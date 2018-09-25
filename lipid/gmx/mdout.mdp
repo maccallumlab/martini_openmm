@@ -2,14 +2,14 @@
 ;	File 'mdout.mdp' was generated
 ;	By user: jlmaccal (501)
 ;	On host: jm-mbpro.local
-;	At date: Mon Sep 24 22:23:58 2018
+;	At date: Mon Sep 24 22:25:25 2018
 ;
 ;	Created by:
 ;	                     :-) GROMACS - gmx grompp, 2018.3 (-:
 ;	
 ;	Executable:   /usr/local/gromacs/bin/gmx
 ;	Data prefix:  /usr/local/gromacs
-;	Working dir:  /Users/jlmaccal/Source/martini_openmm/lipid
+;	Working dir:  /Users/jlmaccal/Source/martini_openmm/lipid/gmx
 ;	Command line:
 ;	  gmx grompp -f martini_md.mdp -c minimized.gro -p dppc.top -o run.tpr
 
