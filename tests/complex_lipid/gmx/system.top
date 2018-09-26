@@ -1,0 +1,21 @@
+#include "martini_v2.1.itp"
+#include "martini_v2.0_DPPC_01.itp"
+#include "martini_v2.0_DIPC_01.itp"
+#include "martini_v2.0_CHOL_02.itp"
+#include "martini_v2.0_ions.itp"
+
+[ system ]
+; name
+INSANE! Membrane UpperLeaflet>DPPC:DIPC:CHOL=4.0:3.0:3.0 LowerLeaflet>DPPC:DIPC:CHOL=4.0:3.0:3.0
+
+[ molecules ]
+; name  number
+DPPC            98
+DIPC            74
+CHOL            74
+DPPC            98
+DIPC            74
+CHOL            74
+W             5577
+NA+             61
+CL-             61

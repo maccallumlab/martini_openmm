@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import math
 import numpy as np
 import sys
@@ -8,9 +10,8 @@ def get_gmx_energy():
     line = f.readlines()[-1]
     cols = line.split()
     energy = float(cols[1])
-    open('gmx/energy.txt', "w").write(f"{energy}")
+    open("gmx/energy.txt", "w").write(f"{energy}")
     return energy
-
 
 
 def get_omm_energy():
@@ -26,7 +27,7 @@ def get_gmx_forces():
     forces = np.array([float(c) for c in cols][1:])
     n = len(forces)
     forces = forces.reshape((n // 3, 3))
-    np.savetxt('gmx/forces.txt', forces)
+    np.savetxt("gmx/forces.txt", forces)
     return forces
 
 
