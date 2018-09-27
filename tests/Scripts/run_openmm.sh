@@ -1,3 +1,4 @@
+set -e
 cd openmm
-python gen_openmm.py
+python ../../Scripts/gen_openmm.py
 cd ..
