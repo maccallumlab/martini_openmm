@@ -126,8 +126,7 @@ class GromacsMartiniV2TopFile(object):
             self.constraints = []
             self.cmaps = []
             self.vsites2 = []
-            self.has_virtual_sites = False
-            self.has_nbfix_terms = False
+            self.vsites3 = []
 
     def _processFile(self, file):
         append = ""
@@ -269,12 +268,16 @@ class GromacsMartiniV2TopFile(object):
                 self._processNonbondType(line)
             elif self._currentCategory == "virtual_sites2":
                 self._processVirtualSites2(line)
+            elif self._currentCategory == "virtual_sites3":
+                self._processVirtualSites3(line)
             elif self._currentCategory.startswith("virtual_sites"):
                 if self._currentMoleculeType is None:
                     raise ValueError(
                         "Found %s before [ moleculetype ]" % self._currentCategory
                     )
-                self._currentMoleculeType.has_virtual_sites = True
+                raise ValueError(
+                    f"[ {self._currentCategory} ] is currently not supported."
+                )
 
     def _processDefaults(self, line):
         """Process the [ defaults ] line."""
@@ -484,6 +487,13 @@ class GromacsMartiniV2TopFile(object):
         if len(fields) < 5:
             raise ValueError("Too few fields in [ virtual_sites2 ] line: " + line)
         self._currentMoleculeType.vsites2.append(fields[:5])
+
+    def _processVirtualSites3(self, line):
+        """Process a line in the [ virtual_sites3 ] category."""
+        fields = line.split()
+        if len(fields) < 7:
+            raise ValueError("Too few fields in [ virtual_sites3 ] line: " + line)
+        self._currentMoleculeType.vsites3.append(fields)
 
     def _buildDihLookupTable(self):
         dihedralTypeTable = {}
@@ -867,6 +877,58 @@ class GromacsMartiniV2TopFile(object):
         constraintExceptions = [(i, j, 0, 0, 0) for i, j in constraintIndices]
         return constraintExceptions
 
+    def _addVirtualSitesToSystem(self, sys, moleculeType, baseAtomIndex):
+        # process vsites2
+        for fields in moleculeType.vsites2:
+            atoms = [int(x) - 1 for x in fields[:3]]
+            c1 = float(fields[4])
+            vsite = mm.TwoParticleAverageSite(
+                baseAtomIndex + atoms[1], baseAtomIndex + atoms[2], (1 - c1), c1
+            )
+            sys.setVirtualSite(baseAtomIndex + atoms[0], vsite)
+            self._all_vsites.append(
+                (
+                    baseAtomIndex + atoms[0],
+                    baseAtomIndex + atoms[1],
+                    baseAtomIndex + atoms[2],
+                )
+            )
+
+        # process vsites3
+        for fields in moleculeType.vsites3:
+            site = int(fields[0]) + baseAtomIndex - 1
+            from_i = int(fields[1]) + baseAtomIndex - 1
+            from_j = int(fields[2]) + baseAtomIndex - 1
+            from_k = int(fields[3]) + baseAtomIndex - 1
+            site_type = int(fields[4])
+
+            if site_type == 1:
+                if len(fields) < 7:
+                    raise ValueError(f"Not enough parameters for type 1 site: {fields}")
+                a = float(fields[5])
+                b = float(fields[6])
+                w_i = 1.0 - a - b
+                w_j = a
+                w_k = b
+                vsite = mm.ThreeParticleAverageSite(
+                    from_i, from_j, from_k, w_i, w_j, w_k
+                )
+                sys.setVirtualSite(site, vsite)
+                self._all_vsites.append((site, from_i, from_j, from_k))
+            elif site_type == 4:
+                if len(fields) < 8:
+                    raise ValueError(f"Not enough parameters for type 4 site: {fields}")
+                a = float(fields[5])
+                b = float(fields[6])
+                c = float(fields[7])
+                vsite = mm.OutOfPlaneSite(from_i, from_j, from_k, a, b, c)
+                sys.setVirtualSite(site, vsite)
+                self._all_vsites.append((site, from_i, from_j, from_k))
+            else:
+                raise ValueError(
+                    f"Site type {site_type} unsupported in [ virtual-sites3 ]."
+                )
+
     def __init__(
         self,
         file,
@@ -897,19 +959,13 @@ class GromacsMartiniV2TopFile(object):
         if includeDir is None:
             includeDir = _defaultGromacsIncludeDir()
         self._includeDirs = (os.path.dirname(file), includeDir)
-        # Most of the gromacs water itp files for different forcefields,
-        # unless the preprocessor #define FLEXIBLE is given, don't define
-        # bonds between the water hydrogen and oxygens, but only give the
-        # constraint distances and exclusions.
         self._defines = OrderedDict()
-        self._defines["FLEXIBLE"] = True
         self._genpairs = True
         if defines is not None:
             for define, value in defines.iteritems():
                 self._defines[define] = value
 
         # Parse the file.
-
         self._currentCategory = None
         self._ifStack = []
         self._elseStack = []
@@ -925,6 +981,7 @@ class GromacsMartiniV2TopFile(object):
         self._cmapTypes = {}
         self._nonbondTypes = {}
         self._processFile(file)
+        self._all_vsites = []
 
         top = Topology()
         self.topology = top
@@ -941,8 +998,6 @@ class GromacsMartiniV2TopFile(object):
             if moleculeName not in self._moleculeTypes:
                 raise ValueError("Unknown molecule type: " + moleculeName)
             moleculeType = self._moleculeTypes[moleculeName]
-            if moleculeCount > 0 and moleculeType.has_virtual_sites:
-                raise ValueError("Virtual sites not yet supported by Gromacs parsers")
 
             # Create the specified number of molecules of this type.
             for i in range(moleculeCount):
@@ -1125,6 +1180,7 @@ class GromacsMartiniV2TopFile(object):
                     baseAtomIndex,
                 )
                 self._addCmapToSystem(sys, moleculeType, bondedTypes, baseAtomIndex)
+                self._addVirtualSitesToSystem(sys, moleculeType, baseAtomIndex)
 
                 exceptions, charges = self._setnonbondedParams(
                     es,
@@ -1137,15 +1193,6 @@ class GromacsMartiniV2TopFile(object):
                 )
                 allExceptions.extend(exceptions)
                 allCharges.extend(charges)
-
-                # Record virtual sites
-                for fields in moleculeType.vsites2:
-                    atoms = [int(x) - 1 for x in fields[:3]]
-                    c1 = float(fields[4])
-                    vsite = mm.TwoParticleAverageSite(
-                        baseAtomIndex + atoms[1], baseAtomIndex + atoms[2], (1 - c1), c1
-                    )
-                    sys.setVirtualSite(baseAtomIndex + atoms[0], vsite)
 
                 # Add explicitly specified constraints.
                 for fields in moleculeType.constraints:
