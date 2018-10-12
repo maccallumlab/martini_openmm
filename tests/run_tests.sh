@@ -35,5 +35,18 @@ cd protein
 python ../Scripts/compare.py
 cd ..
 echo
+
+echo
+echo
+echo "Running membrane_protein test"
+echo
+echo
+cd membrane_protein
+../Scripts/run_gmx.sh
+../Scripts/run_openmm.sh
+python ../Scripts/compare.py
+cd ..
+echo
+
 echo
 echo "All tests completed succesfully"

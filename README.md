@@ -21,3 +21,13 @@ It has not yet been tested for:
 There has not yet been any effort to support:
 - Martini v3
 - Polarizable Martini
+
+Limitations:
+- Math in .itp files:
+    - Gromacs allows for mathmatical expressions to be used in .itp files
+        - `    1     6      1   0.98112 RUBBER_FC*1.000000`
+    - This is not allowed in OpenMM and must be edited
+        - `    1     6      1   0.98112 RUBBER_FC`
+- The only supported electrostatic option is `coulombtype = reaction-field`
+- The only supported option for Van der Waals is `vdw_type = cutoff`
+- The cutoff must be the same for `rcoulomb` and `rvdw`

@@ -276,7 +276,21 @@ class GromacsMartiniV2TopFile(object):
                         "Found %s before [ moleculetype ]" % self._currentCategory
                     )
                 raise ValueError(
-                    f"[ {self._currentCategory} ] is currently not supported."
+                    f"[ {self._currentCategory} ] is currently not supported.\n"
+                    "Please file an issue at github.com/maccallumlab/martini_openmm"
+                )
+            elif self._currentCategory == "system":  # ignore the system description
+                pass
+            elif self._currentCategory == "position_restraints":
+                raise ValueError(
+                    "[ position_restraints ] is not currently supported.\n"
+                    "The same effect can be achieved using a CustomExternalForce in OpenMM.\n"
+                    "Please see github.com/maccallumlab/martini_openmm for details."
+                )
+            else:
+                raise ValueError(
+                    f"[ {self._currentCategory} ] is not currently supported.\n"
+                    "Please file an issue at github.com/maccallumlab/martini_openmm"
                 )
 
     def _processDefaults(self, line):
@@ -522,7 +536,6 @@ class GromacsMartiniV2TopFile(object):
             sys.addParticle(mass)
 
     def _addBondsToSystem(self, sys, moleculeType, bondedTypes, baseAtomIndex):
-        bonds = None
         for fields in moleculeType.bonds:
             atoms = [int(x) - 1 for x in fields[:2]]
             types = tuple(bondedTypes[i] for i in atoms)
@@ -539,10 +552,10 @@ class GromacsMartiniV2TopFile(object):
 
             length = float(params[0])
 
-            if bonds is None:
-                bonds = mm.HarmonicBondForce()
-                sys.addForce(bonds)
-            bonds.addBond(
+            if self.bonds is None:
+                self.bonds = mm.HarmonicBondForce()
+                sys.addForce(self.bonds)
+            self.bonds.addBond(
                 baseAtomIndex + atoms[0],
                 baseAtomIndex + atoms[1],
                 length,
@@ -550,8 +563,6 @@ class GromacsMartiniV2TopFile(object):
             )
 
     def _addAnglesToSystem(self, sys, moleculeType, bondedTypes, baseAtomIndex):
-        angles_harmonic = None
-        angles_gmx = None
         degToRad = math.pi / 180
 
         for fields in moleculeType.angles:
@@ -577,12 +588,14 @@ class GromacsMartiniV2TopFile(object):
             # Need to implment gmx angle types
             theta = float(params[0]) * degToRad
             if int(fields[3]) == 2:
-                if angles_gmx is None:
-                    angles_gmx = mm.CustomAngleForce("0.5*k*(cos(theta)-cos(theta0))^2")
-                    angles_gmx.addPerAngleParameter("theta0")
-                    angles_gmx.addPerAngleParameter("k")
-                    sys.addForce(angles_gmx)
-                angles_gmx.addAngle(
+                if self.angles_gmx is None:
+                    self.angles_gmx = mm.CustomAngleForce(
+                        "0.5*k*(cos(theta)-cos(theta0))^2"
+                    )
+                    self.angles_gmx.addPerAngleParameter("theta0")
+                    self.angles_gmx.addPerAngleParameter("k")
+                    sys.addForce(self.angles_gmx)
+                self.angles_gmx.addAngle(
                     baseAtomIndex + atoms[0],
                     baseAtomIndex + atoms[1],
                     baseAtomIndex + atoms[2],
@@ -590,10 +603,10 @@ class GromacsMartiniV2TopFile(object):
                 )
 
             elif int(fields[3]) == 1:
-                if angles_harmonic is None:
-                    angles_harmonic = mm.HarmonicAngleForce()
-                    sys.addForce(angles_harmonic)
-                angles_harmonic.addAngle(
+                if self.angles_harmonic is None:
+                    self.angles_harmonic = mm.HarmonicAngleForce()
+                    sys.addForce(self.angles_harmonic)
+                self.angles_harmonic.addAngle(
                     baseAtomIndex + atoms[0],
                     baseAtomIndex + atoms[1],
                     baseAtomIndex + atoms[2],
@@ -613,9 +626,6 @@ class GromacsMartiniV2TopFile(object):
         wildcardDihedralTypes,
         baseAtomIndex,
     ):
-        periodic = None
-        harmonicTorsion = None
-        rb = None
         degToRad = math.pi / 180
 
         for fields in moleculeType.dihedrals:
@@ -660,10 +670,10 @@ class GromacsMartiniV2TopFile(object):
                     # Periodic torsion
                     k = float(params[6])
                     if k != 0:
-                        if periodic is None:
-                            periodic = mm.PeriodicTorsionForce()
-                            sys.addForce(periodic)
-                        periodic.addTorsion(
+                        if self.periodic is None:
+                            self.periodic = mm.PeriodicTorsionForce()
+                            sys.addForce(self.periodic)
+                        self.periodic.addTorsion(
                             baseAtomIndex + atoms[0],
                             baseAtomIndex + atoms[1],
                             baseAtomIndex + atoms[2],
@@ -677,17 +687,17 @@ class GromacsMartiniV2TopFile(object):
                     k = float(params[6])
                     phi0 = float(params[5])
                     if k != 0:
-                        if harmonicTorsion is None:
-                            harmonicTorsion = mm.CustomTorsionForce(
+                        if self.harmonicTorsion is None:
+                            self.harmonicTorsion = mm.CustomTorsionForce(
                                 "0.5*k*(thetap-theta0)^2; thetap = step(-(theta-theta0+pi))*2*pi+theta+step(theta-theta0-pi)*(-2*pi); pi = %.15g"
                                 % math.pi
                             )
-                            harmonicTorsion.addPerTorsionParameter("theta0")
-                            harmonicTorsion.addPerTorsionParameter("k")
-                            sys.addForce(harmonicTorsion)
+                            self.harmonicTorsion.addPerTorsionParameter("theta0")
+                            self.harmonicTorsion.addPerTorsionParameter("k")
+                            sys.addForce(self.harmonicTorsion)
                         # map phi0 into correct space
                         phi0 = phi0 - 360 if phi0 > 180 else phi0
-                        harmonicTorsion.addTorsion(
+                        self.harmonicTorsion.addTorsion(
                             baseAtomIndex + atoms[0],
                             baseAtomIndex + atoms[1],
                             baseAtomIndex + atoms[2],
@@ -698,9 +708,9 @@ class GromacsMartiniV2TopFile(object):
                     # RB Torsion
                     c = [float(x) for x in params[5:11]]
                     if any(x != 0 for x in c):
-                        if rb is None:
-                            rb = mm.RBTorsionForce()
-                            sys.addForce(rb)
+                        if self.rb is None:
+                            self.rb = mm.RBTorsionForce()
+                            sys.addForce(self.rb)
                         if dihedralType == "5":
                             # Convert Fourier coefficients to RB coefficients.
                             c = [
@@ -711,7 +721,7 @@ class GromacsMartiniV2TopFile(object):
                                 -4 * c[3],
                                 0,
                             ]
-                        rb.addTorsion(
+                        self.rb.addTorsion(
                             baseAtomIndex + atoms[0],
                             baseAtomIndex + atoms[1],
                             baseAtomIndex + atoms[2],
@@ -962,7 +972,7 @@ class GromacsMartiniV2TopFile(object):
         self._defines = OrderedDict()
         self._genpairs = True
         if defines is not None:
-            for define, value in defines.iteritems():
+            for define, value in defines.items():
                 self._defines[define] = value
 
         # Parse the file.
@@ -982,6 +992,12 @@ class GromacsMartiniV2TopFile(object):
         self._nonbondTypes = {}
         self._processFile(file)
         self._all_vsites = []
+        self.angles_harmonic = None
+        self.angles_gmx = None
+        self.bonds = None
+        self.periodic = None
+        self.harmonicTorsion = None
+        self.rb = None
 
         top = Topology()
         self.topology = top

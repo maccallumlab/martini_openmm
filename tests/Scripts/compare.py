@@ -5,6 +5,13 @@ import numpy as np
 import sys
 
 
+# tolerances for energy and force comparisons
+energy_atol = 1e-4
+energy_rtol = 1e-5
+f_atol = 1e-4
+f_rtol = 1e-5
+
+
 def get_gmx_energy():
     f = open("gmx/energy.xvg")
     line = f.readlines()[-1]
@@ -39,42 +46,47 @@ gmx_energy = get_gmx_energy()
 omm_energy = get_omm_energy()
 gmx_forces = get_gmx_forces()
 omm_forces = get_omm_forces()
-failed = False
 
-if not math.isclose(gmx_energy, omm_energy, rel_tol=1e-6):
+failed = False
+relative_energy_error = abs(gmx_energy - omm_energy) / abs(gmx_energy)
+abs_energy_error = abs(gmx_energy - omm_energy)
+if relative_energy_error > 1e-5 and abs_energy_error > 1e-3:
     print("Gromacs and OpenMM energies do not match!")
-    print(f"    Gromacs: {gmx_energy}")
-    print(f"     OpenMM: {omm_energy}")
-    print(f"      Delta: {gmx_energy - omm_energy}")
+    print(f"    Gromacs: {gmx_energy:16.3f}")
+    print(f"     OpenMM: {omm_energy:16.3f}")
+    print(f"      Delta: {(gmx_energy - omm_energy):16.3f}")
+    print(f"   Relative: {relative_energy_error:16.3f}")
     print()
     failed = True
 
-if not np.allclose(gmx_forces, omm_forces, atol=2e-2):
-    diffs = np.where(np.abs(gmx_forces - omm_forces) > 1e-2)
-    n_diff = len(diffs[0]) // 3
-    i = diffs[0][0]
-    g_f = gmx_forces[i, :]
-    o_f = omm_forces[i, :]
-    max_diff = np.max(np.abs(gmx_forces - omm_forces))
-    max_diff_ind = np.unravel_index(
-        np.argmax(np.abs(gmx_forces - omm_forces)), gmx_forces.shape
+if not np.allclose(omm_forces, gmx_forces, rtol=f_rtol, atol=f_atol):
+    errors = np.logical_not(
+        np.isclose(omm_forces, gmx_forces, rtol=f_rtol, atol=f_atol)
     )
-    ind = max_diff_ind[0]
+    n_diff = np.sum(errors)
+    bad_ind = np.where(errors)
+    first_row = bad_ind[0][0]
+    first_col = bad_ind[1][0]
+    g_f = gmx_forces[first_row, :]
+    o_f = omm_forces[first_row, :]
+    d_f = np.abs(g_f - o_f)
+    errors = np.abs(omm_forces - gmx_forces) - f_atol - f_rtol * np.abs(gmx_forces)
+    max_ind = np.unravel_index(np.argmax(errors, axis=None), errors.shape)
+    max_g = gmx_forces[max_ind[0], :]
+    max_o = omm_forces[max_ind[0], :]
+    max_d = np.abs(max_g - max_o)
     print("Gromacs and OpenMM forces do not match!")
     print(f"    Values differ at {n_diff} of {gmx_forces.shape[0]} positions.")
     print()
-    print(f"    First differing position: {i}")
+    print(f"    First differing position: ({first_row}, {first_col})")
     print(f"    Gromacs: {g_f[0]:20f} {g_f[1]:20f} {g_f[2]:20f}")
     print(f"     OpenMM: {o_f[0]:20f} {o_f[1]:20f} {o_f[2]:20f}")
+    print(f" Difference: {d_f[0]:20f} {d_f[1]:20f} {d_f[2]:20f}")
     print()
-    print(f"    Largest difference is: {max_diff}.")
-    print(f"    Largest difference is at: {ind}.")
-    print(
-        f"    Gromacs: {gmx_forces[ind, 0]:20f} {gmx_forces[ind, 1]:20f} {gmx_forces[ind, 2]:20f}"
-    )
-    print(
-        f"     OpenMM: {omm_forces[ind, 0]:20f} {omm_forces[ind, 1]:20f} {omm_forces[ind, 2]:20f}"
-    )
+    print(f"    Largest violation is at: ({max_ind[0]}, {max_ind[1]}).")
+    print(f"    Gromacs: {max_g[0]:20f} {max_g[1]:20f} {max_g[2]:20f}")
+    print(f"     OpenMM: {max_o[0]:20f} {max_o[1]:20f} {max_o[2]:20f}")
+    print(f" Difference: {max_d[0]:20f} {max_d[1]:20f} {max_d[2]:20f}")
     print()
     failed = True
 

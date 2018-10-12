@@ -1,0 +1,121 @@
+#include "martini_v2.2_masses.itp"
+#include "martini_v2.0_ions.itp"
+#include "PLASMA-v01-PA2.itp"
+#include "POPX_Martini_v2.0_lipid.itp"
+#include "PIPX_Martini_v2.0_lipid.itp"
+    
+#define RUBBER_BANDS
+  
+#include "m_pgp_A+m_pgp_B.itp"
+    
+[ system ]
+; name
+Martini system from 4m1m.pdb
+    
+[ molecules ]
+; name        number
+m_pgp_A+m_pgp_B 	 4
+
+; X: 46.000 (59 lipids) Y: 46.000 (59 lipids)
+; 3376 lipids in upper leaflet, 3082 lipids in lower leaflet
+; Charge of protein: 44.000000
+; Charge of membrane: -66.000000
+; Total charge: -22.000000
+POPX           407
+DOPC            35
+PIPX           598
+PEPC            24
+PAPC            95
+DAPC            12
+PUPC            24
+POPE            45
+DOPE            15
+PIPE            30
+PQPE             7
+PAPE            42
+DAPE            26
+PUPE            15
+DUPE             7
+DPSM           206
+DBSM            45
+DXSM            83
+POSM            12
+PGSM            12
+PNSM           128
+BNSM            64
+XNSM            90
+DPG1            30
+DXG1            17
+PNG1            21
+XNG1            17
+DPG3            30
+DXG3            17
+PNG3            21
+XNG3            17
+DPCE            10
+DXCE             6
+PNCE             7
+XNCE             6
+PPC             21
+OPC              6
+IPC              6
+APC              6
+UPC              2
+PODG             6
+PIDG             6
+PADG             6
+PUDG             2
+CHOL          1074
+CHOL           856
+POPC           182
+DOPC            16
+PIPC           269
+PEPC            10
+PAPC            43
+DAPC             5
+PUPC            10
+POPE           189
+DOPE            63
+PIPE           126
+PQPE            31
+PAPE           173
+DAPE           110
+PUPE            63
+DUPE            31
+DPSM            92
+DBSM            20
+DXSM            37
+POSM             5
+PGSM             5
+PNSM            58
+BNSM            28
+XNSM            40
+POPS            66
+PIPS            26
+PQPS            13
+PAPS           153
+DAPS             6
+PUPS            59
+DUPS             6
+POPI            45
+PIPI            40
+PAPI            40
+PUPI            16
+POPA            15
+PIPA            13
+PAPA            13
+PUPA             5
+POP1            15
+POP2            15
+POP3            15
+DPCE             4
+DXCE             2
+PNCE             3
+XNCE             2
+PODG             7
+PIDG             6
+PADG             6
+PUDG             2
+W           237785
+NA+           3494
+CL-           2581
