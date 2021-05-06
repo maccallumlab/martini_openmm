@@ -9,3 +9,5 @@ dependencies:
 - make
 - ccache
 - openmm
+- gcc_linux-64
+- gxx_linux-64

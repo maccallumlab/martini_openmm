@@ -42,7 +42,7 @@ jobs:
         cd build
         cmake .. -DGMX_BUILD_OWN_FFTW=ON -DGMX_DOUBLE=on
         make
-        make install
+        sudo make install
 
 
 
