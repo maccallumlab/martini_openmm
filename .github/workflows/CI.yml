@@ -30,5 +30,20 @@ jobs:
         environment-file: devtools/ci/gh-actions/conda-envs/build.yml
         auto-activate-base: false
 
+    - name: "Download and untar gromacs"
+      run: |
+        wget https://ftp.gromacs.org/gromacs/gromacs-2021.2.tar.gz
+        tar zxf gromacs-2021.2.tar.gz
+
+    - name: "Build and install gromacs"
+      working-directory: ./gromacs-2021.2
+      run: |
+        mkdir build
+        cd build
+        cmake .. -DGMX_BUILD_OWN_FFTW=ON -DGMX_DOUBLE=on
+        make
+        make install
+
+
 
 
