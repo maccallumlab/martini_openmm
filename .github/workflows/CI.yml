@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "master"
+  pull_request:
+    branches:
+      - "master"
+
+jobs:
+  unix:
+    runs-on: "ubuntu-latest"
+    name: "ubuntu"
+    env:
+      CCACHE_BASEDIR: "${{ github.workspace }}"
+      CCACHE_DIR: "${{ github.workspace }}/.ccache"
+      CCACHE_COMPRESS: true
+      CCACHE_COMPRESSLEVEL: 6
+      CCACHE_MAXSIZE: 400M
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: conda-incubator/setup-miniconda@v2
+      name: "Prepare base dependencies"
+      with:
+        python-version: "3.8"
+        activate-environment: build
+        environment-file: devtools/ci/gh-actions/conda-envs/build.yml
+        auto-activate-base: false
+
+
+

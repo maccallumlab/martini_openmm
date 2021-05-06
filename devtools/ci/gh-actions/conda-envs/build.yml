@@ -1,0 +1,12 @@
+name: build
+
+channels:
+- conda-forge
+
+dependencies:
+# build
+- cmake
+- make
+- ccache
+- gcc_linux-64 @GCC_VERSION@
+- openmm
