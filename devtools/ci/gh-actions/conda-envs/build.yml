@@ -8,5 +8,4 @@ dependencies:
 - cmake
 - make
 - ccache
-- gcc_linux-64 @GCC_VERSION@
 - openmm
