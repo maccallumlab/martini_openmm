@@ -3,7 +3,6 @@
 ; e.g.: -I/home/joe/doe -I/home/mary/roe
 include                  = 
 ; e.g.: -DPOSRES -DFLEXIBLE (note these variable names are case sensitive)
-define                   = -DRUBBER_BANDS
 
 ; RUN CONTROL PARAMETERS
 integrator               = md
@@ -127,31 +126,6 @@ compressibility          = 3e-4  3e-4
 ref_p                    = 1.0  1.0
 ; Scaling of reference coordinates, No, All or COM
 refcoord_scaling         = all
-
-; OPTIONS FOR QMMM calculations
-QMMM                     = no
-; Groups treated Quantum Mechanically
-QMMM-grps                = 
-; QM method             
-QMmethod                 = 
-; QMMM scheme           
-QMMMscheme               = normal
-; QM basisset           
-QMbasis                  = 
-; QM charge             
-QMcharge                 = 
-; QM multiplicity       
-QMmult                   = 
-; Surface Hopping       
-SH                       = 
-; CAS space options     
-CASorbitals              = 
-CASelectrons             = 
-SAon                     = 
-SAoff                    = 
-SAsteps                  = 
-; Scale factor for MM charges
-MMChargeScaleFactor      = 1
 
 ; SIMULATED ANNEALING  
 ; Type of annealing for each temperature group (no/single/periodic)
