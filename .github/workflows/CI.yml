@@ -21,7 +21,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      name: "Checkout and install"
+
+    - name: "Install martini_openmm"
       run: python setup.py install
 
     - uses: conda-incubator/setup-miniconda@v2
