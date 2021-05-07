@@ -31,14 +31,17 @@ jobs:
         auto-activate-base: false
 
     - name: "Install martini_openmm"
+      shell: bash -l {0}
       run: python setup.py install
 
     - name: "Download and untar gromacs"
+      shell: bash -l {0}
       run: |
         wget https://ftp.gromacs.org/gromacs/gromacs-2021.2.tar.gz
         tar zxf gromacs-2021.2.tar.gz
 
     - name: "Build and install gromacs"
+      shell: bash -l {0}
       working-directory: ./gromacs-2021.2
       run: |
         mkdir build
@@ -48,6 +51,7 @@ jobs:
         sudo make install
 
     - name: "Run tests"
+      shell: bash -l {0}
       run: |
         source /usr/local/bin/GMXRC
         cd tests
