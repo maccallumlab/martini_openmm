@@ -21,6 +21,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      name: "Checkout and install"
+      run: python setup.py install
 
     - uses: conda-incubator/setup-miniconda@v2
       name: "Prepare base dependencies"
@@ -43,6 +45,12 @@ jobs:
         cmake .. -DGMX_BUILD_OWN_FFTW=ON -DGMX_DOUBLE=on
         make
         sudo make install
+
+    - name: "Run tests"
+      run: |
+        source /usr/local/bin/GMXRC
+        cd tests
+        ./run_tests.sh
 
 
 
