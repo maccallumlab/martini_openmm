@@ -5,6 +5,9 @@ on your specific system is recommend. See the `tests` directory
 for example scripts to compare gromacs and openmm energies and
 forces.
 
+A suite of tests is run automatically. The current status of these tests is:
+[![martini_openmm](https://github.com/maccallumlab/martini_openmm/actions/workflows/CI.yml/badge.svg)](https://github.com/maccallumlab/martini_openmm/actions)
+
 Please report any defects as issues on
 [the github repo](https://github.com/maccallumlab/martini_openmm).
 
