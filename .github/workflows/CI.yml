@@ -22,9 +22,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: "Install martini_openmm"
-      run: python setup.py install
-
     - uses: conda-incubator/setup-miniconda@v2
       name: "Prepare base dependencies"
       with:
@@ -32,6 +29,9 @@ jobs:
         activate-environment: build
         environment-file: devtools/ci/gh-actions/conda-envs/build.yml
         auto-activate-base: false
+
+    - name: "Install martini_openmm"
+      run: python setup.py install
 
     - name: "Download and untar gromacs"
       run: |
