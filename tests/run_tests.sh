@@ -49,4 +49,40 @@ cd ..
 echo
 
 echo
+echo
+echo "Running martini3 aqp protein with en test"
+echo
+echo
+cd 1j4n_en_m3
+../Scripts/run_gmx.sh
+../Scripts/run_openmm.sh
+python ../Scripts/compare.py
+cd ..
+echo
+
+echo
+echo
+echo "Running martini3 ubq protein with en test"
+echo
+echo
+cd 1ubq_en_m3
+../Scripts/run_gmx.sh
+../Scripts/run_openmm.sh
+python ../Scripts/compare.py
+cd ..
+echo
+
+echo
+echo
+echo "Running martini3 bpti protein with en test"
+echo
+echo
+cd 1k6u_en_m3
+../Scripts/run_gmx.sh
+../Scripts/run_openmm.sh
+python ../Scripts/compare.py
+cd ..
+echo
+
+echo
 echo "All tests completed succesfully"

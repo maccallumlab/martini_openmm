@@ -1,0 +1,18 @@
+#include "martini_v3.0.0.itp"
+#include "molecule_0.itp"
+#include "martini_v3.0.0_phospholipids_v1.itp"
+#include "martini_v3.0.0_ions_v1.itp"
+#include "martini_v3.0.0_solvents_v1.itp"
+
+[ system ]
+Title of the system
+
+[ molecules ]
+molecule_0    1
+POPC           468
+POPC           459
+W            27367
+NA             293
+CL             309
+
+

@@ -1,0 +1,15 @@
+
+#include "martini_v3.0.0.itp"
+#include "martini_v3.0.0_ions_v1.itp"
+#include "martini_v3.0.0_solvents_v1.itp"
+#include "molecule_0.itp"
+
+[ system ]
+Title of the system
+
+[ molecules ]
+molecule_0    1
+W             8859
+NA              95
+CL             101
+
