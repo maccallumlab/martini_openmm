@@ -1,5 +1,3 @@
-#define GO_VIRT
-
 #include "martini_v3.0.0.itp"
 #include "martini_v3.0.0_ions_v1.itp"
 #include "martini_v3.0.0_solvents_v1.itp"
