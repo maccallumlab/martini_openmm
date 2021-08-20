@@ -1,0 +1,9 @@
+#include "martini_v3.0.0.itp"
+#include "4NIAN.itp"
+
+[ system ]
+System
+
+[ molecules ]
+4NIAN	1
+

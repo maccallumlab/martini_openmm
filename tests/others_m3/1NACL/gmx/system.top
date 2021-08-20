@@ -1,0 +1,11 @@
+#include "martini_v3.0.0.itp"
+#include "martini_v3.0.0_ions_v1.itp"
+
+[ system ]
+; name
+NACL
+
+[ molecules ]
+; name  number
+NA	1
+CL	1

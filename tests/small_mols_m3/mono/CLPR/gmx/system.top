@@ -1,0 +1,9 @@
+#include "martini_v3.0.0.itp"
+#include "CLPR.itp"
+
+[ system ]
+System
+
+[ molecules ]
+CLPR	1
+

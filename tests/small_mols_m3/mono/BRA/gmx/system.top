@@ -1,0 +1,9 @@
+#include "martini_v3.0.0.itp"
+#include "BRA.itp"
+
+[ system ]
+System
+
+[ molecules ]
+BRA	1
+
