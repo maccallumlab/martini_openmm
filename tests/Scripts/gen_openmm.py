@@ -23,11 +23,10 @@ try:
 except FileNotFoundError:
     pass
 
-top = martini.GromacsMartiniV2TopFile(
+top = martini.MartiniTopFile(
     "system.top", periodicBoxVectors=box_vectors, defines=defines
 )
-
-system = top.createSystem(nonbondedCutoff=1.1 * u.nanometer)
+system = top.create_system(nonbonded_cutoff=1.1 * u.nanometer)
 integrator = mm.LangevinIntegrator(
     300 * u.kelvin, 1.0 / u.picosecond, 2 * u.femtosecond
 )

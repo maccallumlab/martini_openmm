@@ -50,7 +50,7 @@ echo
 
 echo
 echo
-echo "Running martini3 aqp protein with en test"
+echo "Running martini3 aqp protein with EN test"
 echo
 echo
 cd 1j4n_en_m3
@@ -62,7 +62,7 @@ echo
 
 echo
 echo
-echo "Running martini3 ubq protein with en test"
+echo "Running martini3 ubq protein with EN test"
 echo
 echo
 cd 1ubq_en_m3
@@ -74,7 +74,19 @@ echo
 
 echo
 echo
-echo "Running martini3 bpti protein with en test"
+echo "Running martini3 ubq protein with Go model test"
+echo
+echo
+cd 1ubq_go_m3
+../Scripts/run_gmx.sh
+../Scripts/run_openmm.sh
+python ../Scripts/compare.py
+cd ..
+echo
+
+echo
+echo
+echo "Running martini3 bpti protein with EN test"
 echo
 echo
 cd 1k6u_en_m3
@@ -82,6 +94,67 @@ cd 1k6u_en_m3
 ../Scripts/run_openmm.sh
 python ../Scripts/compare.py
 cd ..
+echo
+
+echo
+echo
+echo "Running martini3 bpti protein with Go model test"
+echo
+echo
+cd 1k6u_go_m3
+../Scripts/run_gmx.sh
+../Scripts/run_openmm.sh
+python ../Scripts/compare.py
+cd ..
+echo
+
+echo
+echo
+echo "Running martini3 dodecane test"
+echo
+echo
+cd others_m3/1DOD
+../../Scripts/run_gmx.sh
+../../Scripts/run_openmm.sh
+python ../../Scripts/compare.py
+cd ../..
+echo
+
+echo
+echo
+echo "Running martini3 NaCl test"
+echo
+echo
+cd others_m3/1NACL
+../../Scripts/run_gmx.sh
+../../Scripts/run_openmm.sh
+python ../../Scripts/compare.py
+cd ../..
+echo
+
+echo
+echo
+echo "Running martini3 single POPC test"
+echo
+echo
+cd others_m3/1POPC
+../../Scripts/run_gmx.sh
+../../Scripts/run_openmm.sh
+python ../../Scripts/compare.py
+cd ../..
+echo
+
+echo
+echo
+echo "Running martini3 water test"
+echo
+
+echo
+cd others_m3/2W
+../../Scripts/run_gmx.sh
+../../Scripts/run_openmm.sh
+python ../../Scripts/compare.py
+cd ../..
 echo
 
 echo
