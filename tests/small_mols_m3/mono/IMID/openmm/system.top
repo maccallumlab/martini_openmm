@@ -1,9 +1,0 @@
-#include "martini_v3.0.0.itp"
-#include "IMID.itp"
-
-[ system ]
-System
-
-[ molecules ]
-IMID	1
-
