@@ -29,24 +29,22 @@ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
-from __future__ import absolute_import
-
 __author__ = "Justin MacCallum"
 __version__ = "0.1"
 
-from simtk.openmm.app import Topology
-from simtk.openmm.app import PDBFile
-from simtk.openmm.app import forcefield as ff
-from simtk.openmm.app import element as elem
-from simtk.openmm.app import amberprmtopfile as prmtop
-import simtk.unit as unit
-import simtk.openmm as mm
+import distutils.spawn
 import math
 import os
 import re
-import distutils.spawn
 from collections import OrderedDict, defaultdict
-from itertools import combinations, combinations_with_replacement
+
+import simtk.openmm as mm
+import simtk.unit as unit
+from simtk.openmm.app import PDBFile, Topology
+from simtk.openmm.app import amberprmtopfile as prmtop
+from simtk.openmm.app import element as elem
+from simtk.openmm.app import forcefield as ff
+from .vsites import LinearSite, OutOfPlane, VSiteManager, COMLinearSite
 
 HBonds = ff.HBonds
 AllBonds = ff.AllBonds
@@ -127,9 +125,7 @@ class MartiniTopFile(object):
             self.pairs = []
             self.constraints = []
             self.cmaps = []
-            self.vsites2 = []
-            self.vsites3 = []
-            self.vsitesn = []
+            self.vsites = VSiteManager()
 
     def __init__(
         self,
@@ -645,20 +641,86 @@ class MartiniTopFile(object):
         """Process a line in the [ virtual_sites2 ] category."""
         fields = line.split()
         if len(fields) < 5:
-            raise ValueError("Too few fields in [ virtual_sites2 ] line: " + line)
-        self._currentMoleculeType.vsites2.append(fields[:5])
+            raise ValueError(f"Too few fields in [ virtual_sites2 ] line: {line}")
+
+        index = int(fields[0])
+        atom1 = int(fields[1])
+        atom2 = int(fields[2])
+        func = int(fields[3])
+        if func != 1:
+            raise ValueError(
+                f"Unknown function type {func} in virtual_sites2 line: {line}"
+            )
+        assert func == 1
+        w = float(fields[4])
+
+        site_dict = {atom1: 1 - w, atom2: w}
+        site = LinearSite(site_dict)
+
+        self._currentMoleculeType.vsites.add(index, site)
 
     def _process_vsites3(self, line):
         """Process a line in the [ virtual_sites3 ] category."""
         fields = line.split()
         if len(fields) < 7:
-            raise ValueError("Too few fields in [ virtual_sites3 ] line: " + line)
-        self._currentMoleculeType.vsites3.append(fields)
+            raise ValueError(f"Too few fields in [ virtual_sites3 ] line: {line}")
+
+        index = int(fields[0])
+        atom1 = int(fields[1])
+        atom2 = int(fields[2])
+        atom3 = int(fields[3])
+        func = int(fields[4])
+
+        if func == 1:
+            if len(fields) < 7:
+                raise ValueError(f"Not enough parameters for vsite: {line}")
+            a = float(fields[5])
+            b = float(fields[6])
+            w1 = 1 - a - b
+            w2 = a
+            w3 = b
+            site_dict = {
+                atom1: w1,
+                atom2: w2,
+                atom3: w3,
+            }
+            site = LinearSite(site_dict)
+            self._currentMoleculeType.vsites.add(index, site)
+        elif func == 4:
+            if len(fields) < 8:
+                raise ValueError(f"Not enough parameters for type 4 site: {line}")
+            a = float(fields[5])
+            b = float(fields[6])
+            c = float(fields[7])
+            site = OutOfPlane(atom1, atom2, atom3, a, b, c)
+            self._currentMoleculeType.vsites.add(index, site)
+        else:
+            raise RuntimeError(f"Function type {func} unsupported in vsites3: {line}")
 
     def _process_vsitesn(self, line):
         """Process a line in the [ virtual_sitesn ] category."""
         fields = line.split()
-        self._currentMoleculeType.vsitesn.append(fields)
+        index = int(fields[0])
+        func = int(fields[1])
+        from_atoms = [int(field) for field in fields[2:]]
+
+        if len(from_atoms) == 1:
+            site_dict = {from_atoms[0]: 1.0}
+            site = LinearSite(site_dict)
+            self._currentMoleculeType.vsites.add(index, site)
+
+        elif func == 1:  # center of geometry
+            w = 1 / len(from_atoms)
+            site_dict = {atom: w for atom in from_atoms}
+            site = LinearSite(site_dict)
+            self._currentMoleculeType.vsites.add(index, site)
+
+        elif func == 2:  # center of mass
+            site = COMLinearSite(from_atoms)
+            self._currentMoleculeType.vsites.add(index, site)
+
+        else:
+            raise ValueError(f"Site type {func} unspported: {line}")
 
     def _build_dihedral_lookup_table(self):
         dihedral_type_table = {}
@@ -1035,8 +1097,12 @@ class MartiniTopFile(object):
                 # We'll use the automatically generated parameters
                 continue
 
-            atom1params = self.es_force.getParticleParameters(base_atom_index + atoms[0])
-            atom2params = self.es_force.getParticleParameters(base_atom_index + atoms[1])
+            atom1params = self.es_force.getParticleParameters(
+                base_atom_index + atoms[0]
+            )
+            atom2params = self.es_force.getParticleParameters(
+                base_atom_index + atoms[1]
+            )
             pairExceptions.append(
                 (
                     base_atom_index + atoms[0],
@@ -1082,109 +1148,110 @@ class MartiniTopFile(object):
         return constraint_exceptions
 
     def _add_vsites_to_system(self, sys, molecule_type, base_atom_index):
-        self._add_vsites2_to_system(sys, molecule_type, base_atom_index)
-        self._add_vsites3_to_system(sys, molecule_type, base_atom_index)
-        self._add_vsitesn_to_system(sys, molecule_type, base_atom_index)
-
-    def _add_vsites2_to_system(self, sys, molecule_type, base_atom_index):
-        for fields in molecule_type.vsites2:
-            atoms = [int(x) - 1 for x in fields[:3]]
-            c1 = float(fields[4])
-            vsite = mm.TwoParticleAverageSite(
-                base_atom_index + atoms[1], base_atom_index + atoms[2], (1 - c1), c1
-            )
-            sys.setVirtualSite(base_atom_index + atoms[0], vsite)
-            self._all_vsites.append(
-                (
-                    base_atom_index + atoms[0],
-                    base_atom_index + atoms[1],
-                    base_atom_index + atoms[2],
-                )
-            )
-
-    def _add_vsites3_to_system(self, sys, molecule_type, base_atom_index):
-        for fields in molecule_type.vsites3:
-            site = int(fields[0]) + base_atom_index - 1
-            from_i = int(fields[1]) + base_atom_index - 1
-            from_j = int(fields[2]) + base_atom_index - 1
-            from_k = int(fields[3]) + base_atom_index - 1
-            site_type = int(fields[4])
-
-            if site_type == 1:
-                if len(fields) < 7:
-                    raise ValueError(f"Not enough parameters for type 1 site: {fields}")
-                a = float(fields[5])
-                b = float(fields[6])
-                w_i = 1.0 - a - b
-                w_j = a
-                w_k = b
-                vsite = mm.ThreeParticleAverageSite(
-                    from_i, from_j, from_k, w_i, w_j, w_k
-                )
-                sys.setVirtualSite(site, vsite)
-                self._all_vsites.append((site, from_i, from_j, from_k))
-            elif site_type == 4:
-                if len(fields) < 8:
-                    raise ValueError(f"Not enough parameters for type 4 site: {fields}")
-                a = float(fields[5])
-                b = float(fields[6])
-                c = float(fields[7])
-                vsite = mm.OutOfPlaneSite(from_i, from_j, from_k, a, b, c)
-                sys.setVirtualSite(site, vsite)
-                self._all_vsites.append((site, from_i, from_j, from_k))
+        offset = base_atom_index - 1
+        for index, site in molecule_type.vsites.iter(sys, offset):
+            if isinstance(site, OutOfPlane):
+                self._add_out_of_plane_vsite(sys, index, site, offset)
+            elif isinstance(site, LinearSite):
+                self._add_linear_vsite(sys, index, site, offset)
             else:
-                raise ValueError(
-                    f"Site type {site_type} unsupported in [ virtual_sites3 ]."
-                )
+                raise RuntimeError(f"Unknown site type {type(site)}.")
+            self._all_vsites.append(index + offset)
 
-    def _add_vsitesn_to_system(self, sys, molecule_type, base_atom_index):
-        for fields in molecule_type.vsitesn:
-            site = int(fields[0]) + base_atom_index - 1
-            site_type = int(fields[1])
-            from_atoms = [int(field) + base_atom_index - 1 for field in fields[2:]]
-            n_from_atoms = len(from_atoms)
+    def _add_out_of_plane_vsite(self, sys, index, site, offset):
+        vsite = mm.OutOfPlaneSite(
+            site.atom1 + offset,
+            site.atom2 + offset,
+            site.atom3 + offset,
+            site.a,
+            site.b,
+            site.c,
+        )
+        sys.setVirtualSite(index + offset, vsite)
 
-            if n_from_atoms == 1:
-                # This is a special case to handle Go potentials
-                # in Martini3. A LocalCoordinateSite must depend
-                # on two other particles, so we'll use particle
-                # 0 to satisfy this requirement.
-                from_atoms = [from_atoms[0], 0]
-                n_from_atoms = 2
-                if site_type == 1 or site_type == 2:
-                    weights = [1.0, 0.0]  # only depend on the first particle
-                else:
-                    raise ValueError(
-                        f"Site type {site_type} unsupported in [ virtual_sizen ]."
-                    )
+    def _add_linear_vsite(self, sys, index, site, offset):
+        n = len(site.atom_weights)
+        if n == 1:
+            self._add_one_particle_vsite(sys, index, site, offset)
+        elif n == 2:
+            self._add_two_particle_vsite(sys, index, site, offset)
+        elif n == 3:
+            self._add_three_particle_vsite(sys, index, site, offset)
+        else:
+            self._add_n_particle_vsite(sys, index, site, offset)
 
-                # Add an exclusion, as the virtual site will always be
-                # exactly on top of the single constructing atom.
-                self.es_force.addExclusion(site, from_atoms[0])
-                self.lj_force.addExclusion(site, from_atoms[0])
-            else:
-                if site_type == 1:  # center of geometry
-                    weights = [1 / n_from_atoms] * n_from_atoms
-                elif site_type == 2:  # center of mass
-                    masses = [
-                        sys.getParticleMass(i).value_in_unit(unit.dalton)
-                        for i in from_atoms
-                    ]
-                    total = sum(masses)
-                    weights = [m / total for m in masses]
-                else:
-                    raise ValueError(
-                        f"Site type {site_type} unsupported in [ virtual_sizen ]."
-                    )
-            # These are dummy weights that specify a local coordinate system
-            # that openmm supports, but we don't use.
-            x_weights = [0.0] * n_from_atoms
-            y_weights = [0.0] * n_from_atoms
-            vsite = mm.LocalCoordinatesSite(
-                from_atoms, weights, x_weights, y_weights, [0.0, 0.0, 0.0]
-            )
-            sys.setVirtualSite(site, vsite)
-            self._all_vsites.append((site, *from_atoms))
+    def _add_one_particle_vsite(self, sys, index, site, offset):
+        atoms = []
+        weights = []
+        for atom, weight in site.atom_weights.items():
+            atoms.append(atom + offset)
+            weights.append(weight)
+        assert len(atoms) == 1
+
+        # We need at least two atoms, so we'll use atom 0 as
+        # dummy with a weight of 0.
+        atoms.append(0)
+        weights.append(0.0)
+
+        # These are dummy weights that specify a local coordinate system
+        # that openmm supports, but we don't use.
+        x_weights = [0.0, 0.0]
+        y_weights = [0.0, 0.0]
+
+        vsite = mm.LocalCoordinatesSite(
+            atoms, weights, x_weights, y_weights, [0.0, 0.0, 0.0]
+        )
+        sys.setVirtualSite(index + offset, vsite)
+
+        # Add exclusions
+        self.es_force.addExclusion(index + offset, atoms[0])
+        self.lj_force.addExclusion(index + offset, atoms[0])
+
+    def _add_two_particle_vsite(self, sys, index, site, offset):
+        atoms = []
+        weights = []
+        for atom, weight in site.atom_weights.items():
+            atoms.append(atom + offset)
+            weights.append(weight)
+        assert len(atoms) == 2
+
+        vsite = mm.TwoParticleAverageSite(atoms[0], atoms[1], weights[0], weights[1])
+        sys.setVirtualSite(index + offset, vsite)
+
+    def _add_three_particle_vsite(self, sys, index, site, offset):
+        atoms = []
+        weights = []
+        for atom, weight in site.atom_weights.items():
+            atoms.append(atom + offset)
+            weights.append(weight)
+        assert len(atoms) == 3
+
+        vsite = mm.ThreeParticleAverageSite(
+            atoms[0],
+            atoms[1],
+            atoms[2],
+            weights[0],
+            weights[1],
+            weights[2],
+        )
+        sys.setVirtualSite(index + offset, vsite)
+
+    def _add_n_particle_vsite(self, sys, index, site, offset):
+        atoms = []
+        weights = []
+        for atom, weight in site.atom_weights.items():
+            atoms.append(atom + offset)
+            weights.append(weight)
+        n_atoms = len(atoms)
+
+        # These are dummy weights that specify a local coordinate system
+        # that openmm supports, but we don't use.
+        x_weights = [0.0] * n_atoms
+        y_weights = [0.0] * n_atoms
+        vsite = mm.LocalCoordinatesSite(
+            atoms, weights, x_weights, y_weights, [0.0, 0.0, 0.0]
+        )
+        sys.setVirtualSite(index + offset, vsite)
 
     def create_system(
         self,
@@ -1324,8 +1391,12 @@ class MartiniTopFile(object):
 
                 C6.append(c6)
                 C12.append(c12)
-        self.lj_force.addTabulatedFunction("C6", mm.Discrete2DFunction(n_types, n_types, C6))
-        self.lj_force.addTabulatedFunction("C12", mm.Discrete2DFunction(n_types, n_types, C12))
+        self.lj_force.addTabulatedFunction(
+            "C6", mm.Discrete2DFunction(n_types, n_types, C6)
+        )
+        self.lj_force.addTabulatedFunction(
+            "C12", mm.Discrete2DFunction(n_types, n_types, C12)
+        )
 
         # Loop over molecules and create the specified number of each type.
         for molecule_name, molecule_count in self._molecules:

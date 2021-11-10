@@ -11,6 +11,8 @@ A suite of tests is run automatically. The current status of these tests is:
 Please report any defects as issues on
 [the github repo](https://github.com/maccallumlab/martini_openmm).
 
+To run the tests, execute `python -m unittest` from the `tests` directory.
+
 The system has been tested on the sytems in the `tests` directory
 and works for:
 - Martini v2
