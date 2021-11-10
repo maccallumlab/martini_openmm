@@ -485,7 +485,7 @@ class MartiniTopFile(object):
         if fields[3] == "1":
             self._use_harmonic_angles = True
             self._currentMoleculeType.harmonic_angles.append(fields)
-        if fields[3] == "2":
+        elif fields[3] == "2":
             self._use_g96_angles = True
             self._currentMoleculeType.g96_angles.append(fields)
         elif fields[3] == "10":

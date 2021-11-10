@@ -118,48 +118,35 @@ class TestMartini3SmallMono4NIAN(TestBase, unittest.TestCase):
     depth = 3
 
 
-class TestMartini3SmallMonoBRA(TestBase, unittest.TestCase):
-    test_dir = "small_mols_m3/mono/BRA"
-    depth = 3
-
-
 class TestMartini3SmallMonoCLPR(TestBase, unittest.TestCase):
     test_dir = "small_mols_m3/mono/CLPR"
     depth = 3
 
 
-class TestMartini3SmallMono3IMID(TestBase, unittest.TestCase):
-    test_dir = "small_mols_m3/mono/IMID"
-    depth = 3
-
-
-class TestMartini3SmallMonoIOPHE(TestBase, unittest.TestCase):
-    test_dir = "small_mols_m3/mono/IOPHE"
-    depth = 3
-
 class TestMartini3SmallPoly2T(TestBase, unittest.TestCase):
     test_dir = "small_mols_m3/poly/2T"
     depth = 3
+
 
 class TestMartini3SmallPolyANTH(TestBase, unittest.TestCase):
     test_dir = "small_mols_m3/poly/ANTH"
     depth = 3
 
-class TestMartini3SmallPolyBZTA(TestBase, unittest.TestCase):
-    test_dir = "small_mols_m3/poly/BZTA"
-    depth = 3
 
 class TestMartini3SmallPolyCAFF(TestBase, unittest.TestCase):
     test_dir = "small_mols_m3/poly/CAFF"
     depth = 3
 
+
 class TestMartini3SmallPolyCNAP(TestBase, unittest.TestCase):
     test_dir = "small_mols_m3/poly/CNAP"
     depth = 3
 
+
 class TestMartini3SmallPolyNDMBI(TestBase, unittest.TestCase):
     test_dir = "small_mols_m3/poly/NDMBI"
     depth = 3
+
 
 class TestMartini3SmallPolyTDMBI(TestBase, unittest.TestCase):
     test_dir = "small_mols_m3/poly/TDMBI"
