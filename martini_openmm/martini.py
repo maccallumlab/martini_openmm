@@ -188,6 +188,7 @@ class MartiniTopFile(object):
         self.harmonic_bond_force = None
         self.periodic_torsion_force = None
         self.harmonic_torsion_force = None
+        self.combined_bending_torsion_force = None
         self.rb_torsion_force = None
         self._use_sigma_eps = False
         self._use_g96_angles = False
@@ -503,7 +504,7 @@ class MartiniTopFile(object):
         fields = line.split()
         if len(fields) < 5:
             raise ValueError("Too few fields in [ dihedrals ] line: " + line)
-        if fields[4] not in ("1", "2", "3", "4", "5", "9"):
+        if fields[4] not in ("1", "2", "3", "4", "5", "9", "11"):
             raise ValueError("Unsupported function type in [ dihedrals ] line: " + line)
         self._currentMoleculeType.dihedrals.append(fields)
 
@@ -885,7 +886,7 @@ class MartiniTopFile(object):
             reversedTypes = types[::-1] + (dihedralType,)
             types = types + (dihedralType,)
             if (
-                (dihedralType in ("1", "4", "5", "9") and len(fields) > 7)
+                (dihedralType in ("1", "4", "5", "9", "11") and len(fields) > 7)
                 or (dihedralType == "3" and len(fields) > 10)
                 or (dihedralType == "2" and len(fields) > 6)
             ):
@@ -954,6 +955,40 @@ class MartiniTopFile(object):
                             base_atom_index + atoms[3],
                             (phi0 * degToRad, k),
                         )
+                elif dihedralType == "11":
+                    # combined bending / torsion
+                    k = float(params[5])
+                    a0 = float(params[6])
+                    a1 = float(params[7])
+                    a2 = float(params[8])
+                    a3 = float(params[9])
+                    a4 = float(params[10])
+                    if self.combined_bending_torsion_force is None:
+                        self.combined_bending_torsion_force = mm.CustomCompoundBondForce(
+                            4,
+                            "k*sintheta0^3*sintheta1^3*(a0 + a1*cosphi + a2*cosphi^2 + a3*cosphi^3 + a4*cosphi^4); "
+                            "sintheta0 = sin(angle(p1, p2, p3));"
+                            "sintheta1 = sin(angle(p2, p3, p4));"
+                            "cosphi = cos(dihedral(p1, p2, p3, p4));"
+                        )
+                        self.combined_bending_torsion_force.addPerBondParameter("k")
+                        self.combined_bending_torsion_force.addPerBondParameter("a0")
+                        self.combined_bending_torsion_force.addPerBondParameter("a1")
+                        self.combined_bending_torsion_force.addPerBondParameter("a2")
+                        self.combined_bending_torsion_force.addPerBondParameter("a3")
+                        self.combined_bending_torsion_force.addPerBondParameter("a4")
+                        sys.addForce(self.combined_bending_torsion_force)
+
+                    self.combined_bending_torsion_force.addBond(
+                        [
+                            base_atom_index + atoms[0],
+                            base_atom_index + atoms[1],
+                            base_atom_index + atoms[2],
+                            base_atom_index + atoms[3]
+                        ],
+                        [k, a0, a1, a2, a3, a4]
+                    )
+
                 else:
                     # RB Torsion
                     c = [float(x) for x in params[5:11]]

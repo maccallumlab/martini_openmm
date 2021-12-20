@@ -38,6 +38,14 @@ class TestBase:
         _compare()
 
 
+class TestMOL1(TestBase, unittest.TestCase):
+    test_dir = "MOL1"
+    depth = 1
+
+class TestPEG(TestBase, unittest.TestCase):
+    test_dir = "PEG"
+    depth = 1
+
 class TestMartini2SimpleLipid(TestBase, unittest.TestCase):
     test_dir = "simple_lipid"
     depth = 1
