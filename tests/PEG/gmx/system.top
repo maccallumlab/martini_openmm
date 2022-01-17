@@ -1,0 +1,18 @@
+#include "martini_v3.0.0.itp"
+#include "martini_v3.0.0_ions_v1.itp"
+#include "martini_v3.0.0_solvents_v1.itp"
+#include "martini_v3.0.0_phospholipids_v1.itp"
+#include "PEL.itp"
+[ system ]
+; name
+PEGylated lipid mushroom
+
+[ molecules ]
+; name  number
+PEL          5
+POPC         95
+PEL          5
+POPC         95
+;W 7000
+W	   6990
+NA	     10

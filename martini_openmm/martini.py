@@ -134,6 +134,7 @@ class MartiniTopFile(object):
         unitCellDimensions=None,
         includeDir=None,
         defines=None,
+        epsilon_r=15.0,
     ):
         """Load a top file.
 
@@ -154,6 +155,7 @@ class MartiniTopFile(object):
         defines : dict={}
             preprocessor definitions that should be predefined when parsing the file
         """
+        self.epsilon_r = epsilon_r
         if includeDir is None:
             includeDir = _get_default_gromacs_include_dir()
         self._includeDirs = (os.path.dirname(file), includeDir)
@@ -969,7 +971,7 @@ class MartiniTopFile(object):
                             "k*sintheta0^3*sintheta1^3*(a0 + a1*cosphi + a2*cosphi^2 + a3*cosphi^3 + a4*cosphi^4); "
                             "sintheta0 = sin(angle(p1, p2, p3));"
                             "sintheta1 = sin(angle(p2, p3, p4));"
-                            "cosphi = cos(dihedral(p1, p2, p3, p4));"
+                            "cosphi = cos(dihedral(p1, p2, p3, p4));",
                         )
                         self.combined_bending_torsion_force.addPerBondParameter("k")
                         self.combined_bending_torsion_force.addPerBondParameter("a0")
@@ -984,11 +986,10 @@ class MartiniTopFile(object):
                             base_atom_index + atoms[0],
                             base_atom_index + atoms[1],
                             base_atom_index + atoms[2],
-                            base_atom_index + atoms[3]
+                            base_atom_index + atoms[3],
                         ],
-                        [k, a0, a1, a2, a3, a4]
+                        [k, a0, a1, a2, a3, a4],
                     )
-
                 else:
                     # RB Torsion
                     c = [float(x) for x in params[5:11]]
@@ -1291,7 +1292,6 @@ class MartiniTopFile(object):
     def create_system(
         self,
         nonbonded_cutoff=1.1 * unit.nanometer,
-        epsilon_r=15.0,
         remove_com_motion=True,
     ):
         """Construct an OpenMM System representing the topology described by this
@@ -1322,7 +1322,7 @@ class MartiniTopFile(object):
             f"ES = f/epsilon_r*q1*q2 * (1/r + krf * r^2 - crf);"
             f"crf = 1 / rcut + krf * rcut^2;"
             f"krf = 1 / (2 * rcut^3);"
-            f"epsilon_r = {epsilon_r};"
+            f"epsilon_r = {self.epsilon_r};"
             f"f = 138.935458;"
             f"rcut={nonbonded_cutoff.value_in_unit(unit.nanometers)};"
         )
@@ -1338,7 +1338,7 @@ class MartiniTopFile(object):
             f"ES = f*qprod/epsilon_r * (krf * r^2 - crf);"
             f"crf = 1 / rcut + krf * rcut^2;"
             f"krf = 1 / (2 * rcut^3);"
-            f"epsilon_r = {epsilon_r};"
+            f"epsilon_r = {self.epsilon_r};"
             f"f = 138.935458;"
             f"rcut={nonbonded_cutoff.value_in_unit(unit.nanometers)};"
         )
@@ -1494,14 +1494,17 @@ class MartiniTopFile(object):
                 if i < j:
                     except_map[(i, j)] = [q, c6, c12]
                 else:
-                    except_map[(j, i)] = [q, c6, C12]
+                    except_map[(j, i)] = [q, c6, c12]
 
             # add in all of the exclusions
             for i, j in except_map:
                 self.es_force.addExclusion(i, j)
                 self.lj_force.addExclusion(i, j)
-                self.es_self_excl_force.addBond(i, j, [all_charges[i] * all_charges[j]])
-                self.lj_except_force.addBond(i, j, [c6, c12])
+                qprod = all_charges[i] * all_charges[j]
+                if qprod != 0.0:
+                    self.es_self_excl_force.addBond(i, j, [all_charges[i] * all_charges[j]])
+                if c6 != 0 and c12 != 0:
+                    self.lj_except_force.addBond(i, j, [c6, c12])
 
         if remove_com_motion:
             sys.addForce(mm.CMMotionRemover())

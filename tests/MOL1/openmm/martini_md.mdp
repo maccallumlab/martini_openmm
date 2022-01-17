@@ -1,0 +1,49 @@
+; Updated 15 Jul 2015 by DdJ
+;
+integrator               = md
+dt                       = 0.02
+nsteps                   = 10000
+nstcomm                  = 10
+comm-grps                =
+
+nstxout                  = 10
+nstvout                  = 10
+nstfout                  = 10
+nstlog                   = 10
+nstenergy                = 10
+nstcalcenergy		 = 10
+
+nstxout-compressed       = 10
+compressed-x-precision   = 1000
+compressed-x-grps        = 
+energygrps               = System
+
+cutoff-scheme            = Verlet
+nstlist                  = 20
+ns_type                  = grid
+pbc                      = xyz
+verlet-buffer-tolerance  = 0.005
+
+coulombtype              = reaction-field
+rcoulomb                 = 1.1
+epsilon_r                = 15 
+epsilon_rf               = 0
+vdw_type                 = cutoff
+vdw-modifier             = Potential-shift-verlet
+rvdw                     = 1.1
+
+tcoupl                   = v-rescale
+tc-grps                  = System
+tau_t                    = 1.0 
+ref_t                    = 310
+Pcoupl                   = Berendsen ;parrinello-rahman
+Pcoupltype               = isotropic
+tau_p                    = 12.0
+compressibility          = 3e-4
+ref_p                    = 1.0
+
+gen_vel                  = yes 
+gen_temp                 = 310
+gen_seed                 = -1
+constraints              = none
+constraint_algorithm     = Lincs

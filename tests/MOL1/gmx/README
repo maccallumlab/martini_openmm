@@ -1,0 +1,5 @@
+1. Prepared a four C1 beads molecule (hexadecane) starting from polyply
+2. Used LigParGen and CGBUILDER to get the itp and other files needed to run bartender
+3. Ran bartender to optimize the bonded interactions in the itp file
+4. Updated CG itp file to use bonds and angles from polyply and replaced the dihedral with those
+from bartender

@@ -16,6 +16,8 @@ f_rtol = 1e-5
 
 
 class TestBase:
+    epsilon_r = 15.0
+
     def setUp(self):
         self.base_dir = os.getcwd()
         os.chdir(self.test_dir)
@@ -32,19 +34,27 @@ class TestBase:
         _handle_gmx_result(result)
 
         # Run openmm
-        _gen_openmm()
+        _gen_openmm(self.epsilon_r)
 
         # Do comparison
         _compare()
+
+
+class TestPolWater(TestBase, unittest.TestCase):
+    test_dir = "pol_water"
+    depth = 1
+    epsilon_r = 2.5
 
 
 class TestMOL1(TestBase, unittest.TestCase):
     test_dir = "MOL1"
     depth = 1
 
+
 class TestPEG(TestBase, unittest.TestCase):
     test_dir = "PEG"
     depth = 1
+
 
 class TestMartini2SimpleLipid(TestBase, unittest.TestCase):
     test_dir = "simple_lipid"
@@ -179,7 +189,7 @@ def _handle_gmx_result(result):
         )
 
 
-def _gen_openmm():
+def _gen_openmm(epsilon_r):
     os.chdir("openmm")
 
     # do all tests with reference platform to avoid messing
@@ -201,7 +211,10 @@ def _gen_openmm():
         pass
 
     top = martini.MartiniTopFile(
-        "system.top", periodicBoxVectors=box_vectors, defines=defines
+        "system.top",
+        periodicBoxVectors=box_vectors,
+        defines=defines,
+        epsilon_r=epsilon_r,
     )
     system = top.create_system(nonbonded_cutoff=1.1 * u.nanometer)
     integrator = mm.LangevinIntegrator(
@@ -267,7 +280,7 @@ def _compare():
         max_o = omm_forces[max_ind[0], :]
         max_d = np.abs(max_g - max_o)
         print("Gromacs and OpenMM forces do not match!")
-        print(f"    Values differ at {n_diff} of {gmx_forces.shape[0]} positions.")
+        print(f"    Values differ at {n_diff} of {3 * gmx_forces.shape[0]} coordinates.")
         print()
         print(f"    First differing position: ({first_row}, {first_col})")
         print(f"    Gromacs: {g_f[0]:20f} {g_f[1]:20f} {g_f[2]:20f}")
@@ -298,7 +311,8 @@ def get_gmx_energy():
 def get_omm_energy():
     with open("openmm/energy.txt") as f:
         line = f.read()
-    return float(line)
+    energy =  float(line)
+    return energy
 
 
 def get_gmx_forces():

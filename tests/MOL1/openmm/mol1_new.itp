@@ -1,0 +1,30 @@
+[moleculetype]
+; molname    nrexcl
+  MOL1         1 
+
+[atoms]
+1 C1 0 MOL1 C1 1 0.0 72.0
+2 C1 0 MOL1 C2 2 0.0 72.0
+3 C1 0 MOL1 C3 3 0.0 72.0
+4 C1 0 MOL1 C4 4 0.0 72.0
+
+[ bonds ]
+1 2 1 0.475 2100.0 ; end-bond
+2 3 1 0.46 2100.0 ; mid-bond
+3 4 1 0.475 2100.0 ; end-bond
+
+[ angles ]
+1 2 3 1 170.0 12.5
+2 3 4 1 170.0 12.5
+
+
+;; sections below are from bartender
+
+[dihedrals]
+; i     j       k    l       funct   phase       kd    pn
+;;  1     2       3    4          1      0.00      0.00   0 ; rmsd:    21.21
+  1     2       3    4          3      5.95  4.05 -4.36  3.60  2.31 -3.90 ;; Ryckaert-Belleman's potential. rmsd:     0.11 
+;;  1     2       3    4         11     -2224.35 1309.29 1328.47 1338.27 1314.00  1248.54 ;; Combined bending-torsion potential. rmsd:     3.09 
+;Improper 
+; i     j       k    l       funct   angle       kd    
+
