@@ -39,6 +39,9 @@ class TestBase:
         # Do comparison
         _compare()
 
+        # Clean up
+        _cleanup()
+
 
 class TestPolWater(TestBase, unittest.TestCase):
     test_dir = "pol_water"
@@ -328,3 +331,11 @@ def get_gmx_forces():
 
 def get_omm_forces():
     return np.loadtxt("openmm/forces.txt")
+
+def _cleanup():
+    os.remove("gmx/energy.xvg")
+    os.remove("gmx/forces.xvg")
+    os.remove("gmx/energy.txt")
+    os.remove("gmx/forces.txt")
+    os.remove("openmm/energy.txt")
+    os.remove("openmm/forces.txt")
