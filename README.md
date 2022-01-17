@@ -16,16 +16,10 @@ To run the tests, execute `python -m unittest` from the `tests` directory.
 The system has been tested on the sytems in the `tests` directory
 and works for:
 - Martini v2
-- Simple and complex mixtures of lipids
-- Simple simulations of soluble proteins
-
-It has not yet been tested for:
-- Elastic network models of proteins
-- ElNeDyn models of proteins
-
-There has not yet been any effort to support:
 - Martini v3
 - Polarizable Martini
+- Simple and complex mixtures of lipids
+- Simple simulations of soluble and membrane proteins
 
 Limitations:
 - Math in .itp files:
