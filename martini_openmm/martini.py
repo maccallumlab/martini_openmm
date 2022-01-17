@@ -182,6 +182,7 @@ class MartiniTopFile(object):
         self._all_vsites = []
         self.es_force = None
         self.es_self_excl_force = None
+        self.es_except_force = None
         self.lj_force = None
         self.lj_except_force = None
         self.harmonic_angle_force = None
@@ -1095,9 +1096,10 @@ class MartiniTopFile(object):
             charges.append(q)
             self.es_force.addParticle([q])
             index = base_atom_index + i
-            self.es_self_excl_force.addBond(index, index, [0.5 * q * q])
             atomType = atom_type_map[params[0]]
             self.lj_force.addParticle([atomType])
+            # Add in the self term for the reaction field correction
+            self.es_self_excl_force.addBond(index, index, [0.5 * q * q])
 
         pairExceptions = self._gen_pair_exceptions(
             molecule_type, base_atom_index, atom_types
@@ -1345,6 +1347,19 @@ class MartiniTopFile(object):
         self.es_self_excl_force.addPerBondParameter("qprod")
         sys.addForce(self.es_self_excl_force)
 
+        # custom non-bonded force for the ES exceptions
+        self.es_except_force = mm.CustomBondForce(
+            f"step(rcut-r) * ES;"
+            f"ES = f*qprod/epsilon_r * (1/r + krf * r^2 - crf);"
+            f"crf = 1 / rcut + krf * rcut^2;"
+            f"krf = 1 / (2 * rcut^3);"
+            f"epsilon_r = {self.epsilon_r};"
+            f"f = 138.935458;"
+            f"rcut={nonbonded_cutoff.value_in_unit(unit.nanometers)};"
+        )
+        self.es_except_force.addPerBondParameter("qprod")
+        sys.addForce(self.es_except_force)
+
         # custom LJ force using a lookup table to implment
         # nbfix-like terms
         self.lj_force = mm.CustomNonbondedForce(
@@ -1498,11 +1513,26 @@ class MartiniTopFile(object):
 
             # add in all of the exclusions
             for i, j in except_map:
+                # Remove i,j from nonbonded interactions for all exceptions / exclusions
                 self.es_force.addExclusion(i, j)
                 self.lj_force.addExclusion(i, j)
-                qprod = all_charges[i] * all_charges[j]
-                if qprod != 0.0:
-                    self.es_self_excl_force.addBond(i, j, [all_charges[i] * all_charges[j]])
+
+                # Handle electrostatic exceptions / exclusions.
+                # We're going to assume that q==0 means that this was an
+                # exclusion.
+                if q == 0:
+                    # In this case, we still need to add in the reaction field correction
+                    # term.
+                    qprod = all_charges[i] * all_charges[j]
+                    # Don't bother adding the interaction if either particle has zero charge.
+                    if qprod != 0.0:
+                        self.es_self_excl_force.addBond(i, j, [qprod])
+                # If q !=0, then this is an exception.
+                else:
+                    # We don't bother adding the interaction if either the charge product is zero
+                    self.es_except_force.addBond(i, j, [q])
+                # Now we'll add the LJ exceptions. We don't bother
+                # adding the interaction if the combined LJ parameters are zero.
                 if c6 != 0 and c12 != 0:
                     self.lj_except_force.addBond(i, j, [c6, c12])
 
