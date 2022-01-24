@@ -44,7 +44,14 @@ from simtk.openmm.app import PDBFile, Topology
 from simtk.openmm.app import amberprmtopfile as prmtop
 from simtk.openmm.app import element as elem
 from simtk.openmm.app import forcefield as ff
-from .vsites import LinearSite, OutOfPlane, VSiteManager, COMLinearSite
+from .vsites import (
+    LinearSite,
+    OutOfPlane,
+    VSiteManager,
+    COMLinearSite,
+    NormalizedInPlaneSite,
+    NormalizedInPlaneTwoParticleSite,
+)
 
 HBonds = ff.HBonds
 AllBonds = ff.AllBonds
@@ -651,17 +658,21 @@ class MartiniTopFile(object):
         atom1 = int(fields[1])
         atom2 = int(fields[2])
         func = int(fields[3])
-        if func != 1:
+        if func == 1:
+            w = float(fields[4])
+
+            site_dict = {atom1: 1 - w, atom2: w}
+            site = LinearSite(site_dict)
+
+            self._currentMoleculeType.vsites.add(index, site)
+        elif func == 2:
+            a = float(fields[4])
+            site = NormalizedInPlaneTwoParticleSite(atom1, atom2, a)
+            self._currentMoleculeType.vsites.add(index, site)
+        else:
             raise ValueError(
                 f"Unknown function type {func} in virtual_sites2 line: {line}"
             )
-        assert func == 1
-        w = float(fields[4])
-
-        site_dict = {atom1: 1 - w, atom2: w}
-        site = LinearSite(site_dict)
-
-        self._currentMoleculeType.vsites.add(index, site)
 
     def _process_vsites3(self, line):
         """Process a line in the [ virtual_sites3 ] category."""
@@ -675,6 +686,7 @@ class MartiniTopFile(object):
         atom3 = int(fields[3])
         func = int(fields[4])
 
+        # type 3 in gromacs
         if func == 1:
             if len(fields) < 7:
                 raise ValueError(f"Not enough parameters for vsite: {line}")
@@ -690,6 +702,15 @@ class MartiniTopFile(object):
             }
             site = LinearSite(site_dict)
             self._currentMoleculeType.vsites.add(index, site)
+        # type 3fd in gromacs
+        elif func == 2:
+            if len(fields) < 7:
+                raise ValueError(f"Not enough parameters for vsite: {line}")
+            a = float(fields[5])
+            d = float(fields[6])
+            site = NormalizedInPlaneSite(atom1, atom2, atom3, a, d)
+            self._currentMoleculeType.vsites.add(index, site)
+        # type 3out in gromacs
         elif func == 4:
             if len(fields) < 8:
                 raise ValueError(f"Not enough parameters for type 4 site: {line}")
@@ -1192,9 +1213,39 @@ class MartiniTopFile(object):
                 self._add_out_of_plane_vsite(sys, index, site, offset)
             elif isinstance(site, LinearSite):
                 self._add_linear_vsite(sys, index, site, offset)
+            elif isinstance(site, NormalizedInPlaneSite):
+                self._add_normalized_in_plane_vsite(sys, index, site, offset)
+            elif isinstance(site, NormalizedInPlaneTwoParticleSite):
+                self._add_normalized_in_plane_two_particle_vsite(
+                    sys, index, site, offset
+                )
             else:
                 raise RuntimeError(f"Unknown site type {type(site)}.")
             self._all_vsites.append(index + offset)
+
+    def _add_normalized_in_plane_two_particle_vsite(self, sys, index, site, offset):
+        vsite = mm.LocalCoordinatesSite(
+            site.atom1 + offset,
+            site.atom2 + offset,
+            site.atom1 + offset,
+            [1.0, 0.0, 0.0],
+            [-0.5, 0.5, 0.0],
+            [0.0, 0.0, 0.0],
+            [site.a, 0.0, 0.0],
+        )
+        sys.setVirtualSite(index + offset, vsite)
+
+    def _add_normalized_in_plane_vsite(self, sys, index, site, offset):
+        vsite = mm.LocalCoordinatesSite(
+            site.atom1 + offset,
+            site.atom2 + offset,
+            site.atom3 + offset,
+            [1.0, 0.0, 0.0],
+            [-1.0, 1.0 - site.a, site.a],
+            [0.0, 0.0, 0.0],
+            [site.d, 0.0, 0.0],
+        )
+        sys.setVirtualSite(index + offset, vsite)
 
     def _add_out_of_plane_vsite(self, sys, index, site, offset):
         vsite = mm.OutOfPlaneSite(

@@ -58,6 +58,38 @@ class OutOfPlane(NonLinearSite):
         return f"OutOfPlane({self.atom1}, {self.atom2}, {self.atom3}, {self.a}, {self.b}, {self.c})"
 
 
+class NormalizedInPlaneSite(NonLinearSite):
+    atom1: int
+    atom2: int
+    atom3: int
+    a: float
+    d: float
+
+    def __init__(self, atom1, atom2, atom3, a, d) -> None:
+        self.atom1 = atom1
+        self.atom2 = atom2
+        self.atom3 = atom3
+        self.a = a
+        self.d = d
+
+    def __repr__(self):
+        return f"NormalizedInPlaneSite({self.atom1}, {self.atom2}, {self.atom3}, {self.a}, {self.d})"
+
+
+class NormalizedInPlaneTwoParticleSite(NonLinearSite):
+    atom1: int
+    atom2: int
+    a: float
+
+    def __init__(self, atom1, atom2, a) -> None:
+        self.atom1 = atom1
+        self.atom2 = atom2
+        self.a = a
+
+    def __repr__(self):
+        return f"NormalizedInPlaneTwoParticleSite({self.atom1}, {self.atom2}, {self.a})"
+
+
 class VSiteManager:
     vsites: Dict[int, Union[LinearSite, NonLinearSite]]
 

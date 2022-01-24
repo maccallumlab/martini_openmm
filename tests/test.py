@@ -43,6 +43,21 @@ class TestBase:
         _cleanup()
 
 
+class TestAdenine(TestBase, unittest.TestCase):
+    test_dir = "aden_m3"
+    depth = 1
+
+
+class TestThymine(TestBase, unittest.TestCase):
+    test_dir = "thym_m3"
+    depth = 1
+
+
+class TestThymine2(TestBase, unittest.TestCase):
+    test_dir = "thy2_m3"
+    depth = 1
+
+
 class TestPolWater(TestBase, unittest.TestCase):
     test_dir = "pol_water"
     depth = 1
@@ -283,7 +298,9 @@ def _compare():
         max_o = omm_forces[max_ind[0], :]
         max_d = np.abs(max_g - max_o)
         print("Gromacs and OpenMM forces do not match!")
-        print(f"    Values differ at {n_diff} of {3 * gmx_forces.shape[0]} coordinates.")
+        print(
+            f"    Values differ at {n_diff} of {3 * gmx_forces.shape[0]} coordinates."
+        )
         print()
         print(f"    First differing position: ({first_row}, {first_col})")
         print(f"    Gromacs: {g_f[0]:20f} {g_f[1]:20f} {g_f[2]:20f}")
@@ -314,7 +331,7 @@ def get_gmx_energy():
 def get_omm_energy():
     with open("openmm/energy.txt") as f:
         line = f.read()
-    energy =  float(line)
+    energy = float(line)
     return energy
 
 
@@ -331,6 +348,7 @@ def get_gmx_forces():
 
 def get_omm_forces():
     return np.loadtxt("openmm/forces.txt")
+
 
 def _cleanup():
     os.remove("gmx/energy.xvg")
