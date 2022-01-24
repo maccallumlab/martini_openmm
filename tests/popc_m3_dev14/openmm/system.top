@@ -1,0 +1,13 @@
+#include "martini_v3.0.0.itp"
+#include "POPC_dev14.itp"
+#include "martini_v3.0.0_solvents_v1.itp"
+
+[ system ]
+; name
+popc_dev14
+
+[ molecules ]
+; name  number
+POPC           169
+POPC           169
+W             4591

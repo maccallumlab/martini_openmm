@@ -1,0 +1,97 @@
+;
+; Collection with all phosphatidylcholine Martini 3 lipids
+;
+; Please cite the Martini 3 publication: 
+; PCT Souza, et al., Nat. Methods, 2021. DOI: 10.1038/s41592-021-01098-3 
+;
+; Last update : 02-Dec-2021 by Kasper 
+; Authors:  Kasper B. Pedersen
+
+;;;;;; Martini lipid topology for C16:0/18:1 PC (POPC)
+;
+;@INSANE alhead=C P, allink=G G, altail=CDCC CCCC, alname=POPC, charge=0.0
+;@RESNTEST POP==POPC if: atoms[0]==NC3
+;@BEADS NC3 PO4 GL1 GL2 C1A D2A C3A C4A C1B C2B C3B C4B 
+;@BONDS NC3-PO4 PO4-GL1 GL1-GL2 GL1-C1A C1A-D2A D2A-C3A C3A-C4A GL2-C1B C1B-C2B C2B-C3B C3B-C4B 
+;
+
+; molecular topology and mapping of indices
+;
+;  NC3-PO4-GL1-C1A-D2A-C3A-C4A  
+;           |
+;          GL2-C1B-C2B-C3B-C4B
+;
+;   1 - 2 - 3 - 5 - 6 - 7 - 8   
+;           |
+;           4 - 9 - 10 - 11 - 12
+;
+
+[moleculetype]
+; molname      nrexcl
+  POPC          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+   1 	Q1  	 1 	POPC 	NC3 	 1 	1.0 	
+   2 	Q5 	 1 	POPC 	PO4 	 2 	-1.0 	
+   3 	SN4a	 1 	POPC 	GL1 	 3 	0 	
+   4 	SN4a	 1 	POPC 	GL2 	 4 	0 	
+   5 	C1 	 1 	POPC 	C1A 	 5 	0 	
+   6 	C4h	 1 	POPC 	D2A 	 6 	0 	
+   7 	C1 	 1 	POPC 	C3A 	 7 	0 	
+   8 	C1 	 1 	POPC 	C4A 	 8 	0 	
+   9 	SC1 	 1 	POPC 	C1B 	 9 	0 	
+  10 	C1 	 1 	POPC 	C2B 	10 	0 	
+  11 	C1 	 1 	POPC 	C3B 	11 	0 	
+  12 	C1 	 1 	POPC 	C4B 	12 	0 	
+
+[bonds]
+;  i  j 
+   1  2   1       0.404   7000.0 	
+   2  3   1       0.440   1500.0	
+   3  4   1       0.315   2100.0 
+   3  5   1       0.480   2400.0
+   5  6   1       0.510   2800.0
+   6  7   1       0.465   2800.0
+   7  8   1       0.495   2800.0
+   4  9   1       0.410   4400.0
+   9 10   1       0.440   4400.0
+  10 11   1       0.480   2800.0
+  11 12   1       0.495   2800.0
+
+[angles]
+; using named angletypes from martini_v3.0_ffbonded.itp
+; head group
+   1  2  3    1   125.0   15.0  	
+   2  3  4    1   100.0   20.0
+   2  3  5    1   139.0   10.0
+;glycerol backbone	
+   4  3  5    1   120.0   20.0   	      
+   3  4  9    1   120.0   20.0    	      
+; tails attached to glycerol
+   3  5  6    1   155.0   13.5          
+   4  9 10    1   180.0   12.0          
+; tails
+   5  6  7    1   135.0    8.0
+   6  7  8    1   170.0   10.0
+   9 10 11    1   180.0   12.0
+  10 11 12    1   180.0   12.0
+
+#ifndef M3_NO_CBT
+[ dihedrals ]
+; using named dihedraltypes from martini_v3.0_ffbonded.itp
+; i j k l      named_type    
+  1  2  3  4   11      1.5  0.0  0.4 0.0 0.8 0.0   
+  1  2  3  5   11      2.8  0.0  0.8 1.0 0.0 0.0
+  3  5  6  7   11      1.5  0.0 -1.0 0.0 0.0 0.0   
+  5  6  7  8   11      6.0  0.0 -1.1 0.2 0.0 0.0   
+  4  9 10 11   11      1.5  0.0 -1.0 0.0 0.0 0.0    
+  9 10 11 12   11     12.0  0.0 -1.0 0.0 0.0 0.0   
+
+; orientation of glycerol backbone and tails is not completely free 
+;  - this adds adequate bias to represent closer configurations from AA simulations (taken from triglycerides)
+  4  3  5  6   11      2.5  0.0 -1.0 0.3 0.0 0.0
+  3  4  9 10   11      2.5  0.0 -1.0 0.3 0.0 0.0
+  5  3  4  9   11      4.0  0.0 -0.8 0.0 0.8 0.0
+#endif
+
