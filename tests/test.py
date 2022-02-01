@@ -43,11 +43,6 @@ class TestBase:
         _cleanup()
 
 
-class TestPOPCDev(TestBase, unittest.TestCase):
-    test_dir = "popc_m3_dev14"
-    depth = 1
-
-
 class TestAdenine(TestBase, unittest.TestCase):
     test_dir = "aden_m3"
     depth = 1
