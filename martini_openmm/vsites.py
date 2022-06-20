@@ -101,22 +101,29 @@ class VSiteManager:
             raise ValueError(f"Tried to add more than one vsite for particle {index}.")
         self.vsites[index] = site
 
-    def iter(self, system, offset):
+    def convert_com_to_linear(self, system, offset):
+        for index, site in self.vsites.items():
+            if isinstance(site, COMLinearSite):
+                self.vsites[index] = site.to_linear(system, offset)
+
+    def iter(self):
         for index, site in self.vsites.items():
             if isinstance(site, NonLinearSite):
                 yield index, site
             else:
-                site = self.flatten_site(site, system, offset)
+                site = self.flatten_site(site)
                 yield index, site
 
-    def flatten_site(self, site, system, offset):
+    def flatten_site(self, site):
         if isinstance(site, NonLinearSite):
             raise RuntimeError("A linear vsite cannot depend on a non-linear vsite.")
 
         # If this is a COM site, find the masses and convert
         # to a LinearSite
         if isinstance(site, COMLinearSite):
-            site = site.to_linear(system, offset)
+            raise RuntimeError(
+                "All COM sites should have been converted to LinearSites."
+            )
 
         from_atoms = defaultdict(list)
 
@@ -124,9 +131,9 @@ class VSiteManager:
             # Atom is itself a vsite.
             # We recrursively flatten and multiply by the weight.
             if atom in self.vsites:
-                flattened = self.flatten_site(self.vsites[atom], system, offset)
+                flattened = self.flatten_site(self.vsites[atom])
                 for f, w in flattened.atom_weights.items():
-                    from_atoms[f].append(w)
+                    from_atoms[f].append(weight * w)
 
             # atom is just a regular atom
             else:

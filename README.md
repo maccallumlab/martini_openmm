@@ -11,8 +11,6 @@ A suite of tests is run automatically. The current status of these tests is:
 Please report any defects as issues on
 [the github repo](https://github.com/maccallumlab/martini_openmm).
 
-To run the tests, execute `python -m unittest` from the `tests` directory.
-
 The system has been tested on the sytems in the `tests` directory
 and works for:
 - Martini v2
@@ -20,6 +18,7 @@ and works for:
 - Polarizable Martini
 - Simple and complex mixtures of lipids
 - Simple simulations of soluble and membrane proteins
+To run the tests, use `pytest` in the root directory after installation.
 
 Limitations:
 - Math in .itp files:

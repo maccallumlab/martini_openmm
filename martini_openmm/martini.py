@@ -1208,7 +1208,8 @@ class MartiniTopFile(object):
 
     def _add_vsites_to_system(self, sys, molecule_type, base_atom_index):
         offset = base_atom_index - 1
-        for index, site in molecule_type.vsites.iter(sys, offset):
+        molecule_type.vsites.convert_com_to_linear(sys, offset)
+        for index, site in molecule_type.vsites.iter():
             if isinstance(site, OutOfPlane):
                 self._add_out_of_plane_vsite(sys, index, site, offset)
             elif isinstance(site, LinearSite):
@@ -1546,7 +1547,9 @@ class MartiniTopFile(object):
                 # Add explicitly specified constraints.
                 for fields in molecule_type.constraints:
                     atoms = [int(x) - 1 for x in fields[:2]]
-                    length = float(fields[2])
+                    constraint_type = int(fields[2])
+                    assert constraint_type == 1
+                    length = float(fields[3])
                     sys.addConstraint(
                         base_atom_index + atoms[0], base_atom_index + atoms[1], length
                     )
