@@ -188,10 +188,9 @@ class MartiniTopFile(object):
         self._cmapTypes = {}
         self._nonbond_types = {}
         self._all_vsites = []
-        self.es_force = None
+        self.nb_force = None
         self.es_self_excl_force = None
         self.es_except_force = None
-        self.lj_force = None
         self.lj_except_force = None
         self.harmonic_angle_force = None
         self.g96_angle_force = None
@@ -1147,10 +1146,9 @@ class MartiniTopFile(object):
             else:
                 q = float(params[4])
             charges.append(q)
-            self.es_force.addParticle([q])
             index = base_atom_index + i
             atomType = atom_type_map[params[0]]
-            self.lj_force.addParticle([atomType])
+            self.nb_force.addParticle([atomType, q])
             # Add in the self term for the reaction field correction
             self.es_self_excl_force.addBond(index, index, [0.5 * q * q])
 
@@ -1188,17 +1186,13 @@ class MartiniTopFile(object):
                 # We'll use the automatically generated parameters
                 continue
 
-            atom1params = self.es_force.getParticleParameters(
-                base_atom_index + atoms[0]
-            )
-            atom2params = self.es_force.getParticleParameters(
-                base_atom_index + atoms[1]
-            )
+            type1_, q1 = self.nb_force.getParticleParameters(base_atom_index + atoms[0])
+            type2_, q2 = self.nb_force.getParticleParameters(base_atom_index + atoms[1])
             pairExceptions.append(
                 (
                     base_atom_index + atoms[0],
                     base_atom_index + atoms[1],
-                    atom1params[0] * atom2params[0],
+                    q1 * q2,
                     params[0],
                     params[1],
                 )
@@ -1326,8 +1320,7 @@ class MartiniTopFile(object):
         sys.setVirtualSite(index + offset, vsite)
 
         # Add exclusions
-        self.es_force.addExclusion(index + offset, atoms[0])
-        self.lj_force.addExclusion(index + offset, atoms[0])
+        self.nb_force.addExclusion(index + offset, atoms[0])
 
     def _add_two_particle_vsite(self, sys, index, site, offset):
         atoms = []
@@ -1401,21 +1394,24 @@ class MartiniTopFile(object):
         else:
             raise ValueError("periodicBoxVectors must be set")
 
-        # custom non-bonded force to deal with martini's
-        # use of epsilon_r
-        self.es_force = mm.CustomNonbondedForce(
-            f"step(rcut-r) * ES;"
-            f"ES = f/epsilon_r*q1*q2 * (1/r + krf * r^2 - crf);"
-            f"crf = 1 / rcut + krf * rcut^2;"
-            f"krf = 1 / (2 * rcut^3);"
+        # Custom force to handle martini nonbonded terms
+        # nbfix-like terms
+        self.nb_force = mm.CustomNonbondedForce(
+            "step(rcut-r)*(LJ - corr + ES);"
+            "LJ = (C12(type1, type2) / r^12 - C6(type1, type2) / r^6);"
+            "corr = (C12(type1, type2) / rcut^12 - C6(type1, type2) / rcut^6);"
+            "ES = f/epsilon_r*q1*q2 * (1/r + krf * r^2 - crf);"
+            "crf = 1 / rcut + krf * rcut^2;"
+            "krf = 1 / (2 * rcut^3);"
             f"epsilon_r = {self.epsilon_r};"
-            f"f = 138.935458;"
+            "f = 138.935458;"
             f"rcut={nonbonded_cutoff.value_in_unit(unit.nanometers)};"
         )
-        self.es_force.addPerParticleParameter("q")
-        self.es_force.setNonbondedMethod(mm.CustomNonbondedForce.CutoffPeriodic)
-        self.es_force.setCutoffDistance(nonbonded_cutoff.value_in_unit(unit.nanometer))
-        sys.addForce(self.es_force)
+        self.nb_force.addPerParticleParameter("type")
+        self.nb_force.addPerParticleParameter("q")
+        self.nb_force.setNonbondedMethod(mm.CustomNonbondedForce.CutoffPeriodic)
+        self.nb_force.setCutoffDistance(nonbonded_cutoff.value_in_unit(unit.nanometer))
+        sys.addForce(self.nb_force)
 
         # custom non-bonded force to add in the electrostatic
         # terms for self and excluded interactions
@@ -1443,19 +1439,6 @@ class MartiniTopFile(object):
         )
         self.es_except_force.addPerBondParameter("qprod")
         sys.addForce(self.es_except_force)
-
-        # custom LJ force using a lookup table to implment
-        # nbfix-like terms
-        self.lj_force = mm.CustomNonbondedForce(
-            "step(rcut-r)*(energy - corr);"
-            "energy = (C12(type1, type2) / r^12 - C6(type1, type2) / r^6);"
-            "corr = (C12(type1, type2) / rcut^12 - C6(type1, type2) / rcut^6);"
-            f"rcut={nonbonded_cutoff.value_in_unit(unit.nanometers)};"
-        )
-        self.lj_force.addPerParticleParameter("type")
-        self.lj_force.setNonbondedMethod(mm.CustomNonbondedForce.CutoffPeriodic)
-        self.lj_force.setCutoffDistance(nonbonded_cutoff.value_in_unit(unit.nanometer))
-        sys.addForce(self.lj_force)
 
         # custom bonded force to handle exceptions
         self.lj_except_force = mm.CustomBondForce(
@@ -1525,10 +1508,10 @@ class MartiniTopFile(object):
 
                 C6.append(c6)
                 C12.append(c12)
-        self.lj_force.addTabulatedFunction(
+        self.nb_force.addTabulatedFunction(
             "C6", mm.Discrete2DFunction(n_types, n_types, C6)
         )
-        self.lj_force.addTabulatedFunction(
+        self.nb_force.addTabulatedFunction(
             "C12", mm.Discrete2DFunction(n_types, n_types, C12)
         )
 
@@ -1600,8 +1583,7 @@ class MartiniTopFile(object):
             # add in all of the exclusions
             for i, j in except_map:
                 # Remove i,j from nonbonded interactions for all exceptions / exclusions
-                self.es_force.addExclusion(i, j)
-                self.lj_force.addExclusion(i, j)
+                self.nb_force.addExclusion(i, j)
 
                 # Handle electrostatic exceptions / exclusions.
                 # We're going to assume that q==0 means that this was an
