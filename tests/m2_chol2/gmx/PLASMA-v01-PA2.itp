@@ -1,0 +1,4227 @@
+; Lipid itp's for PLASMA membrane project - collected on 2013.09.13 
+;
+
+; PC lipids: 
+
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o APC_Martini_v2.0_lipid.itp, -alname APC, -alhead C P, -allink G, -altail DDDDC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   APC          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	APC 	NC3 	1 	1.0
+2 	Qa 	1 	APC 	PO4 	2 	-1.0
+3 	Na 	1 	APC 	GL1 	3 	0
+4 	C4 	1 	APC 	D1A 	4 	0
+5 	C4 	1 	APC 	D2A 	5 	0
+6 	C4 	1 	APC 	D3A 	6 	0
+7 	C4 	1 	APC 	D4A 	7 	0
+8 	C1 	1 	APC 	C5A 	8 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	180.0 	25.0
+  3 4 5 	2 	100.0 	10.0
+  4 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	120.0 	45.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o DAPC_Martini_v2.0_lipid.itp, -alname DAPC, -alhead C P, -allink G G, -altail DDDDC DDDDC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   DAPC          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	DAPC 	NC3 	1 	1.0
+2 	Qa 	1 	DAPC 	PO4 	2 	-1.0
+3 	Na 	1 	DAPC 	GL1 	3 	0
+4 	Na 	1 	DAPC 	GL2 	4 	0
+5 	C4 	1 	DAPC 	D1A 	5 	0
+6 	C4 	1 	DAPC 	D2A 	6 	0
+7 	C4 	1 	DAPC 	D3A 	7 	0
+8 	C4 	1 	DAPC 	D4A 	8 	0
+9 	C1 	1 	DAPC 	C5A 	9 	0
+10 	C4 	1 	DAPC 	D1B 	10 	0
+11 	C4 	1 	DAPC 	D2B 	11 	0
+12 	C4 	1 	DAPC 	D3B 	12 	0
+13 	C4 	1 	DAPC 	D4B 	13 	0
+14 	C1 	1 	DAPC 	C5B 	14 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  4 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+  13 14	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	120.0 	45.0
+  4 10 11 	2 	100.0 	10.0
+  10 11 12 	2 	100.0 	10.0
+  11 12 13 	2 	100.0 	10.0
+  12 13 14 	2 	120.0 	45.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o DOPC_Martini_v2.0_lipid.itp, -alname DOPC, -alhead C P, -allink G G, -altail CCDC CCDC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   DOPC          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	DOPC 	NC3 	1 	1.0
+2 	Qa 	1 	DOPC 	PO4 	2 	-1.0
+3 	Na 	1 	DOPC 	GL1 	3 	0
+4 	Na 	1 	DOPC 	GL2 	4 	0
+5 	C1 	1 	DOPC 	C1A 	5 	0
+6 	C1 	1 	DOPC 	C2A 	6 	0
+7 	C3 	1 	DOPC 	D3A 	7 	0
+8 	C1 	1 	DOPC 	C4A 	8 	0
+9 	C1 	1 	DOPC 	C1B 	9 	0
+10 	C1 	1 	DOPC 	C2B 	10 	0
+11 	C3 	1 	DOPC 	D3B 	11 	0
+12 	C1 	1 	DOPC 	C4B 	12 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  4 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	180.0 	25.0
+  6 7 8 	2 	120.0 	45.0
+  4 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	120.0 	45.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o IPC_Martini_v2.0_lipid.itp, -alname IPC, -alhead C P, -allink G, -altail CDDC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   IPC          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	IPC 	NC3 	1 	1.0
+2 	Qa 	1 	IPC 	PO4 	2 	-1.0
+3 	Na 	1 	IPC 	GL1 	3 	0
+4 	C1 	1 	IPC 	C1A 	4 	0
+5 	C4 	1 	IPC 	D2A 	5 	0
+6 	C4 	1 	IPC 	D3A 	6 	0
+7 	C1 	1 	IPC 	C4A 	7 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	180.0 	25.0
+  3 4 5 	2 	180.0 	25.0
+  4 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	120.0 	45.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o OPC_Martini_v2.0_lipid.itp, -alname OPC, -alhead C P, -allink G, -altail CCDC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   OPC          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	OPC 	NC3 	1 	1.0
+2 	Qa 	1 	OPC 	PO4 	2 	-1.0
+3 	Na 	1 	OPC 	GL1 	3 	0
+4 	C1 	1 	OPC 	C1A 	4 	0
+5 	C1 	1 	OPC 	C2A 	5 	0
+6 	C3 	1 	OPC 	D3A 	6 	0
+7 	C1 	1 	OPC 	C4A 	7 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	180.0 	25.0
+  3 4 5 	2 	180.0 	25.0
+  4 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	120.0 	45.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PAPC_Martini_v2.0_lipid.itp, -alname PAPC, -alhead C P, -allink G G, -altail DDDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PAPC          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	PAPC 	NC3 	1 	1.0
+2 	Qa 	1 	PAPC 	PO4 	2 	-1.0
+3 	Na 	1 	PAPC 	GL1 	3 	0
+4 	Na 	1 	PAPC 	GL2 	4 	0
+5 	C4 	1 	PAPC 	D1A 	5 	0
+6 	C4 	1 	PAPC 	D2A 	6 	0
+7 	C4 	1 	PAPC 	D3A 	7 	0
+8 	C4 	1 	PAPC 	D4A 	8 	0
+9 	C1 	1 	PAPC 	C5A 	9 	0
+10 	C1 	1 	PAPC 	C1B 	10 	0
+11 	C1 	1 	PAPC 	C2B 	11 	0
+12 	C1 	1 	PAPC 	C3B 	12 	0
+13 	C1 	1 	PAPC 	C4B 	13 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  4 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	120.0 	45.0
+  4 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PEPC_Martini_v2.0_lipid.itp, -alname PEPC, -alhead C P, -allink G G, -altail CDDCC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PEPC          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	PEPC 	NC3 	1 	1.0
+2 	Qa 	1 	PEPC 	PO4 	2 	-1.0
+3 	Na 	1 	PEPC 	GL1 	3 	0
+4 	Na 	1 	PEPC 	GL2 	4 	0
+5 	C1 	1 	PEPC 	C1A 	5 	0
+6 	C4 	1 	PEPC 	D2A 	6 	0
+7 	C4 	1 	PEPC 	D3A 	7 	0
+8 	C1 	1 	PEPC 	C4A 	8 	0
+9 	C1 	1 	PEPC 	C5A 	9 	0
+10 	C1 	1 	PEPC 	C1B 	10 	0
+11 	C1 	1 	PEPC 	C2B 	11 	0
+12 	C1 	1 	PEPC 	C3B 	12 	0
+13 	C1 	1 	PEPC 	C4B 	13 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  4 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	120.0 	45.0
+  7 8 9 	2 	180.0 	25.0
+  4 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PIPC_Martini_v2.0_lipid.itp, -alname PIPC, -alhead C P, -allink G G, -altail CDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PIPC          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	PIPC 	NC3 	1 	1.0
+2 	Qa 	1 	PIPC 	PO4 	2 	-1.0
+3 	Na 	1 	PIPC 	GL1 	3 	0
+4 	Na 	1 	PIPC 	GL2 	4 	0
+5 	C1 	1 	PIPC 	C1A 	5 	0
+6 	C4 	1 	PIPC 	D2A 	6 	0
+7 	C4 	1 	PIPC 	D3A 	7 	0
+8 	C1 	1 	PIPC 	C4A 	8 	0
+9 	C1 	1 	PIPC 	C1B 	9 	0
+10 	C1 	1 	PIPC 	C2B 	10 	0
+11 	C1 	1 	PIPC 	C3B 	11 	0
+12 	C1 	1 	PIPC 	C4B 	12 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  4 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	120.0 	45.0
+  4 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o POPC_Martini_v2.0_lipid.itp, -alname POPC, -alhead C P, -allink G G, -altail CCDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   POPC          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	POPC 	NC3 	1 	1.0
+2 	Qa 	1 	POPC 	PO4 	2 	-1.0
+3 	Na 	1 	POPC 	GL1 	3 	0
+4 	Na 	1 	POPC 	GL2 	4 	0
+5 	C1 	1 	POPC 	C1A 	5 	0
+6 	C1 	1 	POPC 	C2A 	6 	0
+7 	C3 	1 	POPC 	D3A 	7 	0
+8 	C1 	1 	POPC 	C4A 	8 	0
+9 	C1 	1 	POPC 	C1B 	9 	0
+10 	C1 	1 	POPC 	C2B 	10 	0
+11 	C1 	1 	POPC 	C3B 	11 	0
+12 	C1 	1 	POPC 	C4B 	12 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  4 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	180.0 	25.0
+  6 7 8 	2 	120.0 	45.0
+  4 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PPC_Martini_v2.0_lipid.itp, -alname PPC, -alhead C P, -allink G, -altail CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PPC          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	PPC 	NC3 	1 	1.0
+2 	Qa 	1 	PPC 	PO4 	2 	-1.0
+3 	Na 	1 	PPC 	GL1 	3 	0
+4 	C1 	1 	PPC 	C1A 	4 	0
+5 	C1 	1 	PPC 	C2A 	5 	0
+6 	C1 	1 	PPC 	C3A 	6 	0
+7 	C1 	1 	PPC 	C4A 	7 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	180.0 	25.0
+  3 4 5 	2 	180.0 	25.0
+  4 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PUPC_Martini_v2.0_lipid.itp, -alname PUPC, -alhead C P, -allink G G, -altail DDDDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PUPC          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	PUPC 	NC3 	1 	1.0
+2 	Qa 	1 	PUPC 	PO4 	2 	-1.0
+3 	Na 	1 	PUPC 	GL1 	3 	0
+4 	Na 	1 	PUPC 	GL2 	4 	0
+5 	C4 	1 	PUPC 	D1A 	5 	0
+6 	C4 	1 	PUPC 	D2A 	6 	0
+7 	C4 	1 	PUPC 	D3A 	7 	0
+8 	C4 	1 	PUPC 	D4A 	8 	0
+9 	C4 	1 	PUPC 	D5A 	9 	0
+10 	C1 	1 	PUPC 	C6A 	10 	0
+11 	C1 	1 	PUPC 	C1B 	11 	0
+12 	C1 	1 	PUPC 	C2B 	12 	0
+13 	C1 	1 	PUPC 	C3B 	13 	0
+14 	C1 	1 	PUPC 	C4B 	14 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  4 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+  13 14	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	100.0 	10.0
+  8 9 10 	2 	120.0 	45.0
+  4 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+  12 13 14 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o UPC_Martini_v2.0_lipid.itp, -alname UPC, -alhead C P, -allink G, -altail DDDDDC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   UPC          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	UPC 	NC3 	1 	1.0
+2 	Qa 	1 	UPC 	PO4 	2 	-1.0
+3 	Na 	1 	UPC 	GL1 	3 	0
+4 	C4 	1 	UPC 	D1A 	4 	0
+5 	C4 	1 	UPC 	D2A 	5 	0
+6 	C4 	1 	UPC 	D3A 	6 	0
+7 	C4 	1 	UPC 	D4A 	7 	0
+8 	C4 	1 	UPC 	D5A 	8 	0
+9 	C1 	1 	UPC 	C6A 	9 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	180.0 	25.0
+  3 4 5 	2 	100.0 	10.0
+  4 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	120.0 	45.0
+
+; PE lipids: 
+
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o DAPE_Martini_v2.0_lipid.itp, -alname DAPE, -alhead E P, -allink G G, -altail DDDDC DDDDC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   DAPE          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Qd 	1 	DAPE 	NH3 	1 	1.0
+2 	Qa 	1 	DAPE 	PO4 	2 	-1.0
+3 	Na 	1 	DAPE 	GL1 	3 	0
+4 	Na 	1 	DAPE 	GL2 	4 	0
+5 	C4 	1 	DAPE 	D1A 	5 	0
+6 	C4 	1 	DAPE 	D2A 	6 	0
+7 	C4 	1 	DAPE 	D3A 	7 	0
+8 	C4 	1 	DAPE 	D4A 	8 	0
+9 	C1 	1 	DAPE 	C5A 	9 	0
+10 	C4 	1 	DAPE 	D1B 	10 	0
+11 	C4 	1 	DAPE 	D2B 	11 	0
+12 	C4 	1 	DAPE 	D3B 	12 	0
+13 	C4 	1 	DAPE 	D4B 	13 	0
+14 	C1 	1 	DAPE 	C5B 	14 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  4 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+  13 14	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	120.0 	45.0
+  4 10 11 	2 	100.0 	10.0
+  10 11 12 	2 	100.0 	10.0
+  11 12 13 	2 	100.0 	10.0
+  12 13 14 	2 	120.0 	45.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o DOPE_Martini_v2.0_lipid.itp, -alname DOPE, -alhead E P, -allink G G, -altail CCDC CCDC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   DOPE          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Qd 	1 	DOPE 	NH3 	1 	1.0
+2 	Qa 	1 	DOPE 	PO4 	2 	-1.0
+3 	Na 	1 	DOPE 	GL1 	3 	0
+4 	Na 	1 	DOPE 	GL2 	4 	0
+5 	C1 	1 	DOPE 	C1A 	5 	0
+6 	C1 	1 	DOPE 	C2A 	6 	0
+7 	C3 	1 	DOPE 	D3A 	7 	0
+8 	C1 	1 	DOPE 	C4A 	8 	0
+9 	C1 	1 	DOPE 	C1B 	9 	0
+10 	C1 	1 	DOPE 	C2B 	10 	0
+11 	C3 	1 	DOPE 	D3B 	11 	0
+12 	C1 	1 	DOPE 	C4B 	12 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  4 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	180.0 	25.0
+  6 7 8 	2 	120.0 	45.0
+  4 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	120.0 	45.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o DUPE_Martini_v2.0_lipid.itp, -alname DUPE, -alhead E P, -allink G G, -altail DDDDDC DDDDDC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   DUPE          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Qd 	1 	DUPE 	NH3 	1 	1.0
+2 	Qa 	1 	DUPE 	PO4 	2 	-1.0
+3 	Na 	1 	DUPE 	GL1 	3 	0
+4 	Na 	1 	DUPE 	GL2 	4 	0
+5 	C4 	1 	DUPE 	D1A 	5 	0
+6 	C4 	1 	DUPE 	D2A 	6 	0
+7 	C4 	1 	DUPE 	D3A 	7 	0
+8 	C4 	1 	DUPE 	D4A 	8 	0
+9 	C4 	1 	DUPE 	D5A 	9 	0
+10 	C1 	1 	DUPE 	C6A 	10 	0
+11 	C4 	1 	DUPE 	D1B 	11 	0
+12 	C4 	1 	DUPE 	D2B 	12 	0
+13 	C4 	1 	DUPE 	D3B 	13 	0
+14 	C4 	1 	DUPE 	D4B 	14 	0
+15 	C4 	1 	DUPE 	D5B 	15 	0
+16 	C1 	1 	DUPE 	C6B 	16 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  4 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+  13 14	1 	0.47 	1250
+  14 15	1 	0.47 	1250
+  15 16	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	100.0 	10.0
+  8 9 10 	2 	120.0 	45.0
+  4 11 12 	2 	100.0 	10.0
+  11 12 13 	2 	100.0 	10.0
+  12 13 14 	2 	100.0 	10.0
+  13 14 15 	2 	100.0 	10.0
+  14 15 16 	2 	120.0 	45.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PAPE_Martini_v2.0_lipid.itp, -alname PAPE, -alhead E P, -allink G G, -altail DDDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PAPE          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Qd 	1 	PAPE 	NH3 	1 	1.0
+2 	Qa 	1 	PAPE 	PO4 	2 	-1.0
+3 	Na 	1 	PAPE 	GL1 	3 	0
+4 	Na 	1 	PAPE 	GL2 	4 	0
+5 	C4 	1 	PAPE 	D1A 	5 	0
+6 	C4 	1 	PAPE 	D2A 	6 	0
+7 	C4 	1 	PAPE 	D3A 	7 	0
+8 	C4 	1 	PAPE 	D4A 	8 	0
+9 	C1 	1 	PAPE 	C5A 	9 	0
+10 	C1 	1 	PAPE 	C1B 	10 	0
+11 	C1 	1 	PAPE 	C2B 	11 	0
+12 	C1 	1 	PAPE 	C3B 	12 	0
+13 	C1 	1 	PAPE 	C4B 	13 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  4 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	120.0 	45.0
+  4 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PIPE_Martini_v2.0_lipid.itp, -alname PIPE, -alhead E P, -allink G G, -altail CDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PIPE          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Qd 	1 	PIPE 	NH3 	1 	1.0
+2 	Qa 	1 	PIPE 	PO4 	2 	-1.0
+3 	Na 	1 	PIPE 	GL1 	3 	0
+4 	Na 	1 	PIPE 	GL2 	4 	0
+5 	C1 	1 	PIPE 	C1A 	5 	0
+6 	C4 	1 	PIPE 	D2A 	6 	0
+7 	C4 	1 	PIPE 	D3A 	7 	0
+8 	C1 	1 	PIPE 	C4A 	8 	0
+9 	C1 	1 	PIPE 	C1B 	9 	0
+10 	C1 	1 	PIPE 	C2B 	10 	0
+11 	C1 	1 	PIPE 	C3B 	11 	0
+12 	C1 	1 	PIPE 	C4B 	12 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  4 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	120.0 	45.0
+  4 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o POPE_Martini_v2.0_lipid.itp, -alname POPE, -alhead E P, -allink G G, -altail CCDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   POPE          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Qd 	1 	POPE 	NH3 	1 	1.0
+2 	Qa 	1 	POPE 	PO4 	2 	-1.0
+3 	Na 	1 	POPE 	GL1 	3 	0
+4 	Na 	1 	POPE 	GL2 	4 	0
+5 	C1 	1 	POPE 	C1A 	5 	0
+6 	C1 	1 	POPE 	C2A 	6 	0
+7 	C3 	1 	POPE 	D3A 	7 	0
+8 	C1 	1 	POPE 	C4A 	8 	0
+9 	C1 	1 	POPE 	C1B 	9 	0
+10 	C1 	1 	POPE 	C2B 	10 	0
+11 	C1 	1 	POPE 	C3B 	11 	0
+12 	C1 	1 	POPE 	C4B 	12 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  4 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	180.0 	25.0
+  6 7 8 	2 	120.0 	45.0
+  4 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PQPE_Martini_v2.0_lipid.itp, -alname PQPE, -alhead E P, -allink G G, -altail CDDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PQPE          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Qd 	1 	PQPE 	NH3 	1 	1.0
+2 	Qa 	1 	PQPE 	PO4 	2 	-1.0
+3 	Na 	1 	PQPE 	GL1 	3 	0
+4 	Na 	1 	PQPE 	GL2 	4 	0
+5 	C1 	1 	PQPE 	C1A 	5 	0
+6 	C4 	1 	PQPE 	D2A 	6 	0
+7 	C4 	1 	PQPE 	D3A 	7 	0
+8 	C4 	1 	PQPE 	D4A 	8 	0
+9 	C1 	1 	PQPE 	C5A 	9 	0
+10 	C1 	1 	PQPE 	C1B 	10 	0
+11 	C1 	1 	PQPE 	C2B 	11 	0
+12 	C1 	1 	PQPE 	C3B 	12 	0
+13 	C1 	1 	PQPE 	C4B 	13 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  4 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	120.0 	45.0
+  4 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PUPE_Martini_v2.0_lipid.itp, -alname PUPE, -alhead E P, -allink G G, -altail DDDDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PUPE          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Qd 	1 	PUPE 	NH3 	1 	1.0
+2 	Qa 	1 	PUPE 	PO4 	2 	-1.0
+3 	Na 	1 	PUPE 	GL1 	3 	0
+4 	Na 	1 	PUPE 	GL2 	4 	0
+5 	C4 	1 	PUPE 	D1A 	5 	0
+6 	C4 	1 	PUPE 	D2A 	6 	0
+7 	C4 	1 	PUPE 	D3A 	7 	0
+8 	C4 	1 	PUPE 	D4A 	8 	0
+9 	C4 	1 	PUPE 	D5A 	9 	0
+10 	C1 	1 	PUPE 	C6A 	10 	0
+11 	C1 	1 	PUPE 	C1B 	11 	0
+12 	C1 	1 	PUPE 	C2B 	12 	0
+13 	C1 	1 	PUPE 	C3B 	13 	0
+14 	C1 	1 	PUPE 	C4B 	14 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  4 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+  13 14	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	100.0 	10.0
+  8 9 10 	2 	120.0 	45.0
+  4 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+  12 13 14 	2 	180.0 	25.0
+
+; PS lipids: 
+
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o DAPS_Martini_v2.0_lipid.itp, -alname DAPS, -alhead S P, -allink G G, -altail DDDDC DDDDC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   DAPS          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	P5 	1 	DAPS 	CNO 	1 	0.0
+2 	Qa 	1 	DAPS 	PO4 	2 	-1.0
+3 	Na 	1 	DAPS 	GL1 	3 	0
+4 	Na 	1 	DAPS 	GL2 	4 	0
+5 	C4 	1 	DAPS 	D1A 	5 	0
+6 	C4 	1 	DAPS 	D2A 	6 	0
+7 	C4 	1 	DAPS 	D3A 	7 	0
+8 	C4 	1 	DAPS 	D4A 	8 	0
+9 	C1 	1 	DAPS 	C5A 	9 	0
+10 	C4 	1 	DAPS 	D1B 	10 	0
+11 	C4 	1 	DAPS 	D2B 	11 	0
+12 	C4 	1 	DAPS 	D3B 	12 	0
+13 	C4 	1 	DAPS 	D4B 	13 	0
+14 	C1 	1 	DAPS 	C5B 	14 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  4 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+  13 14	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	120.0 	45.0
+  4 10 11 	2 	100.0 	10.0
+  10 11 12 	2 	100.0 	10.0
+  11 12 13 	2 	100.0 	10.0
+  12 13 14 	2 	120.0 	45.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o DUPS_Martini_v2.0_lipid.itp, -alname DUPS, -alhead S P, -allink G G, -altail DDDDDC DDDDDC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   DUPS          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	P5 	1 	DUPS 	CNO 	1 	0.0
+2 	Qa 	1 	DUPS 	PO4 	2 	-1.0
+3 	Na 	1 	DUPS 	GL1 	3 	0
+4 	Na 	1 	DUPS 	GL2 	4 	0
+5 	C4 	1 	DUPS 	D1A 	5 	0
+6 	C4 	1 	DUPS 	D2A 	6 	0
+7 	C4 	1 	DUPS 	D3A 	7 	0
+8 	C4 	1 	DUPS 	D4A 	8 	0
+9 	C4 	1 	DUPS 	D5A 	9 	0
+10 	C1 	1 	DUPS 	C6A 	10 	0
+11 	C4 	1 	DUPS 	D1B 	11 	0
+12 	C4 	1 	DUPS 	D2B 	12 	0
+13 	C4 	1 	DUPS 	D3B 	13 	0
+14 	C4 	1 	DUPS 	D4B 	14 	0
+15 	C4 	1 	DUPS 	D5B 	15 	0
+16 	C1 	1 	DUPS 	C6B 	16 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  4 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+  13 14	1 	0.47 	1250
+  14 15	1 	0.47 	1250
+  15 16	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	100.0 	10.0
+  8 9 10 	2 	120.0 	45.0
+  4 11 12 	2 	100.0 	10.0
+  11 12 13 	2 	100.0 	10.0
+  12 13 14 	2 	100.0 	10.0
+  13 14 15 	2 	100.0 	10.0
+  14 15 16 	2 	120.0 	45.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PAPS_Martini_v2.0_lipid.itp, -alname PAPS, -alhead S P, -allink G G, -altail DDDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PAPS          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	P5 	1 	PAPS 	CNO 	1 	0.0
+2 	Qa 	1 	PAPS 	PO4 	2 	-1.0
+3 	Na 	1 	PAPS 	GL1 	3 	0
+4 	Na 	1 	PAPS 	GL2 	4 	0
+5 	C4 	1 	PAPS 	D1A 	5 	0
+6 	C4 	1 	PAPS 	D2A 	6 	0
+7 	C4 	1 	PAPS 	D3A 	7 	0
+8 	C4 	1 	PAPS 	D4A 	8 	0
+9 	C1 	1 	PAPS 	C5A 	9 	0
+10 	C1 	1 	PAPS 	C1B 	10 	0
+11 	C1 	1 	PAPS 	C2B 	11 	0
+12 	C1 	1 	PAPS 	C3B 	12 	0
+13 	C1 	1 	PAPS 	C4B 	13 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  4 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	120.0 	45.0
+  4 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PIPS_Martini_v2.0_lipid.itp, -alname PIPS, -alhead S P, -allink G G, -altail CDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PIPS          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	P5 	1 	PIPS 	CNO 	1 	0.0
+2 	Qa 	1 	PIPS 	PO4 	2 	-1.0
+3 	Na 	1 	PIPS 	GL1 	3 	0
+4 	Na 	1 	PIPS 	GL2 	4 	0
+5 	C1 	1 	PIPS 	C1A 	5 	0
+6 	C4 	1 	PIPS 	D2A 	6 	0
+7 	C4 	1 	PIPS 	D3A 	7 	0
+8 	C1 	1 	PIPS 	C4A 	8 	0
+9 	C1 	1 	PIPS 	C1B 	9 	0
+10 	C1 	1 	PIPS 	C2B 	10 	0
+11 	C1 	1 	PIPS 	C3B 	11 	0
+12 	C1 	1 	PIPS 	C4B 	12 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  4 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	120.0 	45.0
+  4 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o POPS_Martini_v2.0_lipid.itp, -alname POPS, -alhead S P, -allink G G, -altail CCDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   POPS          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	P5 	1 	POPS 	CNO 	1 	0.0
+2 	Qa 	1 	POPS 	PO4 	2 	-1.0
+3 	Na 	1 	POPS 	GL1 	3 	0
+4 	Na 	1 	POPS 	GL2 	4 	0
+5 	C1 	1 	POPS 	C1A 	5 	0
+6 	C1 	1 	POPS 	C2A 	6 	0
+7 	C3 	1 	POPS 	D3A 	7 	0
+8 	C1 	1 	POPS 	C4A 	8 	0
+9 	C1 	1 	POPS 	C1B 	9 	0
+10 	C1 	1 	POPS 	C2B 	10 	0
+11 	C1 	1 	POPS 	C3B 	11 	0
+12 	C1 	1 	POPS 	C4B 	12 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  4 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	180.0 	25.0
+  6 7 8 	2 	120.0 	45.0
+  4 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PQPS_Martini_v2.0_lipid.itp, -alname PQPS, -alhead S P, -allink G G, -altail CDDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PQPS          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	P5 	1 	PQPS 	CNO 	1 	0.0
+2 	Qa 	1 	PQPS 	PO4 	2 	-1.0
+3 	Na 	1 	PQPS 	GL1 	3 	0
+4 	Na 	1 	PQPS 	GL2 	4 	0
+5 	C1 	1 	PQPS 	C1A 	5 	0
+6 	C4 	1 	PQPS 	D2A 	6 	0
+7 	C4 	1 	PQPS 	D3A 	7 	0
+8 	C4 	1 	PQPS 	D4A 	8 	0
+9 	C1 	1 	PQPS 	C5A 	9 	0
+10 	C1 	1 	PQPS 	C1B 	10 	0
+11 	C1 	1 	PQPS 	C2B 	11 	0
+12 	C1 	1 	PQPS 	C3B 	12 	0
+13 	C1 	1 	PQPS 	C4B 	13 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  4 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	120.0 	45.0
+  4 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PUPS_Martini_v2.0_lipid.itp, -alname PUPS, -alhead S P, -allink G G, -altail DDDDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PUPS          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	P5 	1 	PUPS 	CNO 	1 	0.0
+2 	Qa 	1 	PUPS 	PO4 	2 	-1.0
+3 	Na 	1 	PUPS 	GL1 	3 	0
+4 	Na 	1 	PUPS 	GL2 	4 	0
+5 	C4 	1 	PUPS 	D1A 	5 	0
+6 	C4 	1 	PUPS 	D2A 	6 	0
+7 	C4 	1 	PUPS 	D3A 	7 	0
+8 	C4 	1 	PUPS 	D4A 	8 	0
+9 	C4 	1 	PUPS 	D5A 	9 	0
+10 	C1 	1 	PUPS 	C6A 	10 	0
+11 	C1 	1 	PUPS 	C1B 	11 	0
+12 	C1 	1 	PUPS 	C2B 	12 	0
+13 	C1 	1 	PUPS 	C3B 	13 	0
+14 	C1 	1 	PUPS 	C4B 	14 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  4 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+  13 14	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	100.0 	10.0
+  8 9 10 	2 	120.0 	45.0
+  4 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+  12 13 14 	2 	180.0 	25.0
+
+; PA lipids: 
+
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PAPA_Martini_v2.0_lipid.itp, -alname PAPA, -alhead P, -allink G G, -altail DDDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PAPA          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Qa 	1 	PAPA 	PO4 	1 	-2.0
+2 	Na 	1 	PAPA 	GL1 	2 	0
+3 	Na 	1 	PAPA 	GL2 	3 	0
+4 	C4 	1 	PAPA 	D1A 	4 	0
+5 	C4 	1 	PAPA 	D2A 	5 	0
+6 	C4 	1 	PAPA 	D3A 	6 	0
+7 	C4 	1 	PAPA 	D4A 	7 	0
+8 	C1 	1 	PAPA 	C5A 	8 	0
+9 	C1 	1 	PAPA 	C1B 	9 	0
+10 	C1 	1 	PAPA 	C2B 	10 	0
+11 	C1 	1 	PAPA 	C3B 	11 	0
+12 	C1 	1 	PAPA 	C4B 	12 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.37 	1250
+  2 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  3 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  1 2 3 	2 	120.0 	25.0
+  1 2 4 	2 	180.0 	25.0
+  2 4 5 	2 	100.0 	10.0
+  4 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	120.0 	45.0
+  3 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PIPA_Martini_v2.0_lipid.itp, -alname PIPA, -alhead P, -allink G G, -altail CDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PIPA          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Qa 	1 	PIPA 	PO4 	1 	-2.0
+2 	Na 	1 	PIPA 	GL1 	2 	0
+3 	Na 	1 	PIPA 	GL2 	3 	0
+4 	C1 	1 	PIPA 	C1A 	4 	0
+5 	C4 	1 	PIPA 	D2A 	5 	0
+6 	C4 	1 	PIPA 	D3A 	6 	0
+7 	C1 	1 	PIPA 	C4A 	7 	0
+8 	C1 	1 	PIPA 	C1B 	8 	0
+9 	C1 	1 	PIPA 	C2B 	9 	0
+10 	C1 	1 	PIPA 	C3B 	10 	0
+11 	C1 	1 	PIPA 	C4B 	11 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.37 	1250
+  2 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  3 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  1 2 3 	2 	120.0 	25.0
+  1 2 4 	2 	180.0 	25.0
+  2 4 5 	2 	180.0 	25.0
+  4 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	120.0 	45.0
+  3 8 9 	2 	180.0 	25.0
+  8 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o POPA_Martini_v2.0_lipid.itp, -alname POPA, -alhead P, -allink G G, -altail CCDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   POPA          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Qa 	1 	POPA 	PO4 	1 	-2.0
+2 	Na 	1 	POPA 	GL1 	2 	0
+3 	Na 	1 	POPA 	GL2 	3 	0
+4 	C1 	1 	POPA 	C1A 	4 	0
+5 	C1 	1 	POPA 	C2A 	5 	0
+6 	C3 	1 	POPA 	D3A 	6 	0
+7 	C1 	1 	POPA 	C4A 	7 	0
+8 	C1 	1 	POPA 	C1B 	8 	0
+9 	C1 	1 	POPA 	C2B 	9 	0
+10 	C1 	1 	POPA 	C3B 	10 	0
+11 	C1 	1 	POPA 	C4B 	11 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.37 	1250
+  2 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  3 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  1 2 3 	2 	120.0 	25.0
+  1 2 4 	2 	180.0 	25.0
+  2 4 5 	2 	180.0 	25.0
+  4 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	120.0 	45.0
+  3 8 9 	2 	180.0 	25.0
+  8 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PUPA_Martini_v2.0_lipid.itp, -alname PUPA, -alhead P, -allink G G, -altail DDDDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PUPA          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Qa 	1 	PUPA 	PO4 	1 	-2.0
+2 	Na 	1 	PUPA 	GL1 	2 	0
+3 	Na 	1 	PUPA 	GL2 	3 	0
+4 	C4 	1 	PUPA 	D1A 	4 	0
+5 	C4 	1 	PUPA 	D2A 	5 	0
+6 	C4 	1 	PUPA 	D3A 	6 	0
+7 	C4 	1 	PUPA 	D4A 	7 	0
+8 	C4 	1 	PUPA 	D5A 	8 	0
+9 	C1 	1 	PUPA 	C6A 	9 	0
+10 	C1 	1 	PUPA 	C1B 	10 	0
+11 	C1 	1 	PUPA 	C2B 	11 	0
+12 	C1 	1 	PUPA 	C3B 	12 	0
+13 	C1 	1 	PUPA 	C4B 	13 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.37 	1250
+  2 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  3 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  1 2 3 	2 	120.0 	25.0
+  1 2 4 	2 	180.0 	25.0
+  2 4 5 	2 	100.0 	10.0
+  4 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	100.0 	10.0
+  7 8 9 	2 	120.0 	45.0
+  3 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+
+; DG (DAG) lipids: 
+
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PADG_Martini_v2.0_lipid.itp, -alname PADG, -alhead , -allink G G, -altail DDDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PADG          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Na 	1 	PADG 	GL1 	1 	0
+2 	Na 	1 	PADG 	GL2 	2 	0
+3 	C4 	1 	PADG 	D1A 	3 	0
+4 	C4 	1 	PADG 	D2A 	4 	0
+5 	C4 	1 	PADG 	D3A 	5 	0
+6 	C4 	1 	PADG 	D4A 	6 	0
+7 	C1 	1 	PADG 	C5A 	7 	0
+8 	C1 	1 	PADG 	C1B 	8 	0
+9 	C1 	1 	PADG 	C2B 	9 	0
+10 	C1 	1 	PADG 	C3B 	10 	0
+11 	C1 	1 	PADG 	C4B 	11 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.37 	1250
+  1 3	1 	0.47 	1250
+  3 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  2 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  1 3 4 	2 	100.0 	10.0
+  3 4 5 	2 	100.0 	10.0
+  4 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	120.0 	45.0
+  2 8 9 	2 	180.0 	25.0
+  8 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PIDG_Martini_v2.0_lipid.itp, -alname PIDG, -alhead , -allink G G, -altail CDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PIDG          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Na 	1 	PIDG 	GL1 	1 	0
+2 	Na 	1 	PIDG 	GL2 	2 	0
+3 	C1 	1 	PIDG 	C1A 	3 	0
+4 	C4 	1 	PIDG 	D2A 	4 	0
+5 	C4 	1 	PIDG 	D3A 	5 	0
+6 	C1 	1 	PIDG 	C4A 	6 	0
+7 	C1 	1 	PIDG 	C1B 	7 	0
+8 	C1 	1 	PIDG 	C2B 	8 	0
+9 	C1 	1 	PIDG 	C3B 	9 	0
+10 	C1 	1 	PIDG 	C4B 	10 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.37 	1250
+  1 3	1 	0.47 	1250
+  3 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  2 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  1 3 4 	2 	180.0 	25.0
+  3 4 5 	2 	100.0 	10.0
+  4 5 6 	2 	120.0 	45.0
+  2 7 8 	2 	180.0 	25.0
+  7 8 9 	2 	180.0 	25.0
+  8 9 10 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PODG_Martini_v2.0_lipid.itp, -alname PODG, -alhead , -allink G G, -altail CCDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PODG          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Na 	1 	PODG 	GL1 	1 	0
+2 	Na 	1 	PODG 	GL2 	2 	0
+3 	C1 	1 	PODG 	C1A 	3 	0
+4 	C1 	1 	PODG 	C2A 	4 	0
+5 	C3 	1 	PODG 	D3A 	5 	0
+6 	C1 	1 	PODG 	C4A 	6 	0
+7 	C1 	1 	PODG 	C1B 	7 	0
+8 	C1 	1 	PODG 	C2B 	8 	0
+9 	C1 	1 	PODG 	C3B 	9 	0
+10 	C1 	1 	PODG 	C4B 	10 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.37 	1250
+  1 3	1 	0.47 	1250
+  3 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  2 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  1 3 4 	2 	180.0 	25.0
+  3 4 5 	2 	180.0 	25.0
+  4 5 6 	2 	120.0 	45.0
+  2 7 8 	2 	180.0 	25.0
+  7 8 9 	2 	180.0 	25.0
+  8 9 10 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PUDG_Martini_v2.0_lipid.itp, -alname PUDG, -alhead , -allink G G, -altail DDDDDC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PUDG          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Na 	1 	PUDG 	GL1 	1 	0
+2 	Na 	1 	PUDG 	GL2 	2 	0
+3 	C4 	1 	PUDG 	D1A 	3 	0
+4 	C4 	1 	PUDG 	D2A 	4 	0
+5 	C4 	1 	PUDG 	D3A 	5 	0
+6 	C4 	1 	PUDG 	D4A 	6 	0
+7 	C4 	1 	PUDG 	D5A 	7 	0
+8 	C1 	1 	PUDG 	C6A 	8 	0
+9 	C1 	1 	PUDG 	C1B 	9 	0
+10 	C1 	1 	PUDG 	C2B 	10 	0
+11 	C1 	1 	PUDG 	C3B 	11 	0
+12 	C1 	1 	PUDG 	C4B 	12 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.37 	1250
+  1 3	1 	0.47 	1250
+  3 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  2 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  1 3 4 	2 	100.0 	10.0
+  3 4 5 	2 	100.0 	10.0
+  4 5 6 	2 	100.0 	10.0
+  5 6 7 	2 	100.0 	10.0
+  6 7 8 	2 	120.0 	45.0
+  2 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+
+; SM sphingomyelin lipids: 
+
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o BNSM_Martini_v2.0_lipid.itp, -alname BNSM, -alhead C P, -allink A A, -altail TCCC CCCDCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   BNSM          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	BNSM 	NC3 	1 	1.0
+2 	Qa 	1 	BNSM 	PO4 	2 	-1.0
+3 	P1 	1 	BNSM 	AM1 	3 	0
+4 	P5 	1 	BNSM 	AM2 	4 	0
+5 	C3 	1 	BNSM 	T1A 	5 	0
+6 	C1 	1 	BNSM 	C2A 	6 	0
+7 	C1 	1 	BNSM 	C3A 	7 	0
+8 	C1 	1 	BNSM 	C4A 	8 	0
+9 	C1 	1 	BNSM 	C1B 	9 	0
+10 	C1 	1 	BNSM 	C2B 	10 	0
+11 	C1 	1 	BNSM 	C3B 	11 	0
+12 	C3 	1 	BNSM 	D4B 	12 	0
+13 	C1 	1 	BNSM 	C5B 	13 	0
+14 	C1 	1 	BNSM 	C6B 	14 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  4 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+  13 14	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	45.0
+  5 6 7 	2 	180.0 	25.0
+  6 7 8 	2 	180.0 	25.0
+  4 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	120.0 	45.0
+  12 13 14 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o DBSM_Martini_v2.0_lipid.itp, -alname DBSM, -alhead C P, -allink A A, -altail TCCC CCCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   DBSM          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	DBSM 	NC3 	1 	1.0
+2 	Qa 	1 	DBSM 	PO4 	2 	-1.0
+3 	P1 	1 	DBSM 	AM1 	3 	0
+4 	P5 	1 	DBSM 	AM2 	4 	0
+5 	C3 	1 	DBSM 	T1A 	5 	0
+6 	C1 	1 	DBSM 	C2A 	6 	0
+7 	C1 	1 	DBSM 	C3A 	7 	0
+8 	C1 	1 	DBSM 	C4A 	8 	0
+9 	C1 	1 	DBSM 	C1B 	9 	0
+10 	C1 	1 	DBSM 	C2B 	10 	0
+11 	C1 	1 	DBSM 	C3B 	11 	0
+12 	C1 	1 	DBSM 	C4B 	12 	0
+13 	C1 	1 	DBSM 	C5B 	13 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  4 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	45.0
+  5 6 7 	2 	180.0 	25.0
+  6 7 8 	2 	180.0 	25.0
+  4 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o DPSM_Martini_v2.0_lipid.itp, -alname DPSM, -alhead C P, -allink A A, -altail TCC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   DPSM          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	DPSM 	NC3 	1 	1.0
+2 	Qa 	1 	DPSM 	PO4 	2 	-1.0
+3 	P1 	1 	DPSM 	AM1 	3 	0
+4 	P5 	1 	DPSM 	AM2 	4 	0
+5 	C3 	1 	DPSM 	T1A 	5 	0
+6 	C1 	1 	DPSM 	C2A 	6 	0
+7 	C1 	1 	DPSM 	C3A 	7 	0
+8 	C1 	1 	DPSM 	C1B 	8 	0
+9 	C1 	1 	DPSM 	C2B 	9 	0
+10 	C1 	1 	DPSM 	C3B 	10 	0
+11 	C1 	1 	DPSM 	C4B 	11 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  4 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	45.0
+  5 6 7 	2 	180.0 	25.0
+  4 8 9 	2 	180.0 	25.0
+  8 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o DXSM_Martini_v2.0_lipid.itp, -alname DXSM, -alhead C P, -allink A A, -altail TCCCC CCCCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   DXSM          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	DXSM 	NC3 	1 	1.0
+2 	Qa 	1 	DXSM 	PO4 	2 	-1.0
+3 	P1 	1 	DXSM 	AM1 	3 	0
+4 	P5 	1 	DXSM 	AM2 	4 	0
+5 	C3 	1 	DXSM 	T1A 	5 	0
+6 	C1 	1 	DXSM 	C2A 	6 	0
+7 	C1 	1 	DXSM 	C3A 	7 	0
+8 	C1 	1 	DXSM 	C4A 	8 	0
+9 	C1 	1 	DXSM 	C5A 	9 	0
+10 	C1 	1 	DXSM 	C1B 	10 	0
+11 	C1 	1 	DXSM 	C2B 	11 	0
+12 	C1 	1 	DXSM 	C3B 	12 	0
+13 	C1 	1 	DXSM 	C4B 	13 	0
+14 	C1 	1 	DXSM 	C5B 	14 	0
+15 	C1 	1 	DXSM 	C6B 	15 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  4 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+  13 14	1 	0.47 	1250
+  14 15	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	45.0
+  5 6 7 	2 	180.0 	25.0
+  6 7 8 	2 	180.0 	25.0
+  7 8 9 	2 	180.0 	25.0
+  4 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+  12 13 14 	2 	180.0 	25.0
+  13 14 15 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PGSM_Martini_v2.0_lipid.itp, -alname PGSM, -alhead C P, -allink A A, -altail TCC CCDCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PGSM          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	PGSM 	NC3 	1 	1.0
+2 	Qa 	1 	PGSM 	PO4 	2 	-1.0
+3 	P1 	1 	PGSM 	AM1 	3 	0
+4 	P5 	1 	PGSM 	AM2 	4 	0
+5 	C3 	1 	PGSM 	T1A 	5 	0
+6 	C1 	1 	PGSM 	C2A 	6 	0
+7 	C1 	1 	PGSM 	C3A 	7 	0
+8 	C1 	1 	PGSM 	C1B 	8 	0
+9 	C1 	1 	PGSM 	C2B 	9 	0
+10 	C3 	1 	PGSM 	D3B 	10 	0
+11 	C1 	1 	PGSM 	C4B 	11 	0
+12 	C1 	1 	PGSM 	C5B 	12 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  4 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	45.0
+  5 6 7 	2 	180.0 	25.0
+  4 8 9 	2 	180.0 	25.0
+  8 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	120.0 	45.0
+  10 11 12 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PNSM_Martini_v2.0_lipid.itp, -alname PNSM, -alhead C P, -allink A A, -altail TCC CCCDCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PNSM          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	PNSM 	NC3 	1 	1.0
+2 	Qa 	1 	PNSM 	PO4 	2 	-1.0
+3 	P1 	1 	PNSM 	AM1 	3 	0
+4 	P5 	1 	PNSM 	AM2 	4 	0
+5 	C3 	1 	PNSM 	T1A 	5 	0
+6 	C1 	1 	PNSM 	C2A 	6 	0
+7 	C1 	1 	PNSM 	C3A 	7 	0
+8 	C1 	1 	PNSM 	C1B 	8 	0
+9 	C1 	1 	PNSM 	C2B 	9 	0
+10 	C1 	1 	PNSM 	C3B 	10 	0
+11 	C3 	1 	PNSM 	D4B 	11 	0
+12 	C1 	1 	PNSM 	C5B 	12 	0
+13 	C1 	1 	PNSM 	C6B 	13 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  4 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	45.0
+  5 6 7 	2 	180.0 	25.0
+  4 8 9 	2 	180.0 	25.0
+  8 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	120.0 	45.0
+  11 12 13 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o POSM_Martini_v2.0_lipid.itp, -alname POSM, -alhead C P, -allink A A, -altail TCC CCDC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   POSM          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	POSM 	NC3 	1 	1.0
+2 	Qa 	1 	POSM 	PO4 	2 	-1.0
+3 	P1 	1 	POSM 	AM1 	3 	0
+4 	P5 	1 	POSM 	AM2 	4 	0
+5 	C3 	1 	POSM 	T1A 	5 	0
+6 	C1 	1 	POSM 	C2A 	6 	0
+7 	C1 	1 	POSM 	C3A 	7 	0
+8 	C1 	1 	POSM 	C1B 	8 	0
+9 	C1 	1 	POSM 	C2B 	9 	0
+10 	C3 	1 	POSM 	D3B 	10 	0
+11 	C1 	1 	POSM 	C4B 	11 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  4 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	45.0
+  5 6 7 	2 	180.0 	25.0
+  4 8 9 	2 	180.0 	25.0
+  8 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	120.0 	45.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o XNSM_Martini_v2.0_lipid.itp, -alname XNSM, -alhead C P, -allink A A, -altail TCCCC CCCDCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   XNSM          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	Q0 	1 	XNSM 	NC3 	1 	1.0
+2 	Qa 	1 	XNSM 	PO4 	2 	-1.0
+3 	P1 	1 	XNSM 	AM1 	3 	0
+4 	P5 	1 	XNSM 	AM2 	4 	0
+5 	C3 	1 	XNSM 	T1A 	5 	0
+6 	C1 	1 	XNSM 	C2A 	6 	0
+7 	C1 	1 	XNSM 	C3A 	7 	0
+8 	C1 	1 	XNSM 	C4A 	8 	0
+9 	C1 	1 	XNSM 	C5A 	9 	0
+10 	C1 	1 	XNSM 	C1B 	10 	0
+11 	C1 	1 	XNSM 	C2B 	11 	0
+12 	C1 	1 	XNSM 	C3B 	12 	0
+13 	C3 	1 	XNSM 	D4B 	13 	0
+14 	C1 	1 	XNSM 	C5B 	14 	0
+15 	C1 	1 	XNSM 	C6B 	15 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.47 	1250
+  2 3	1 	0.47 	1250
+  3 4	1 	0.37 	1250
+  3 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  4 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+  13 14	1 	0.47 	1250
+  14 15	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  2 3 4 	2 	120.0 	25.0
+  2 3 5 	2 	180.0 	25.0
+  3 5 6 	2 	180.0 	45.0
+  5 6 7 	2 	180.0 	25.0
+  6 7 8 	2 	180.0 	25.0
+  7 8 9 	2 	180.0 	25.0
+  4 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+  12 13 14 	2 	120.0 	45.0
+  13 14 15 	2 	180.0 	25.0
+
+; CE ceramide lipids: 
+
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o DPCE_Martini_v2.0_lipid.itp, -alname DPCE, -alhead , -allink A A, -altail TCC CCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   DPCE          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	P1 	1 	DPCE 	AM1 	1 	0
+2 	P5 	1 	DPCE 	AM2 	2 	0
+3 	C3 	1 	DPCE 	T1A 	3 	0
+4 	C1 	1 	DPCE 	C2A 	4 	0
+5 	C1 	1 	DPCE 	C3A 	5 	0
+6 	C1 	1 	DPCE 	C1B 	6 	0
+7 	C1 	1 	DPCE 	C2B 	7 	0
+8 	C1 	1 	DPCE 	C3B 	8 	0
+9 	C1 	1 	DPCE 	C4B 	9 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.37 	1250
+  1 3	1 	0.47 	1250
+  3 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  2 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  1 3 4 	2 	180.0 	45.0
+  3 4 5 	2 	180.0 	25.0
+  2 6 7 	2 	180.0 	25.0
+  6 7 8 	2 	180.0 	25.0
+  7 8 9 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o DXCE_Martini_v2.0_lipid.itp, -alname DXCE, -alhead , -allink A A, -altail TCCCC CCCCCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   DXCE          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	P1 	1 	DXCE 	AM1 	1 	0
+2 	P5 	1 	DXCE 	AM2 	2 	0
+3 	C3 	1 	DXCE 	T1A 	3 	0
+4 	C1 	1 	DXCE 	C2A 	4 	0
+5 	C1 	1 	DXCE 	C3A 	5 	0
+6 	C1 	1 	DXCE 	C4A 	6 	0
+7 	C1 	1 	DXCE 	C5A 	7 	0
+8 	C1 	1 	DXCE 	C1B 	8 	0
+9 	C1 	1 	DXCE 	C2B 	9 	0
+10 	C1 	1 	DXCE 	C3B 	10 	0
+11 	C1 	1 	DXCE 	C4B 	11 	0
+12 	C1 	1 	DXCE 	C5B 	12 	0
+13 	C1 	1 	DXCE 	C6B 	13 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.37 	1250
+  1 3	1 	0.47 	1250
+  3 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  2 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  1 3 4 	2 	180.0 	45.0
+  3 4 5 	2 	180.0 	25.0
+  4 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	180.0 	25.0
+  2 8 9 	2 	180.0 	25.0
+  8 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	180.0 	25.0
+  11 12 13 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o PNCE_Martini_v2.0_lipid.itp, -alname PNCE, -alhead , -allink A A, -altail TCC CCCDCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   PNCE          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	P1 	1 	PNCE 	AM1 	1 	0
+2 	P5 	1 	PNCE 	AM2 	2 	0
+3 	C3 	1 	PNCE 	T1A 	3 	0
+4 	C1 	1 	PNCE 	C2A 	4 	0
+5 	C1 	1 	PNCE 	C3A 	5 	0
+6 	C1 	1 	PNCE 	C1B 	6 	0
+7 	C1 	1 	PNCE 	C2B 	7 	0
+8 	C1 	1 	PNCE 	C3B 	8 	0
+9 	C3 	1 	PNCE 	D4B 	9 	0
+10 	C1 	1 	PNCE 	C5B 	10 	0
+11 	C1 	1 	PNCE 	C6B 	11 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.37 	1250
+  1 3	1 	0.47 	1250
+  3 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  2 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  7 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  1 3 4 	2 	180.0 	45.0
+  3 4 5 	2 	180.0 	25.0
+  2 6 7 	2 	180.0 	25.0
+  6 7 8 	2 	180.0 	25.0
+  7 8 9 	2 	180.0 	25.0
+  8 9 10 	2 	120.0 	45.0
+  9 10 11 	2 	180.0 	25.0
+;;;;;; Martini lipid topology auto generated using:
+; Martini lipid itp generator version dev-v03  Args are: -o XNCE_Martini_v2.0_lipid.itp, -alname XNCE, -alhead , -allink A A, -altail TCCCC CCCDCC
+; WARNING: Lipids topology was generated following the Martini 2.0 guidelines but specific lipids type has
+;          most likely not been tested and should therefore be used with care. 
+;
+
+[moleculetype]
+; molname      nrexcl
+   XNCE          1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+1 	P1 	1 	XNCE 	AM1 	1 	0
+2 	P5 	1 	XNCE 	AM2 	2 	0
+3 	C3 	1 	XNCE 	T1A 	3 	0
+4 	C1 	1 	XNCE 	C2A 	4 	0
+5 	C1 	1 	XNCE 	C3A 	5 	0
+6 	C1 	1 	XNCE 	C4A 	6 	0
+7 	C1 	1 	XNCE 	C5A 	7 	0
+8 	C1 	1 	XNCE 	C1B 	8 	0
+9 	C1 	1 	XNCE 	C2B 	9 	0
+10 	C1 	1 	XNCE 	C3B 	10 	0
+11 	C3 	1 	XNCE 	D4B 	11 	0
+12 	C1 	1 	XNCE 	C5B 	12 	0
+13 	C1 	1 	XNCE 	C6B 	13 	0
+
+[bonds]
+; i j 	funct 	length 	force.c.
+  1 2	1 	0.37 	1250
+  1 3	1 	0.47 	1250
+  3 4	1 	0.47 	1250
+  4 5	1 	0.47 	1250
+  5 6	1 	0.47 	1250
+  6 7	1 	0.47 	1250
+  2 8	1 	0.47 	1250
+  8 9	1 	0.47 	1250
+  9 10	1 	0.47 	1250
+  10 11	1 	0.47 	1250
+  11 12	1 	0.47 	1250
+  12 13	1 	0.47 	1250
+
+[angles]
+; i j k 	funct 	angle 	force.c.
+  1 3 4 	2 	180.0 	45.0
+  3 4 5 	2 	180.0 	25.0
+  4 5 6 	2 	180.0 	25.0
+  5 6 7 	2 	180.0 	25.0
+  2 8 9 	2 	180.0 	25.0
+  8 9 10 	2 	180.0 	25.0
+  9 10 11 	2 	180.0 	25.0
+  10 11 12 	2 	120.0 	45.0
+  11 12 13 	2 	180.0 	25.0
+
+; Glycolipids: 
+
+; MONOSIALOTETRAHEXOSYLGANGLIOSIDE (GM1)
+; with a DP tail (x2 palmitoyl or stearoyl tails) therfore called DPG1 (tail string would be -altail "TCC CCCC")
+; 
+; Head based on Cesar Lopez's GM1 from martini_v2.0_glycolipids.itp with bonded parameters modified by Manuel Melo for
+;   increased stability and faithfulness to AA.
+; Note:  GM1 currently runs at a 20fs time step. It also seems to be stable at 40fs, with no ill effect on the bonded distributions,
+;        although GROMACS will complain that bonds with k over 10000 have oscillation periods under 10x the time step.
+; Note2: Most bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;        Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+; Note3: Seven of the bonds (flagged below) represent an average of an underlying multimodal distribution of the mapped AA,
+;        trajectory. These bonds should not be constrained since the average distance might correspond to a weakly populated position.
+
+[ moleculetype ]
+; molname      nrexcl
+  DPG1         1
+
+[ atoms ]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge   mass
+ 1      SP1     1       DPG1     GM1     1      0        72.0000
+ 2      SP1     1       DPG1     GM2     2      0        72.0000
+ 3      SP1     1       DPG1     GM3     3      0        72.0000
+ 4      SP1     1       DPG1     GM4     4      0        72.0000
+ 5      SP1     1       DPG1     GM5     5      0        72.0000
+ 6      Nda     1       DPG1     GM6     6      0        72.0000
+ 7       P5     1       DPG1     GM7     7      0        72.0000
+ 8      SP1     1       DPG1     GM8     8      0        72.0000
+ 9      SP1     1       DPG1     GM9     9      0        72.0000
+10      SP1     1       DPG1     GM10   10      0        72.0000
+11      SP1     1       DPG1     GM11   11      0        72.0000
+12       P4     1       DPG1     GM12   12      0        72.0000
+13       Qa     1       DPG1     GM13   13     -1        72.0000
+14       P1     1       DPG1     GM14   14      0        72.0000
+15       P1     1       DPG1     GM15   15      0        72.0000
+16       P4     1       DPG1     GM16   16      0        72.0000
+17       P5     1       DPG1     GM17   17      0        72.0000
+; Tail part
+18       P1     1       DPG1     AM1    18      0        72.0000
+19       P5     1       DPG1     AM2    19      0        72.0000
+20       C3     1       DPG1     T1A    20      0        72.0000
+21       C1     1       DPG1     C2A    21      0        72.0000
+22       C1     1       DPG1     C3A    22      0        72.0000
+23       C1     1       DPG1     C1B    23      0        72.0000
+24       C1     1       DPG1     C2B    24      0        72.0000
+25       C1     1       DPG1     C3B    25      0        72.0000
+26       C1     1       DPG1     C4B    26      0        72.0000
+
+[ bonds ]
+; i j 	funct 	length 	force.c.
+#ifdef FLEXIBLE
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.57   35000
+  9  10   1  0.30   40000
+ 10  11   1  0.395  40000
+ 10  12   1  0.270  40000
+ 13  14   1  0.35   35000
+ 13  15   1  0.381  35000
+ 14  15   1  0.364  40000
+#endif
+  1   2   1  0.36   17500 ; do not constrain (underlying mapped distribution is bimodal) 
+  1   3   1  0.31   20000 ; do not constrain (underlying mapped distribution is bimodal)
+  2   3   1  0.315   8500 ; do not constrain (underlying mapped distribution is multimodal)
+  3   4   1  0.368  15000 ; do not constrain (underlying mapped distribution is bimodal)  
+  5   6   1  0.307  25000 ; do not constrain (underlying mapped distribution is bimodal)
+  6   7   1  0.36   11000
+  6  13   1  0.376  12500
+  7   9   1  0.364  17500
+  8   9   1  0.37   10000
+ 11  12   1  0.32   12000 ; do not constrain (underlying mapped distribution is bimodal) 
+ 14  16   1  0.34   11500 ; do not constrain (underlying mapped distribution is bimodal) 
+ 15  17   1  0.275   8500 
+; Tail part 
+ 1 18   1  0.57   20000 ; Head linked to AM1
+18 19   1  0.27   20000 ; Based on Cesar GM1 and GCER
+18 20   1  0.29   20000 ; Based on Cesar GM1 and GCER
+20 21   1  0.47   1250 
+21 22   1  0.47   1250
+19 23   1  0.37   20000 ; Based on Cesar GM1 and GCER
+23 24   1  0.47   1250
+24 25   1  0.47   1250
+25 26   1  0.47   1250
+
+[ angles ]
+; i j k 	funct 	angle 	force.c.
+  2   3   4   2    85.50  320.00
+  3   4   5   2    67.00  550.00
+  4   6   7   2   102.00  350.00
+  4   6  13   2    97.50  295.00
+  6   7   8   2    57.00  700.00
+  6   7   9   2    90.00  670.00
+  6  13  15   2    71.00  700.00
+  7   6  13   2    68.50  880.00
+  7   9  10   2    76.00  290.00
+  9  10  11   2    69.00  630.00
+ 13  15  17   2    96.00  210.00
+ 15  14  16   2    61.00  300.00
+; Orient Head
+3   1  18   2    50.00  200.00  
+; Tail part
+1  18  19   2    85.00   25.00  ; Based on Cesar GM1 and GCER
+1  18  20   2   150.00   30.00  ; Based on Cesar GM1 and GCER
+18 19  23   2   129.00  200.00  ; Based on Cesar GM1 and GCER
+18 20  21   2   180.00   25.00  ; Based on Cesar GM1 and GCER
+20 21  22   2   180.00   25.00
+19 23  24   2   180.00   25.00
+23 24  25   2   180.00   25.00 
+24 25  26   2   180.00   25.00
+
+[ dihedrals ]
+  1   2   3   4   2  -160.0  30.0
+  2   3   4   5   2  -149.0  16.0
+  3   4   5   6   2  -150.0  55.0
+  4   6   7   8   2   157.0 180.0
+  4   6  13  15   2  -124.0  60.0
+  5   4   6   7   2  -126.0  90.0
+  5   4   6  13   2   154.0 115.0
+  6   7   8   9   2   150.0  32.0
+  6  13  15  14   2   107.5 265.0
+  7   9  10  11   2  -156.0  23.0
+  8   7   9  10   2   179.0 115.0
+  9  10  11  12   2  -163.0  80.0
+ 13  15  14  16   2   137.0  80.0
+ 14  13  15  17   2   162.0  50.0
+ 3  1 18 19 1  125.0 10.00 1 ; Orient head with respect to tail 
+
+#ifndef FLEXIBLE
+[ constraints ]
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.57   35000
+  9  10   1  0.30   40000
+ 10  11   1  0.394  40000
+ 10  12   1  0.268  40000
+ 13  14   1  0.347  35000
+ 13  15   1  0.381  35000
+ 14  15   1  0.364  40000
+#endif
+
+[ exclusions ]
+  2  4
+  3  5
+  4  7
+  5  8
+  6  8
+  6  9
+  6 15
+  7 10
+  7 13
+  9 11
+  9 12
+ 15 16
+
+; MONOSIALOTETRAHEXOSYLGANGLIOSIDE (GM1)
+; with a DX tail (x2 Lignoceroyl or Hexacosanoyl tail) therfore called DXG1 (tail string would be -altail "TCCCC CCCCCC")
+; 
+; Head based on Cesar Lopez's GM1 from martini_v2.0_glycolipids.itp with bonded parameters modified by Manuel Melo for
+;   increased stability and faithfulness to AA.
+; Note:  GM1 currently runs at a 20fs time step. It also seems to be stable at 40fs, with no ill effect on the bonded distributions,
+;        although GROMACS will complain that bonds with k over 10000 have oscillation periods under 10x the time step.
+; Note2: Most bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;        Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+; Note3: Seven of the bonds (flagged below) represent an average of an underlying multimodal distribution of the mapped AA,
+;        trajectory. These bonds should not be constrained since the average distance might correspond to a weakly populated position.
+
+[ moleculetype ]
+; molname      nrexcl
+  DXG1         1
+
+[ atoms ]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge   mass
+ 1      SP1     1       DXG1     GM1     1      0        72.0000
+ 2      SP1     1       DXG1     GM2     2      0        72.0000
+ 3      SP1     1       DXG1     GM3     3      0        72.0000
+ 4      SP1     1       DXG1     GM4     4      0        72.0000
+ 5      SP1     1       DXG1     GM5     5      0        72.0000
+ 6      Nda     1       DXG1     GM6     6      0        72.0000
+ 7       P5     1       DXG1     GM7     7      0        72.0000
+ 8      SP1     1       DXG1     GM8     8      0        72.0000
+ 9      SP1     1       DXG1     GM9     9      0        72.0000
+10      SP1     1       DXG1     GM10   10      0        72.0000
+11      SP1     1       DXG1     GM11   11      0        72.0000
+12       P4     1       DXG1     GM12   12      0        72.0000
+13       Qa     1       DXG1     GM13   13     -1        72.0000
+14       P1     1       DXG1     GM14   14      0        72.0000
+15       P1     1       DXG1     GM15   15      0        72.0000
+16       P4     1       DXG1     GM16   16      0        72.0000
+17       P5     1       DXG1     GM17   17      0        72.0000
+; Tail part
+18       P1     1       DXG1     AM1    18      0        72.0000
+19       P5     1       DXG1     AM2    19      0        72.0000
+20       C3     1       DXG1     T1A    20      0        72.0000
+21       C1     1       DXG1     C2A    21      0        72.0000
+22       C1     1       DXG1     C3A    22      0        72.0000
+23       C1     1       DXG1     C4A    23      0        72.0000
+24       C1     1       DXG1     C5A    24      0        72.0000
+25       C1     1       DXG1     C1B    25      0        72.0000
+26       C1     1       DXG1     C2B    26      0        72.0000
+27       C1     1       DXG1     C3B    27      0        72.0000
+28       C1     1       DXG1     C4B    28      0        72.0000
+29       C1     1       DXG1     C5B    29      0        72.0000
+30       C1     1       DXG1     C6B    30      0        72.0000
+
+[ bonds ]
+; i j 	funct 	length 	force.c.
+#ifdef FLEXIBLE
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.57   35000
+  9  10   1  0.30   40000
+ 10  11   1  0.395  40000
+ 10  12   1  0.270  40000
+ 13  14   1  0.35   35000
+ 13  15   1  0.381  35000
+ 14  15   1  0.364  40000
+#endif
+  1   2   1  0.36   17500 ; do not constrain (underlying mapped distribution is bimodal) 
+  1   3   1  0.31   20000 ; do not constrain (underlying mapped distribution is bimodal)
+  2   3   1  0.315   8500 ; do not constrain (underlying mapped distribution is multimodal)
+  3   4   1  0.368  15000 ; do not constrain (underlying mapped distribution is bimodal)  
+  5   6   1  0.307  25000 ; do not constrain (underlying mapped distribution is bimodal)
+  6   7   1  0.36   11000
+  6  13   1  0.376  12500
+  7   9   1  0.364  17500
+  8   9   1  0.37   10000
+ 11  12   1  0.32   12000 ; do not constrain (underlying mapped distribution is bimodal) 
+ 14  16   1  0.34   11500 ; do not constrain (underlying mapped distribution is bimodal) 
+ 15  17   1  0.275   8500 
+; Tail part 
+ 1 18   1  0.57   20000 ; Head linked to AM1
+18 19   1  0.27   20000 ; Based on Cesar GM1 and GCER
+18 20   1  0.29   20000 ; Based on Cesar GM1 and GCER
+20 21   1  0.47   1250
+21 22   1  0.47   1250
+22 23   1  0.47   1250
+23 24   1  0.47   1250
+19 25   1  0.37   20000 ; Based on Cesar GM1 and GCER
+25 26   1  0.47   1250
+26 27   1  0.47   1250
+27 28   1  0.47   1250
+28 29   1  0.47   1250
+29 30   1  0.47   1250
+
+[ angles ]
+; i j k 	funct 	angle 	force.c.
+  2   3   4   2    85.50  320.00
+  3   4   5   2    67.00  550.00
+  4   6   7   2   102.00  350.00
+  4   6  13   2    97.50  295.00
+  6   7   8   2    57.00  700.00
+  6   7   9   2    90.00  670.00
+  6  13  15   2    71.00  700.00
+  7   6  13   2    68.50  880.00
+  7   9  10   2    76.00  290.00
+  9  10  11   2    69.00  630.00
+ 13  15  17   2    96.00  210.00
+ 15  14  16   2    61.00  300.00
+; Orient Head
+3   1  18   2    50.00  200.00  
+; Tail part
+1  18  19   2    85.00   25.00  ; Based on Cesar GM1 and GCER
+1  18  20   2   150.00   30.00  ; Based on Cesar GM1 and GCER
+18 19  25   2   129.00  200.00  ; Based on Cesar GM1 and GCER
+18 20  21   2   180.00   25.00  ; Based on Cesar GM1 and GCER
+20 21  22   2   180.00   25.00
+21 22  23   2   180.00   25.00
+22 23  24   2   180.00   25.00
+19 25  26   2   180.00   25.00
+25 26  27   2   180.00   25.00 
+26 27  28   2   180.00   25.00
+27 28  29   2   180.00   25.00
+28 29  30   2   180.00   25.00
+
+[ dihedrals ]
+  1   2   3   4   2  -160.0  30.0
+  2   3   4   5   2  -149.0  16.0
+  3   4   5   6   2  -150.0  55.0
+  4   6   7   8   2   157.0 180.0
+  4   6  13  15   2  -124.0  60.0
+  5   4   6   7   2  -126.0  90.0
+  5   4   6  13   2   154.0 115.0
+  6   7   8   9   2   150.0  32.0
+  6  13  15  14   2   107.5 265.0
+  7   9  10  11   2  -156.0  23.0
+  8   7   9  10   2   179.0 115.0
+  9  10  11  12   2  -163.0  80.0
+ 13  15  14  16   2   137.0  80.0
+ 14  13  15  17   2   162.0  50.0
+ 3  1 18 19 1  125.0 10.00 1 ; ; Orient head with respect to tail 
+
+#ifndef FLEXIBLE
+[ constraints ]
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.57   35000
+  9  10   1  0.30   40000
+ 10  11   1  0.394  40000
+ 10  12   1  0.268  40000
+ 13  14   1  0.347  35000
+ 13  15   1  0.381  35000
+ 14  15   1  0.364  40000
+#endif
+
+[ exclusions ]
+  2  4
+  3  5
+  4  7
+  5  8
+  6  8
+  6  9
+  6 15
+  7 10
+  7 13
+  9 11
+  9 12
+ 15 16
+
+; MONOSIALOTETRAHEXOSYLGANGLIOSIDE (GM1)
+; with a PN tail (First a Palmitic acid or Stearoyl tail then a Nervonic acid tail) therfore called PNG1 (tail string would be -altail "TCC CCCDCC")
+; 
+; Head based on Cesar Lopez's GM1 from martini_v2.0_glycolipids.itp with bonded parameters modified by Manuel Melo for
+;   increased stability and faithfulness to AA.
+; Note:  GM1 currently runs at a 20fs time step. It also seems to be stable at 40fs, with no ill effect on the bonded distributions,
+;        although GROMACS will complain that bonds with k over 10000 have oscillation periods under 10x the time step.
+; Note2: Most bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;        Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+; Note3: Seven of the bonds (flagged below) represent an average of an underlying multimodal distribution of the mapped AA,
+;        trajectory. These bonds should not be constrained since the average distance might correspond to a weakly populated position.
+;
+
+[ moleculetype ]
+; molname      nrexcl
+  PNG1         1
+
+[ atoms ]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge   mass
+ 1      SP1     1       PNG1     GM1     1      0        72.0000
+ 2      SP1     1       PNG1     GM2     2      0        72.0000
+ 3      SP1     1       PNG1     GM3     3      0        72.0000
+ 4      SP1     1       PNG1     GM4     4      0        72.0000
+ 5      SP1     1       PNG1     GM5     5      0        72.0000
+ 6      Nda     1       PNG1     GM6     6      0        72.0000
+ 7       P5     1       PNG1     GM7     7      0        72.0000
+ 8      SP1     1       PNG1     GM8     8      0        72.0000
+ 9      SP1     1       PNG1     GM9     9      0        72.0000
+10      SP1     1       PNG1     GM10   10      0        72.0000
+11      SP1     1       PNG1     GM11   11      0        72.0000
+12       P4     1       PNG1     GM12   12      0        72.0000
+13       Qa     1       PNG1     GM13   13     -1        72.0000
+14       P1     1       PNG1     GM14   14      0        72.0000
+15       P1     1       PNG1     GM15   15      0        72.0000
+16       P4     1       PNG1     GM16   16      0        72.0000
+17       P5     1       PNG1     GM17   17      0        72.0000
+; Tail part
+18       P1     1       PNG1     AM1    18      0        72.0000
+19       P5     1       PNG1     AM2    19      0        72.0000
+20       C3     1       PNG1     T1A    20      0        72.0000
+21       C1     1       PNG1     C2A    21      0        72.0000
+22       C1     1       PNG1     C3A    22      0        72.0000
+23       C1     1       PNG1     C1B    23      0        72.0000
+24       C1     1       PNG1     C2B    24      0        72.0000
+25       C1     1       PNG1     C3B    25      0        72.0000
+26       C3     1       PNG1     D4B    26      0        72.0000
+27       C1     1       PNG1     C5B    27      0        72.0000
+28       C1     1       PNG1     C6B    28      0        72.0000
+
+[ bonds ]
+; i j 	funct 	length 	force.c.
+#ifdef FLEXIBLE
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.57   35000
+  9  10   1  0.30   40000
+ 10  11   1  0.395  40000
+ 10  12   1  0.270  40000
+ 13  14   1  0.35   35000
+ 13  15   1  0.381  35000
+ 14  15   1  0.364  40000
+#endif
+  1   2   1  0.36   17500 ; do not constrain (underlying mapped distribution is bimodal) 
+  1   3   1  0.31   20000 ; do not constrain (underlying mapped distribution is bimodal)
+  2   3   1  0.315   8500 ; do not constrain (underlying mapped distribution is multimodal)
+  3   4   1  0.368  15000 ; do not constrain (underlying mapped distribution is bimodal)  
+  5   6   1  0.307  25000 ; do not constrain (underlying mapped distribution is bimodal)
+  6   7   1  0.36   11000
+  6  13   1  0.376  12500
+  7   9   1  0.364  17500
+  8   9   1  0.37   10000
+ 11  12   1  0.32   12000 ; do not constrain (underlying mapped distribution is bimodal) 
+ 14  16   1  0.34   11500 ; do not constrain (underlying mapped distribution is bimodal) 
+ 15  17   1  0.275   8500 
+; Tail part 
+ 1 18   1  0.57   20000 ; Head linked to AM1
+18 19   1  0.27   20000 ; Based on Cesar GM1 and GCER
+18 20   1  0.29   20000 ; Based on Cesar GM1 and GCER
+20 21   1  0.47   1250
+21 22   1  0.47   1250
+19 23   1  0.37   20000 ; Based on Cesar GM1 and GCER
+23 24   1  0.47   1250
+24 25   1  0.47   1250
+25 26   1  0.47   1250
+26 27   1  0.47   1250
+27 28   1  0.47   1250
+
+[ angles ]
+; i j k 	funct 	angle 	force.c.
+  2   3   4   2    85.50  320.00
+  3   4   5   2    67.00  550.00
+  4   6   7   2   102.00  350.00
+  4   6  13   2    97.50  295.00
+  6   7   8   2    57.00  700.00
+  6   7   9   2    90.00  670.00
+  6  13  15   2    71.00  700.00
+  7   6  13   2    68.50  880.00
+  7   9  10   2    76.00  290.00
+  9  10  11   2    69.00  630.00
+ 13  15  17   2    96.00  210.00
+ 15  14  16   2    61.00  300.00
+; Orient Head
+3   1  18   2   50.00    200.00 
+; Tail part
+1  18  19   2    85.00   25.00  ; Based on Cesar GM1 and GCER
+1  18  20   2   150.00   30.00  ; Based on Cesar GM1 and GCER
+18 19  23   2   129.00  200.00  ; Based on Cesar GM1 and GCER
+18 20  21   2   180.00   25.00  ; Based on Cesar GM1 and GCER
+20 21  22   2   180.00   25.00
+19 23  24   2   180.00   25.00
+23 24  25   2   180.00   25.00 
+24 25  26   2   180.00   25.00
+25 26  27   2   120.00   45.00
+26 27  28   2   180.00   25.00
+
+[ dihedrals ]
+  1   2   3   4   2  -160.0  30.0
+  2   3   4   5   2  -149.0  16.0
+  3   4   5   6   2  -150.0  55.0
+  4   6   7   8   2   157.0 180.0
+  4   6  13  15   2  -124.0  60.0
+  5   4   6   7   2  -126.0  90.0
+  5   4   6  13   2   154.0 115.0
+  6   7   8   9   2   150.0  32.0
+  6  13  15  14   2   107.5 265.0
+  7   9  10  11   2  -156.0  23.0
+  8   7   9  10   2   179.0 115.0
+  9  10  11  12   2  -163.0  80.0
+ 13  15  14  16   2   137.0  80.0
+ 14  13  15  17   2   162.0  50.0
+ 3  1 18 19 1  125.0 10.00 1 ; Orient head with respect to tail 
+
+#ifndef FLEXIBLE
+[ constraints ]
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.57   35000
+  9  10   1  0.30   40000
+ 10  11   1  0.394  40000
+ 10  12   1  0.268  40000
+ 13  14   1  0.347  35000
+ 13  15   1  0.381  35000
+ 14  15   1  0.364  40000
+#endif
+
+[ exclusions ]
+  2  4
+  3  5
+  4  7
+  5  8
+  6  8
+  6  9
+  6 15
+  7 10
+  7 13
+  9 11
+  9 12
+ 15 16
+
+; MONOSIALOTETRAHEXOSYLGANGLIOSIDE (GM1)
+; with a XN tail (First a Lignoceroyl or Hexacosanoyl tail then a Nervonic acid tail) therfore called XNG1 (tail string would be -altail "TCCCC CCCDCC")
+; 
+; Head based on Cesar Lopez's GM1 from martini_v2.0_glycolipids.itp with bonded parameters modified by Manuel Melo for
+;   increased stability and faithfulness to AA.
+; Note:  GM1 currently runs at a 20fs time step. It also seems to be stable at 40fs, with no ill effect on the bonded distributions,
+;        although GROMACS will complain that bonds with k over 10000 have oscillation periods under 10x the time step.
+; Note2: Most bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;        Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+; Note3: Seven of the bonds (flagged below) represent an average of an underlying multimodal distribution of the mapped AA,
+;        trajectory. These bonds should not be constrained since the average distance might correspond to a weakly populated position.
+;
+
+[ moleculetype ]
+; molname      nrexcl
+  XNG1         1
+
+[ atoms ]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge   mass
+ 1      SP1     1       XNG1     GM1     1      0        72.0000
+ 2      SP1     1       XNG1     GM2     2      0        72.0000
+ 3      SP1     1       XNG1     GM3     3      0        72.0000
+ 4      SP1     1       XNG1     GM4     4      0        72.0000
+ 5      SP1     1       XNG1     GM5     5      0        72.0000
+ 6      Nda     1       XNG1     GM6     6      0        72.0000
+ 7       P5     1       XNG1     GM7     7      0        72.0000
+ 8      SP1     1       XNG1     GM8     8      0        72.0000
+ 9      SP1     1       XNG1     GM9     9      0        72.0000
+10      SP1     1       XNG1     GM10   10      0        72.0000
+11      SP1     1       XNG1     GM11   11      0        72.0000
+12       P4     1       XNG1     GM12   12      0        72.0000
+13       Qa     1       XNG1     GM13   13     -1        72.0000
+14       P1     1       XNG1     GM14   14      0        72.0000
+15       P1     1       XNG1     GM15   15      0        72.0000
+16       P4     1       XNG1     GM16   16      0        72.0000
+17       P5     1       XNG1     GM17   17      0        72.0000
+; Tail part
+18       P1     1       XNG1     AM1    18      0        72.0000
+19       P5     1       XNG1     AM2    19      0        72.0000
+20       C3     1       XNG1     T1A    20      0        72.0000
+21       C1     1       XNG1     C2A    21      0        72.0000
+22       C1     1       XNG1     C3A    22      0        72.0000
+23       C1     1       XNG1     C4A    23      0        72.0000
+24       C1     1       XNG1     C5A    24      0        72.0000
+25       C1     1       XNG1     C1B    25      0        72.0000
+26       C1     1       XNG1     C2B    26      0        72.0000
+27       C1     1       XNG1     C3B    27      0        72.0000
+28       C3     1       XNG1     D4B    28      0        72.0000
+29       C1     1       XNG1     C5B    29      0        72.0000
+30       C1     1       XNG1     C6B    30      0        72.0000
+
+[ bonds ]
+; i j 	funct 	length 	force.c.
+#ifdef FLEXIBLE
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.57   35000
+  9  10   1  0.30   40000
+ 10  11   1  0.395  40000
+ 10  12   1  0.270  40000
+ 13  14   1  0.35   35000
+ 13  15   1  0.381  35000
+ 14  15   1  0.364  40000
+#endif
+  1   2   1  0.36   17500 ; do not constrain (underlying mapped distribution is bimodal) 
+  1   3   1  0.31   20000 ; do not constrain (underlying mapped distribution is bimodal)
+  2   3   1  0.315   8500 ; do not constrain (underlying mapped distribution is multimodal)
+  3   4   1  0.368  15000 ; do not constrain (underlying mapped distribution is bimodal)  
+  5   6   1  0.307  25000 ; do not constrain (underlying mapped distribution is bimodal)
+  6   7   1  0.36   11000
+  6  13   1  0.376  12500
+  7   9   1  0.364  17500
+  8   9   1  0.37   10000
+ 11  12   1  0.32   12000 ; do not constrain (underlying mapped distribution is bimodal) 
+ 14  16   1  0.34   11500 ; do not constrain (underlying mapped distribution is bimodal) 
+ 15  17   1  0.275   8500 
+; Tail part
+ 1 18   1  0.57   20000 ; Head linked to AM1
+18 19   1  0.27   20000 ; Based on Cesar GM1 and GCER
+18 20   1  0.29   20000 ; Based on Cesar GM1 and GCER
+20 21   1  0.47   1250
+21 22   1  0.47   1250
+22 23   1  0.47   1250
+23 24   1  0.47   1250
+19 25   1  0.37   20000 ; Based on Cesar GM1 and GCER
+25 26   1  0.47   1250
+26 27   1  0.47   1250
+27 28   1  0.47   1250
+28 29   1  0.47   1250
+29 30   1  0.47   1250
+
+[ angles ]
+; i j k 	funct 	angle 	force.c.
+  2   3   4   2    85.50  320.00
+  3   4   5   2    67.00  550.00
+  4   6   7   2   102.00  350.00
+  4   6  13   2    97.50  295.00
+  6   7   8   2    57.00  700.00
+  6   7   9   2    90.00  670.00
+  6  13  15   2    71.00  700.00
+  7   6  13   2    68.50  880.00
+  7   9  10   2    76.00  290.00
+  9  10  11   2    69.00  630.00
+ 13  15  17   2    96.00  210.00
+ 15  14  16   2    61.00  300.00
+; Orient Head
+3   1  18   2    50.00  200.00  
+; Tail part
+1  18  19   2    85.00   25.00  ; Based on Cesar GM1 and GCER
+1  18  20   2   150.00   30.00  ; Based on Cesar GM1 and GCER
+18 19  25   2   129.00  200.00  ; Based on Cesar GM1 and GCER
+18 20  21   2   180.00   25.00  ; Based on Cesar GM1 and GCER
+20 21  22   2   180.00   25.00
+21 22  23   2   180.00   25.00
+22 23  24   2   180.00   25.00
+19 25  26   2   180.00   25.00
+25 26  27   2   180.00   25.00 
+26 27  28   2   180.00   25.00
+27 28  29   2   120.00   45.00
+28 29  30   2   180.00   25.00
+
+[ dihedrals ]
+  1   2   3   4   2  -160.0  30.0
+  2   3   4   5   2  -149.0  16.0
+  3   4   5   6   2  -150.0  55.0
+  4   6   7   8   2   157.0 180.0
+  4   6  13  15   2  -124.0  60.0
+  5   4   6   7   2  -126.0  90.0
+  5   4   6  13   2   154.0 115.0
+  6   7   8   9   2   150.0  32.0
+  6  13  15  14   2   107.5 265.0
+  7   9  10  11   2  -156.0  23.0
+  8   7   9  10   2   179.0 115.0
+  9  10  11  12   2  -163.0  80.0
+ 13  15  14  16   2   137.0  80.0
+ 14  13  15  17   2   162.0  50.0
+ 3  1 18 19 1  125.0 10.00 1 ; Orient head with respect to tail 
+
+#ifndef FLEXIBLE
+[ constraints ]
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.57   35000
+  9  10   1  0.30   40000
+ 10  11   1  0.394  40000
+ 10  12   1  0.268  40000
+ 13  14   1  0.347  35000
+ 13  15   1  0.381  35000
+ 14  15   1  0.364  40000
+#endif
+
+[ exclusions ]
+  2  4
+  3  5
+  4  7
+  5  8
+  6  8
+  6  9
+  6 15
+  7 10
+  7 13
+  9 11
+  9 12
+ 15 16
+
+; monosialodihexosylganglioside (GM3) 
+; with a DP tail (x2 palmitoyl or stearoyl tails) therfore called DPG3 (tail string would be -altail "TCC CCCC")
+;
+; Head based on Cesar Lopez's GM1 from martini_v2.0_glycolipids.itp with bonded parameters modified by Manuel Melo for
+;   increased stability and faithfulness to AA. Top two galactose groups where cut off and the branching bead in GM1 (Nda) was changed to an SP1 type. 
+; Note:  GM3 currently runs at a 20fs time step. It also seems to be stable at 40fs, with no ill effect on the bonded distributions,
+;        although GROMACS will complain that bonds with k over 10000 have oscillation periods under 10x the time step.
+; Note2: Most bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;        Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+; Note3: Seven of the bonds (flagged below) represent an average of an underlying multimodal distribution of the mapped AA,
+;        trajectory. These bonds should not be constrained since the average distance might correspond to a weakly populated position.
+
+[ moleculetype ]
+; molname      nrexcl
+  DPG3         1
+
+[ atoms ]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge   mass
+ 1      SP1     1       DPG3     GM1     1      0        72.0000
+ 2      SP1     1       DPG3     GM2     2      0        72.0000
+ 3      SP1     1       DPG3     GM3     3      0        72.0000
+ 4      SP1     1       DPG3     GM4     4      0        72.0000
+ 5      SP1     1       DPG3     GM5     5      0        72.0000
+ 6      SP1     1       DPG3     GM6     6      0        72.0000 ; Changed from Nda to P1 - as it's not a branching bead any more 
+ 7       Qa     1       DPG3     GM13   13     -1        72.0000
+ 8       P1     1       DPG3     GM14   14      0        72.0000
+ 9       P1     1       DPG3     GM15   15      0        72.0000
+10       P4     1       DPG3     GM16   16      0        72.0000
+11       P5     1       DPG3     GM17   17      0        72.0000
+; Tail part
+12       P1     1       DPG3     AM1    18      0        72.0000
+13       P5     1       DPG3     AM2    19      0        72.0000
+14       C3     1       DPG3     T1A    20      0        72.0000
+15       C1     1       DPG3     C2A    21      0        72.0000
+16       C1     1       DPG3     C3A    22      0        72.0000
+17       C1     1       DPG3     C1B    23      0        72.0000
+18       C1     1       DPG3     C2B    24      0        72.0000
+19       C1     1       DPG3     C3B    25      0        72.0000
+20       C1     1       DPG3     C4B    26      0        72.0000
+
+[ bonds ]
+; i j 	funct 	length 	force.c.
+#ifdef FLEXIBLE
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.35   35000
+  7   9   1  0.381  35000
+  8   9   1  0.364  40000
+#endif
+  1   2   1  0.36   17500 ; do not constrain (underlying mapped distribution is bimodal) 
+  1   3   1  0.31   20000 ; do not constrain (underlying mapped distribution is bimodal)
+  2   3   1  0.315   8500 ; do not constrain (underlying mapped distribution is multimodal)
+  3   4   1  0.368  15000 ; do not constrain (underlying mapped distribution is bimodal)  
+  5   6   1  0.307  25000 ; do not constrain (underlying mapped distribution is bimodal)
+  6   7   1  0.376  12500
+  8  10   1  0.34   11500 ; do not constrain (underlying mapped distribution is bimodal) 
+  9  11   1  0.275   8500 
+; Tail part 
+  1 12   1  0.57   20000 ; Head linked to AM1
+ 12 13   1  0.27   20000 ; Based on Cesar GM1 and GCER
+ 12 14   1  0.29   20000 ; Based on Cesar GM1 and GCER
+ 14 15   1  0.47   1250 
+ 15 16   1  0.47   1250
+ 13 17   1  0.37   20000 ; Based on Cesar GM1 and GCER
+ 17 18   1  0.47   1250
+ 18 19   1  0.47   1250
+ 19 20   1  0.47   1250
+
+[ angles ]
+; i j k 	funct 	angle 	force.c.
+  2   3   4   2    85.50  320.00
+  3   4   5   2    67.00  550.00
+  4   6   7   2    97.50  295.00
+  6   7   9   2    71.00  700.00
+  7   9  11   2    96.00  210.00
+  9   8  10   2    61.00  300.00
+; Orient Head
+  3   1  12   2    50.00  200.00  
+; Tail part
+  1  12  13   2    85.00   25.00  ; Based on Cesar GM1 and GCER
+  1  12  14   2   150.00   30.00  ; Based on Cesar GM1 and GCER
+ 12  13  17   2   129.00  200.00  ; Based on Cesar GM1 and GCER
+ 12  14  15   2   180.00   25.00  ; Based on Cesar GM1 and GCER
+ 14  15  16   2   180.00   25.00
+ 13  17  18   2   180.00   25.00
+ 17  18  19   2   180.00   25.00 
+ 18  19  20   2   180.00   25.00
+
+[ dihedrals ]
+  1   2   3   4   2  -160.0  30.0
+  2   3   4   5   2  -149.0  16.0
+  3   4   5   6   2  -150.0  55.0
+  4   6   7   9   2  -124.0  60.0
+  5   4   6   7   2   154.0 115.0
+  6   7   9   8   2   107.5 265.0
+  7   9   8  10   2   137.0  80.0
+  8   7   9  11   2   162.0  50.0
+  3   1  12  13   1   125.0  10.00 1 ; Orient head with respect to tail 
+
+#ifndef FLEXIBLE
+[ constraints ]
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.35   35000
+  7   9   1  0.381  35000
+  8   9   1  0.364  40000
+#endif
+
+[ exclusions ]
+  2  4
+  3  5
+  6  9
+  9 10
+
+; monosialodihexosylganglioside (GM3) 
+; with a DX tail (x2 Lignoceroyl or Hexacosanoyl tail) therfore called DXG3 (tail string would be -altail "TCCCC CCCCCC")
+; 
+; Head based on Cesar Lopez's GM1 from martini_v2.0_glycolipids.itp with bonded parameters modified by Manuel Melo for
+;   increased stability and faithfulness to AA. Top two galactose groups where cut off and the branching bead in GM1 (Nda) was changed to an SP1 type. 
+; Note:  GM3 currently runs at a 20fs time step. It also seems to be stable at 40fs, with no ill effect on the bonded distributions,
+;        although GROMACS will complain that bonds with k over 10000 have oscillation periods under 10x the time step.
+; Note2: Most bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;        Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+; Note3: Seven of the bonds (flagged below) represent an average of an underlying multimodal distribution of the mapped AA,
+;        trajectory. These bonds should not be constrained since the average distance might correspond to a weakly populated position.
+
+[ moleculetype ]
+; molname      nrexcl
+  DXG3         1
+
+[ atoms ]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge   mass
+ 1      SP1     1       DXG3     GM1     1      0        72.0000
+ 2      SP1     1       DXG3     GM2     2      0        72.0000
+ 3      SP1     1       DXG3     GM3     3      0        72.0000
+ 4      SP1     1       DXG3     GM4     4      0        72.0000
+ 5      SP1     1       DXG3     GM5     5      0        72.0000
+ 6      SP1     1       DXG3     GM6     6      0        72.0000 ; Changed from Nda to P1 - as it's not a branching bead any more
+ 7       Qa     1       DXG3     GM13   13     -1        72.0000
+ 8       P1     1       DXG3     GM14   14      0        72.0000
+ 9       P1     1       DXG3     GM15   15      0        72.0000
+10       P4     1       DXG3     GM16   16      0        72.0000
+11       P5     1       DXG3     GM17   17      0        72.0000
+; Tail part
+12       P1     1       DXG3     AM1    18      0        72.0000
+13       P5     1       DXG3     AM2    19      0        72.0000
+14       C3     1       DXG3     T1A    20      0        72.0000
+15       C1     1       DXG3     C2A    21      0        72.0000
+16       C1     1       DXG3     C3A    22      0        72.0000
+17       C1     1       DXG3     C4A    23      0        72.0000
+18       C1     1       DXG3     C5A    24      0        72.0000
+19       C1     1       DXG3     C1B    25      0        72.0000
+20       C1     1       DXG3     C2B    26      0        72.0000
+21       C1     1       DXG3     C3B    27      0        72.0000
+22       C1     1       DXG3     C4B    28      0        72.0000
+23       C1     1       DXG3     C5B    29      0        72.0000
+24       C1     1       DXG3     C6B    30      0        72.0000
+
+[ bonds ]
+; i j 	funct 	length 	force.c.
+#ifdef FLEXIBLE
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.35   35000
+  7   9   1  0.381  35000
+  8   9   1  0.364  40000
+#endif
+  1   2   1  0.36   17500 ; do not constrain (underlying mapped distribution is bimodal) 
+  1   3   1  0.31   20000 ; do not constrain (underlying mapped distribution is bimodal)
+  2   3   1  0.315   8500 ; do not constrain (underlying mapped distribution is multimodal)
+  3   4   1  0.368  15000 ; do not constrain (underlying mapped distribution is bimodal)  
+  5   6   1  0.307  25000 ; do not constrain (underlying mapped distribution is bimodal)
+  6   7   1  0.376  12500
+  8  10   1  0.34   11500 ; do not constrain (underlying mapped distribution is bimodal) 
+  9  11   1  0.275   8500 
+; Tail part 
+  1 12   1  0.57   20000 ; Head linked to AM1
+ 12 13   1  0.27   20000 ; Based on Cesar GM1 and GCER
+ 12 14   1  0.29   20000 ; Based on Cesar GM1 and GCER
+ 14 15   1  0.47   1250 
+ 15 16   1  0.47   1250
+ 16 17   1  0.47   1250
+ 17 18   1  0.47   1250
+ 13 19   1  0.37   20000 ; Based on Cesar GM1 and GCER
+ 19 20   1  0.47   1250
+ 20 21   1  0.47   1250
+ 21 22   1  0.47   1250
+ 22 23   1  0.47   1250
+ 23 24   1  0.47   1250
+
+[ angles ]
+; i j k 	funct 	angle 	force.c.
+  2   3   4   2    85.50  320.00
+  3   4   5   2    67.00  550.00
+  4   6   7   2    97.50  295.00
+  6   7   9   2    71.00  700.00
+  7   9  11   2    96.00  210.00
+  9   8  10   2    61.00  300.00
+; Orient Head
+  3   1  12   2    50.00  200.00  
+; Tail part
+  1  12  13   2    85.00   25.00  ; Based on Cesar GM1 and GCER
+  1  12  14   2   150.00   30.00  ; Based on Cesar GM1 and GCER
+ 12  13  19   2   129.00  200.00  ; Based on Cesar GM1 and GCER
+ 12  14  15   2   180.00   25.00  ; Based on Cesar GM1 and GCER
+ 14  15  16   2   180.00   25.00
+ 15  16  17   2   180.00   25.00
+ 16  17  18   2   180.00   25.00
+ 13  19  20   2   180.00   25.00
+ 19  20  21   2   180.00   25.00 
+ 20  21  22   2   180.00   25.00
+ 21  22  23   2   180.00   25.00
+ 22  23  24   2   180.00   25.00
+
+[ dihedrals ]
+  1   2   3   4   2  -160.0  30.0
+  2   3   4   5   2  -149.0  16.0
+  3   4   5   6   2  -150.0  55.0
+  4   6   7   9   2  -124.0  60.0
+  5   4   6   7   2   154.0 115.0
+  6   7   9   8   2   107.5 265.0
+  7   9   8  10   2   137.0  80.0
+  8   7   9  11   2   162.0  50.0
+  3   1  12  13   1   125.0  10.00 1 ; Orient head with respect to tail 
+
+#ifndef FLEXIBLE
+[ constraints ]
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.35   35000
+  7   9   1  0.381  35000
+  8   9   1  0.364  40000
+#endif
+
+[ exclusions ]
+  2  4
+  3  5
+  6  9
+  9 10
+
+; monosialodihexosylganglioside (GM3) 
+; with a PN tail (First a Palmitic acid or Stearoyl tail then a Nervonic acid tail) therfore called PNG1 (tail string would be -altail "TCC CCCDCC")
+; 
+; Head based on Cesar Lopez's GM1 from martini_v2.0_glycolipids.itp with bonded parameters modified by Manuel Melo for
+;   increased stability and faithfulness to AA. Top two galactose groups where cut off and the branching bead in GM1 (Nda) was changed to an SP1 type. 
+; Note:  GM3 currently runs at a 20fs time step. It also seems to be stable at 40fs, with no ill effect on the bonded distributions,
+;        although GROMACS will complain that bonds with k over 10000 have oscillation periods under 10x the time step.
+; Note2: Most bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;        Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+; Note3: Seven of the bonds (flagged below) represent an average of an underlying multimodal distribution of the mapped AA,
+;        trajectory. These bonds should not be constrained since the average distance might correspond to a weakly populated position.
+
+[ moleculetype ]
+; molname      nrexcl
+  PNG3         1
+
+[ atoms ]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge   mass
+ 1      SP1     1       PNG3     GM1     1      0        72.0000
+ 2      SP1     1       PNG3     GM2     2      0        72.0000
+ 3      SP1     1       PNG3     GM3     3      0        72.0000
+ 4      SP1     1       PNG3     GM4     4      0        72.0000
+ 5      SP1     1       PNG3     GM5     5      0        72.0000
+ 6      SP1     1       PNG3     GM6     6      0        72.0000 ; Changed from Nda to P1 - as it's not a branching bead any more
+ 7       Qa     1       PNG3     GM13   13     -1        72.0000
+ 8       P1     1       PNG3     GM14   14      0        72.0000
+ 9       P1     1       PNG3     GM15   15      0        72.0000
+10       P4     1       PNG3     GM16   16      0        72.0000
+11       P5     1       PNG3     GM17   17      0        72.0000
+; Tail part
+12       P1     1       PNG3     AM1    18      0        72.0000
+13       P5     1       PNG3     AM2    19      0        72.0000
+14       C3     1       PNG3     T1A    20      0        72.0000
+15       C1     1       PNG3     C2A    21      0        72.0000
+16       C1     1       PNG3     C3A    22      0        72.0000
+17       C1     1       PNG3     C1B    25      0        72.0000
+18       C1     1       PNG3     C2B    26      0        72.0000
+19       C1     1       PNG3     C3B    27      0        72.0000
+20       C3     1       PNG3     D4B    26      0        72.0000
+21       C1     1       PNG3     C5B    29      0        72.0000
+22       C1     1       PNG3     C6B    30      0        72.0000
+
+[ bonds ]
+; i j 	funct 	length 	force.c.
+#ifdef FLEXIBLE
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.35   35000
+  7   9   1  0.381  35000
+  8   9   1  0.364  40000
+#endif
+  1   2   1  0.36   17500 ; do not constrain (underlying mapped distribution is bimodal) 
+  1   3   1  0.31   20000 ; do not constrain (underlying mapped distribution is bimodal)
+  2   3   1  0.315   8500 ; do not constrain (underlying mapped distribution is multimodal)
+  3   4   1  0.368  15000 ; do not constrain (underlying mapped distribution is bimodal)  
+  5   6   1  0.307  25000 ; do not constrain (underlying mapped distribution is bimodal)
+  6   7   1  0.376  12500
+  8  10   1  0.34   11500 ; do not constrain (underlying mapped distribution is bimodal) 
+  9  11   1  0.275   8500 
+; Tail part 
+  1 12   1  0.57   20000 ; Head linked to AM1
+ 12 13   1  0.27   20000 ; Based on Cesar GM1 and GCER
+ 12 14   1  0.29   20000 ; Based on Cesar GM1 and GCER
+ 14 15   1  0.47   1250 
+ 15 16   1  0.47   1250
+ 13 17   1  0.37   20000 ; Based on Cesar GM1 and GCER
+ 17 18   1  0.47   1250
+ 18 19   1  0.47   1250
+ 19 20   1  0.47   1250
+ 20 21   1  0.47   1250
+ 21 22   1  0.47   1250
+
+[ angles ]
+; i j k 	funct 	angle 	force.c.
+  2   3   4   2    85.50  320.00
+  3   4   5   2    67.00  550.00
+  4   6   7   2    97.50  295.00
+  6   7   9   2    71.00  700.00
+  7   9  11   2    96.00  210.00
+  9   8  10   2    61.00  300.00
+; Orient Head
+  3   1  12   2    50.00  200.00  
+; Tail part
+  1  12  13   2    85.00   25.00  ; Based on Cesar GM1 and GCER
+  1  12  14   2   150.00   30.00  ; Based on Cesar GM1 and GCER
+ 12  13  17   2   129.00  200.00  ; Based on Cesar GM1 and GCER
+ 12  14  15   2   180.00   25.00  ; Based on Cesar GM1 and GCER
+ 14  15  16   2   180.00   25.00
+ 13  17  18   2   180.00   25.00
+ 17  18  19   2   180.00   25.00 
+ 18  19  20   2   180.00   25.00
+ 19  20  21   2   120.00   45.00
+ 20  21  22   2   180.00   25.00
+
+[ dihedrals ]
+  1   2   3   4   2  -160.0  30.0
+  2   3   4   5   2  -149.0  16.0
+  3   4   5   6   2  -150.0  55.0
+  4   6   7   9   2  -124.0  60.0
+  5   4   6   7   2   154.0 115.0
+  6   7   9   8   2   107.5 265.0
+  7   9   8  10   2   137.0  80.0
+  8   7   9  11   2   162.0  50.0
+  3   1  12  13   1   125.0  10.00 1 ; Orient head with respect to tail 
+
+#ifndef FLEXIBLE
+[ constraints ]
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.35   35000
+  7   9   1  0.381  35000
+  8   9   1  0.364  40000
+#endif
+
+[ exclusions ]
+  2  4
+  3  5
+  6  9
+  9 10
+
+; monosialodihexosylganglioside (GM3) 
+; with a XN tail (First a Lignoceroyl or Hexacosanoyl tail then a Nervonic acid tail) therfore called XNG1 (tail string would be -altail "TCCCC CCCDCC")
+; 
+; Head based on Cesar Lopez's GM1 from martini_v2.0_glycolipids.itp with bonded parameters modified by Manuel Melo for
+;   increased stability and faithfulness to AA. Top two galactose groups where cut off and the branching bead in GM1 (Nda) was changed to an SP1 type. 
+; Note:  GM3 currently runs at a 20fs time step. It also seems to be stable at 40fs, with no ill effect on the bonded distributions,
+;        although GROMACS will complain that bonds with k over 10000 have oscillation periods under 10x the time step.
+; Note2: Most bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;        Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+; Note3: Seven of the bonds (flagged below) represent an average of an underlying multimodal distribution of the mapped AA,
+;        trajectory. These bonds should not be constrained since the average distance might correspond to a weakly populated position.
+
+[ moleculetype ]
+; molname      nrexcl
+  XNG3         1
+
+[ atoms ]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge   mass
+ 1      SP1     1       XNG3     GM1     1      0        72.0000
+ 2      SP1     1       XNG3     GM2     2      0        72.0000
+ 3      SP1     1       XNG3     GM3     3      0        72.0000
+ 4      SP1     1       XNG3     GM4     4      0        72.0000
+ 5      SP1     1       XNG3     GM5     5      0        72.0000
+ 6      SP1     1       XNG3     GM6     6      0        72.0000 ; Changed from Nda to P1 - as it's not a branching bead any more
+ 7       Qa     1       XNG3     GM13   13     -1        72.0000
+ 8       P1     1       XNG3     GM14   14      0        72.0000
+ 9       P1     1       XNG3     GM15   15      0        72.0000
+10       P4     1       XNG3     GM16   16      0        72.0000
+11       P5     1       XNG3     GM17   17      0        72.0000
+; Tail part
+12       P1     1       XNG3     AM1    18      0        72.0000
+13       P5     1       XNG3     AM2    19      0        72.0000
+14       C3     1       XNG3     T1A    20      0        72.0000
+15       C1     1       XNG3     C2A    21      0        72.0000
+16       C1     1       XNG3     C3A    22      0        72.0000
+17       C1     1       XNG3     C4A    23      0        72.0000
+18       C1     1       XNG3     C5A    24      0        72.0000
+19       C1     1       XNG3     C1B    25      0        72.0000
+20       C1     1       XNG3     C2B    26      0        72.0000
+21       C1     1       XNG3     C3B    27      0        72.0000
+22       C3     1       XNG3     D4B    28      0        72.0000
+23       C1     1       XNG3     C5B    29      0        72.0000
+24       C1     1       XNG3     C6B    30      0        72.0000
+
+[ bonds ]
+; i j 	funct 	length 	force.c.
+#ifdef FLEXIBLE
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.35   35000
+  7   9   1  0.381  35000
+  8   9   1  0.364  40000
+#endif
+  1   2   1  0.36   17500 ; do not constrain (underlying mapped distribution is bimodal) 
+  1   3   1  0.31   20000 ; do not constrain (underlying mapped distribution is bimodal)
+  2   3   1  0.315   8500 ; do not constrain (underlying mapped distribution is multimodal)
+  3   4   1  0.368  15000 ; do not constrain (underlying mapped distribution is bimodal)  
+  5   6   1  0.307  25000 ; do not constrain (underlying mapped distribution is bimodal)
+  6   7   1  0.376  12500
+  8  10   1  0.34   11500 ; do not constrain (underlying mapped distribution is bimodal) 
+  9  11   1  0.275   8500 
+; Tail part 
+  1 12   1  0.57   20000 ; Head linked to AM1
+ 12 13   1  0.27   20000 ; Based on Cesar GM1 and GCER
+ 12 14   1  0.29   20000 ; Based on Cesar GM1 and GCER
+ 14 15   1  0.47   1250 
+ 15 16   1  0.47   1250
+ 16 17   1  0.47   1250
+ 17 18   1  0.47   1250
+ 13 19   1  0.37   20000 ; Based on Cesar GM1 and GCER
+ 19 20   1  0.47   1250
+ 20 21   1  0.47   1250
+ 21 22   1  0.47   1250
+ 22 23   1  0.47   1250
+ 23 24   1  0.47   1250
+
+[ angles ]
+; i j k 	funct 	angle 	force.c.
+  2   3   4   2    85.50  320.00
+  3   4   5   2    67.00  550.00
+  4   6   7   2    97.50  295.00
+  6   7   9   2    71.00  700.00
+  7   9  11   2    96.00  210.00
+  9   8  10   2    61.00  300.00
+; Orient Head
+  3   1  12   2    50.00  200.00  
+; Tail part
+  1  12  13   2    85.00   25.00  ; Based on Cesar GM1 and GCER
+  1  12  14   2   150.00   30.00  ; Based on Cesar GM1 and GCER
+ 12  13  19   2   129.00  200.00  ; Based on Cesar GM1 and GCER
+ 12  14  15   2   180.00   25.00  ; Based on Cesar GM1 and GCER
+ 14  15  16   2   180.00   25.00
+ 15  16  17   2   180.00   25.00
+ 16  17  18   2   180.00   25.00
+ 13  19  20   2   180.00   25.00
+ 19  20  21   2   180.00   25.00 
+ 20  21  22   2   180.00   25.00
+ 21  22  23   2   120.00   45.00
+ 22  23  24   2   180.00   25.00
+
+[ dihedrals ]
+  1   2   3   4   2  -160.0  30.0
+  2   3   4   5   2  -149.0  16.0
+  3   4   5   6   2  -150.0  55.0
+  4   6   7   9   2  -124.0  60.0
+  5   4   6   7   2   154.0 115.0
+  6   7   9   8   2   107.5 265.0
+  7   9   8  10   2   137.0  80.0
+  8   7   9  11   2   162.0  50.0
+  3   1  12  13   1   125.0  10.00 1 ; Orient head with respect to tail 
+
+#ifndef FLEXIBLE
+[ constraints ]
+  4   5   1  0.389  40000
+  4   6   1  0.300  40000
+  7   8   1  0.35   35000
+  7   9   1  0.381  35000
+  8   9   1  0.364  40000
+#endif
+
+[ exclusions ]
+  2  4
+  3  5
+  6  9
+  9 10
+
+
+; phosphatidylinositol lipdis: 
+
+; phosphatidylinositol 
+; with a PA tail (First a Palmitic acid or Stearoyl tail then a Arachidonic acid, Eicosatetraenoic acid or Adrenic acid tail) 
+; therfore called PAPI (tail string would be -altail "DDDDC CCCC")
+; 
+; Head based on Cesar Lopez DIPALMITOYLPHOSPHATIDYLINOSITOL (DPPI) from martini_v2.0_glycolipids.itp
+; Note: bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;       Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+;
+
+
+[ moleculetype ]
+; molname      nrexcl
+  PAPI         1
+
+[ atoms ]
+; id    type    resnr   residu  atom    cgnr    charge
+ 1        P1     1     PAPI      C1      1          0       
+ 2        P4     1     PAPI      C2      2          0       
+ 3        P4     1     PAPI      C3      3          0       
+ 4        Qa     1     PAPI      CP      4         -1       
+; Tail part (uses standar Martini v2.0 tail rules)
+ 5        Na     1     PAPI      GL1     5          0       
+ 6        Na     1     PAPI      GL2     6          0       
+ 7        C4     1     PAPI      D1A     7          0       
+ 8        C4     1     PAPI      D2A     8          0       
+ 9        C4     1     PAPI      D3A     9          0       
+10        C4     1     PAPI      D4A    10          0     
+11        C1     1     PAPI      C5A    11          0     
+12        C1     1     PAPI      C1B    12          0       
+13        C1     1     PAPI      C2B    13          0       
+14        C1     1     PAPI      C3B    14          0       
+15        C1     1     PAPI      C4B    15          0       
+
+[ bonds ]
+; i j   funct   length  force.c.
+#ifdef FLEXIBLE
+; Using bonds not constraints
+  1     2         1 0.4 30000
+  1     3         1 0.4 30000
+  2     3         1 0.4 30000
+#endif
+  1     4         1 0.35 1250
+  4     5         1 0.47 1250
+; Tail part (uses standar Martini v2.0 tail rules)
+  5     6         1 0.37 1250
+  5     7         1 0.47 1250
+  7     8         1 0.47 1250
+  8     9         1 0.47 1250
+  9    10         1 0.47 1250
+ 10    11         1 0.47 1250
+  6    12         1 0.47 1250
+ 12    13         1 0.47 1250
+ 13    14         1 0.47 1250
+ 14    15         1 0.47 1250
+
+[ angles ]
+; i j k         funct   angle   force.c.
+  3    1    4         2 133.00 100
+  2    1    4         2 100.00 70
+; Orient Head
+  1    4    5         2 140.00 30 ; link to lipid 
+; 4    5    6         2 120.00 25.0 ; These are part of the default lipids rules but not used here
+; 4    5    7         2 180.00 25.0 ; These are part of the default lipids rules but not used here
+; Tail part (uses standar Martini v2.0 tail rules)
+  5    7    8         2 100.00 10
+  7    8    9         2 100.00 10
+  8    9   10         2 100.00 10
+  9   10   11         2 120.00 45
+  6   12   13         2 180.00 25
+ 12   13   14         2 180.00 25
+ 13   14   15         2 180.00 25
+
+[ dihedrals ]
+;3 1 4 5 1 -30.00 5.00 1   ; Removed as it was unstable - WARNING has not been tested
+
+[ constraints ]
+#ifndef FLEXIBLE 
+; Using constraints not bonds
+  1     2         1 0.4
+  1     3         1 0.4
+  2     3         1 0.4
+#endif 
+
+; phosphatidylinositol 
+; with a PI tail (First a Palmitic acid or Stearoyl tail then a Linoleic acid tail) therfore called PIPI (tail string would be -altail "CDDC CCCC")
+; 
+; Head based on Cesar Lopez DIPALMITOYLPHOSPHATIDYLINOSITOL (DPPI) from martini_v2.0_glycolipids.itp
+; Note: bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;       Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+;
+
+
+[ moleculetype ]
+; molname      nrexcl
+  PIPI         1
+
+[ atoms ]
+; id    type    resnr   residu  atom    cgnr    charge
+ 1        P1     1     PIPI      C1      1          0       
+ 2        P4     1     PIPI      C2      2          0       
+ 3        P4     1     PIPI      C3      3          0       
+ 4        Qa     1     PIPI      CP      4         -1       
+; Tail part (uses standar Martini v2.0 tail rules)
+ 5        Na     1     PIPI      GL1     5          0       
+ 6        Na     1     PIPI      GL2     6          0       
+ 7        C1     1     PIPI      C1A     7          0       
+ 8        C4     1     PIPI      D2A     8          0       
+ 9        C4     1     PIPI      D3A     9          0       
+10        C1     1     PIPI      C4A    10          0       
+11        C1     1     PIPI      C1B    11          0       
+12        C1     1     PIPI      C2B    12          0       
+13        C1     1     PIPI      C3B    13          0       
+14        C1     1     PIPI      C4B    14          0       
+
+[ bonds ]
+; i j   funct   length  force.c.i
+#ifdef FLEXIBLE
+; Using bonds not constraints
+  1     2         1 0.4 30000
+  1     3         1 0.4 30000
+  2     3         1 0.4 30000
+#endif
+  1     4         1 0.35 1250
+  4     5         1 0.47 1250
+; Tail part (uses standar Martini v2.0 tail rules)
+  5     6         1 0.37 1250
+  5     7         1 0.47 1250
+  7     8         1 0.47 1250
+  8     9         1 0.47 1250
+  9    10         1 0.47 1250
+  6    11         1 0.47 1250
+ 11    12         1 0.47 1250
+ 12    13         1 0.47 1250
+ 13    14         1 0.47 1250
+
+[ angles ]
+; i j k         funct   angle   force.c.
+  3    1    4         2 133.00 100
+  2    1    4         2 100.00 70
+; Orient Head
+  1    4    5         2 140.00 30 ; link to lipid 
+; 4    5    6         2 120.00 25.0 ; These are part of the default lipids rules but not used here
+; 4    5    7         2 180.00 25.0 ; These are part of the default lipids rules but not used here
+; Tail part (uses standar Martini v2.0 tail rules)
+  5    7    8         2 180.00 25
+  7    8    9         2 100.00 10
+  8    9   10         2 120.00 45
+  6   11   12         2 180.00 25
+ 11   12   13         2 180.00 25
+ 12   13   14         2 180.00 25
+
+[ dihedrals ]
+;3 1 4 5 1 -30.00 5.00 1   ; Removed as it was unstable - WARNING has not been tested
+
+[ constraints ]
+#ifndef FLEXIBLE 
+; Using constraints not bonds
+  1     2         1 0.4
+  1     3         1 0.4
+  2     3         1 0.4
+#endif 
+
+; phosphatidylinositol 
+; with a PO tail (First a Palmitic acid or Stearoyl tail then a Palmitoleic acid or Oleic acid tail) therfore called POPI (tail string would be -altail "CCDC CCCC")
+; 
+; Head based on Cesar Lopez DIPALMITOYLPHOSPHATIDYLINOSITOL (DPPI) from martini_v2.0_glycolipids.itp
+; Note: bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;       Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+;
+
+
+[ moleculetype ]
+; molname      nrexcl
+  POPI         1
+
+[ atoms ]
+; id    type    resnr   residu  atom    cgnr    charge
+ 1        P1     1     POPI      C1      1          0       
+ 2        P4     1     POPI      C2      2          0       
+ 3        P4     1     POPI      C3      3          0       
+ 4        Qa     1     POPI      CP      4         -1       
+; Tail part (uses standar Martini v2.0 tail rules)
+ 5        Na     1     POPI      GL1     5          0       
+ 6        Na     1     POPI      GL2     6          0       
+ 7        C1     1     POPI      C1A     7          0       
+ 8        C1     1     POPI      C2A     8          0       
+ 9        C3     1     POPI      D3A     9          0       
+10        C1     1     POPI      C4A    10          0       
+11        C1     1     POPI      C1B    11          0       
+12        C1     1     POPI      C2B    12          0       
+13        C1     1     POPI      C3B    13          0       
+14        C1     1     POPI      C4B    14          0       
+
+[ bonds ]
+; i j   funct   length  force.c.
+#ifdef FLEXIBLE
+; Using bonds not constraints
+  1     2         1 0.4 30000
+  1     3         1 0.4 30000
+  2     3         1 0.4 30000
+#endif
+  1     4         1 0.35 1250
+  4     5         1 0.47 1250
+; Tail part (uses standar Martini v2.0 tail rules)
+  5     6         1 0.37 1250
+  5     7         1 0.47 1250
+  7     8         1 0.47 1250
+  8     9         1 0.47 1250
+  9    10         1 0.47 1250
+  6    11         1 0.47 1250
+ 11    12         1 0.47 1250
+ 12    13         1 0.47 1250
+ 13    14         1 0.47 1250
+
+[ angles ]
+; i j k         funct   angle   force.c.
+  3    1    4         2 133.00 100
+  2    1    4         2 100.00 70
+; Orient Head
+  1    4    5         2 140.00 30 ; link to lipid 
+; 4    5    6         2 120.00 25.0 ; These are part of the default lipids rules but not used here
+; 4    5    7         2 180.00 25.0 ; These are part of the default lipids rules but not used here
+; Tail part (uses standar Martini v2.0 tail rules)
+  5    7    8         2 180.00 25
+  7    8    9         2 180.00 25
+  8    9   10         2 120.00 45
+  6   11   12         2 180.00 25
+ 11   12   13         2 180.00 25
+ 12   13   14         2 180.00 25
+
+[ dihedrals ]
+;3 1 4 5 1 -30.00 5.00 1   ; Removed as it was unstable - WARNING has not been tested
+
+[ constraints ]
+#ifndef FLEXIBLE 
+; Using constraints not bonds
+  1     2         1 0.4
+  1     3         1 0.4
+  2     3         1 0.4
+#endif 
+
+; phosphatidylinositol 
+; with a PU tail (First a Palmitic acid or Stearoyl tail then a Docosapentaenoic acid or Docosahexaenoic acid tail) 
+; therfore called PUPI (tail string would be -altail "DDDDDC CCCC")
+; 
+; Head based on Cesar Lopez DIPALMITOYLPHOSPHATIDYLINOSITOL (DPPI) from martini_v2.0_glycolipids.itp
+; Note: bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;       Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+;
+
+
+[ moleculetype ]
+; molname      nrexcl
+  PUPI         1
+
+[ atoms ]
+; id    type    resnr   residu  atom    cgnr    charge
+ 1        P1     1     PUPI      C1      1          0       
+ 2        P4     1     PUPI      C2      2          0       
+ 3        P4     1     PUPI      C3      3          0       
+ 4        Qa     1     PUPI      CP      4         -1       
+; Tail part (uses standar Martini v2.0 tail rules)
+ 5        Na     1     PUPI      GL1     5          0       
+ 6        Na     1     PUPI      GL2     6          0       
+ 7        C4     1     PUPI      D1A     7          0       
+ 8        C4     1     PUPI      D2A     8          0       
+ 9        C4     1     PUPI      D3A     9          0       
+10        C4     1     PUPI      D4A    10          0   
+11        C4     1     PUPI      D5A    11          0      
+12        C1     1     PUPI      C6A    12          0     
+13        C1     1     PUPI      C1B    13          0       
+14        C1     1     PUPI      C2B    14          0       
+15        C1     1     PUPI      C3B    15          0       
+16        C1     1     PUPI      C4B    16          0       
+
+[ bonds ]
+; i j   funct   length  force.c.
+#ifdef FLEXIBLE
+; Using bonds not constraints
+  1     2         1 0.4 30000
+  1     3         1 0.4 30000
+  2     3         1 0.4 30000
+#endif
+  1     4         1 0.35 1250
+  4     5         1 0.47 1250
+; Tail part (uses standar Martini v2.0 tail rules)
+  5     6         1 0.37 1250
+  5     7         1 0.47 1250
+  7     8         1 0.47 1250
+  8     9         1 0.47 1250
+  9    10         1 0.47 1250
+ 10    11         1 0.47 1250
+ 11    12         1 0.47 1250
+  6    13         1 0.47 1250
+ 13    14         1 0.47 1250
+ 14    15         1 0.47 1250
+ 15    16         1 0.47 1250
+
+[ angles ]
+; i j k         funct   angle   force.c.
+  3    1    4         2 133.00 100
+  2    1    4         2 100.00 70
+; Orient Head
+  1    4    5         2 140.00 30 ; link to lipid 
+; 4    5    6         2 120.00 25.0 ; These are part of the default lipids rules but not used here
+; 4    5    7         2 180.00 25.0 ; These are part of the default lipids rules but not used here
+; Tail part (uses standar Martini v2.0 tail rules)
+  5    7    8         2 100.00 10
+  7    8    9         2 100.00 10
+  8    9   10         2 100.00 10
+  9   10   11         2 100.00 10
+ 10   11   12         2 120.00 45
+  6   13   14         2 180.00 25
+ 13   14   15         2 180.00 25
+ 14   15   16         2 180.00 25
+
+[ dihedrals ]
+;3 1 4 5 1 -30.00 5.00 1   ; Removed as it was unstable - WARNING has not been tested
+
+[ constraints ]
+#ifndef FLEXIBLE 
+; Using constraints not bonds
+  1     2         1 0.4
+  1     3         1 0.4
+  2     3         1 0.4
+#endif 
+
+
+; PI phosphates: 
+
+; PHOSPHATIDILINOSITOL 3-MONO-PHOSPHATE - PIP1 with the phosphate at position 3
+; with a PO tail (First a Palmitic acid or Stearoyl tail then a Palmitoleic acid or Oleic acid tail) therfore called POP1 (tail string would be -altail "CCDC CCCC")
+; 
+; Head based on Cesar Lopez DIPALMITOYLPHOSPHATIDILINOSITOL 3-MONO-PHOSPHATE ( PIP(3) ) named "PI3" from martini_v2.0_glycolipids.itp
+; Note: bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;       Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+;
+
+
+[ moleculetype ]
+; molname      nrexcl
+  POP1         1
+
+[ atoms ]
+; id    type    resnr   residu  atom    cgnr    charge
+   1        P1     1   POP1      C1      1          0       72.000
+   2        P1     1   POP1      C2      2          0       72.000
+   3        P4     1   POP1      C3      3          0       72.000
+   4        Qa     1   POP1      CP      4         -1       72.000
+   5        Qa     1   POP1      P1      5         -2       72.000
+; Tail part (uses standar Martini v2.0 tail rules)
+   6        Na     1   POP1      GL1     7          0       72.000
+   7        Na     1   POP1      GL2     8          0       72.000
+   8        C1     1   POP1      C1A     9          0       72.000
+   9        C1     1   POP1      C2A    10          0       72.000
+  10        C3     1   POP1      D3A    11          0       72.000
+  11        C1     1   POP1      C4A    12          0       72.000
+  12        C1     1   POP1      C1B    13          0       72.000
+  13        C1     1   POP1      C2B    14          0       72.000
+  14        C1     1   POP1      C3B    15          0       72.000
+  15        C1     1   POP1      C4B    16          0       72.000
+
+[ bonds ]
+; i j   funct   length  force.c.
+#ifdef FLEXIBLE
+; Using bonds not constraints
+  1     2         1 0.4 30000
+  1     3         1 0.4 30000
+  2     3         1 0.4 30000
+  1     5         1 0.4 25000
+  2     5         1 0.3 30000 
+#endif
+  1     4         1 0.35 1250
+  4     6         1 0.47 1250
+; Tail part (uses standar Martini v2.0 tail rules)
+  6     7         1 0.37 1250
+  6     8         1 0.47 1250
+  8     9         1 0.47 1250
+  9    10         1 0.47 1250
+ 10    11         1 0.47 1250
+  7    12         1 0.47 1250
+ 12    13         1 0.47 1250
+ 13    14         1 0.47 1250
+ 14    15         1 0.47 1250
+
+[ angles ]
+; i j k         funct   angle   force.c.
+; Here we have less angles than in PI, replaced by bonds/constraints
+; Orient Head
+  1    4    6         2 140.00 25 ; link to lipid - PI has 30
+; 4    6    7         2 120.00 25.0 ; These are part of the default lipids rules but not used here
+; 4    6    8         2 180.00 25.0 ; These are part of the default lipids rules but not used here
+; Tail part (uses standar Martini v2.0 tail rules)
+  6     8     9         2 180.00 25.0
+  8     9    10         2 180.00 25.0
+  9    10    11         2 120.00 45.0
+  7    12    13         2 180.00 25.0
+ 12    13    14         2 180.00 25.0
+ 13    14    15         2 180.00 25.0
+
+[ dihedrals ]
+;3 1 4 5 1 -30.00 5.00 1   ; Removed as it was unstable - WARNING has not been tested
+
+[ constraints ]
+#ifndef FLEXIBLE 
+; Using constraints not bonds
+  1     2         1 0.4
+  1     3         1 0.4
+  2     3         1 0.4
+  2     5         1 0.3
+  1     5         1 0.4
+#endif
+ 
+; PHOSPHATIDILINOSITOL 3-4 BI-PHOSPHATE - PIP2 with the phosphates at position 3 and 4
+; with a PO tail (First a Palmitic acid or Stearoyl tail then a Palmitoleic acid or Oleic acid tail) therfore called POP2 (tail string would be -altail "CCDC CCCC")
+; 
+; Head based on Cesar Lopez DIPALMITOYLPHOSPHATIDILINOSITOL 3-4 BI-PHOSPHATE ( PIP2(3,4) ) named "PI34" from martini_v2.0_glycolipids.itp
+; Note: bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;       Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+;
+
+
+[ moleculetype ]
+; molname      nrexcl
+POP2               1
+
+[ atoms ]
+; id    type    resnr   residu  atom    cgnr    charge
+   1        P1     1   POP2      C1      1          0       72.000
+   2        Na     1   POP2      C2      2          0       72.000
+   3        P4     1   POP2      C3      3          0       72.000
+   4        Qa     1   POP2      CP      4         -1       72.000
+   5        Qa     1   POP2      P1      5         -2       72.000
+   6        Qa     1   POP2      P2      6         -2       72.000
+; Tail part (uses standar Martini v2.0 tail rules)
+   7        Na     1   POP2      GL1     7          0       72.000
+   8        Na     1   POP2      GL2     8          0       72.000
+   9        C1     1   POP2      C1A     9          0       72.000
+  10        C1     1   POP2      C2A    10          0       72.000
+  11        C3     1   POP2      D3A    11          0       72.000
+  12        C1     1   POP2      C4A    12          0       72.000
+  13        C1     1   POP2      C1B    13          0       72.000
+  14        C1     1   POP2      C2B    14          0       72.000
+  15        C1     1   POP2      C3B    15          0       72.000
+  16        C1     1   POP2      C4B    16          0       72.000
+
+[ bonds ]
+; i j   funct   length  force.c.i
+#ifdef FLEXIBLE
+; Using bonds not constraints
+  1     2         1 0.4 30000
+  1     3         1 0.4 30000
+  2     3         1 0.4 30000
+  2     5         1 0.3  30000
+  2     6         1 0.35 30000
+  1     5         1 0.40 25000
+  3     6         1 0.31 30000
+;  5     6         1 0.60 25000 ; Always keep as bond for stability
+#endif
+  5     6         1 0.60 25000 ; Always keep as bond for stability
+  1     4         1 0.35 1250
+  4     7         1 0.47 1250
+; Tail part (uses standar Martini v2.0 tail rules)
+  7     8         1 0.37 1250
+  7     9         1 0.47 1250
+  9    10         1 0.47 1250
+ 10    11         1 0.47 1250
+ 11    12         1 0.47 1250
+  8    13         1 0.47 1250
+ 13    14         1 0.47 1250
+ 14    15         1 0.47 1250
+ 15    16         1 0.47 1250
+
+[ angles ]
+; i j k         funct   angle   force.c.
+; Here we have less angles than in PI, replaced by bonds/constraints
+; Orient Head
+  1    4    7         2 140.00 25 ; link to lipid - PI has 30
+; 4    7    8         2 120.00 25.0 ; These are part of the default lipids rules but not used here
+; 4    7    9         2 180.00 25.0 ; These are part of the default lipids rules but not used here
+  7     9    10         2 180.00 25.0
+  9    10    11         2 180.00 25.0
+ 10    11    12         2 120.00 45.0
+  8    13    14         2 180.00 25.0 
+ 13    14    15         2 180.00 25.0 
+ 14    15    16         2 180.00 25.0 
+
+[ dihedrals ]
+;3 1 4 5 1 -30.00 5.00 1   ; Removed as it was unstable - WARNING has not been tested
+
+[ constraints ]
+#ifndef FLEXIBLE 
+; Using constraints not bonds
+  1     2         1 0.4 
+  1     3         1 0.4 
+  2     3         1 0.4 
+  2     5         1 0.3  
+  2     6         1 0.35 
+  1     5         1 0.40 
+  3     6         1 0.31 
+;  5     6         1 0.60 ; Always keep as bond for stability
+#endif
+ 
+; PHOSPHATIDILINOSITOL 3-4-5 tri-PHOSPHATE - PIP3 with the phosphates at position 3, 4 and 5
+; with a PO tail (First a Palmitic acid or Stearoyl tail then a Palmitoleic acid or Oleic acid tail) therfore called POP3 (tail string would be -altail "CCDC CCCC")
+;
+; WARNING this one is losly based on Cesar Lopez DIPALMITOYLPHOSPHATIDILINOSITOL 3-4 BI-PHOSPHATE ( PIP2(3,4) ) named "PI34" from martini_v2.0_glycolipids.itp
+; Was just placed opposite to the P1 – this needs to be redone with proper mapping from atomistic simulations as the C1, C2, C3 beads are not evenly distributed 
+; on the inositol ring. Also charge state should be altered / check – at pH 7, PIP3 normally has one or two reduced charges. 
+; - Also dihedral for head oriantation was removed to make the molecule more stable - should be tested / compaired to atomistic sims
+; 
+; Note: bonds with force constant > 25000 are treated as constraints, but use harmonic bonds for minimization. 
+;       Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+;
+
+
+[ moleculetype ]
+; molname      nrexcl
+POP3               1
+
+[ atoms ]
+; id    type    resnr   residu  atom    cgnr    charge
+   1        P1     1   POP3      C1      1          0       72.000
+   2        Na     1   POP3      C2      2          0       72.000
+   3        P4     1   POP3      C3      3          0       72.000
+   4        Qa     1   POP3      CP      4         -1       72.000
+   5        Qa     1   POP3      P1      5         -2       72.000
+   6        Qa     1   POP3      P2      6         -2       72.000
+   7        Qa     1   POP3      P3      7         -2       72.000 ; New P3 bead
+; Tail part (uses standar Martini v2.0 tail rules)
+   8        Na     1   POP3      GL1     8          0       72.000
+   9        Na     1   POP3      GL2     9          0       72.000
+  10        C1     1   POP3      C1A    10          0       72.000
+  11        C1     1   POP3      C2A    11          0       72.000
+  12        C3     1   POP3      D3A    12          0       72.000
+  13        C1     1   POP3      C4A    13          0       72.000
+  14        C1     1   POP3      C1B    14          0       72.000
+  15        C1     1   POP3      C2B    15          0       72.000
+  16        C1     1   POP3      C3B    16          0       72.000
+  17        C1     1   POP3      C4B    17          0       72.000
+
+[ bonds ]
+; i j   funct   length  force.c.i
+#ifdef FLEXIBLE
+; Using bonds not constraints
+  1     2         1 0.4 30000
+  1     3         1 0.4 30000
+  2     3         1 0.4 30000
+  2     5         1 0.3  30000
+  2     6         1 0.35 30000
+  1     5         1 0.40 25000
+  3     6         1 0.31 30000
+;  5     6         1 0.60 25000
+  1     7         1 0.40 25000 ; New to add P3 bad - not messured just placed 
+  3     7         1 0.3  30000 ; New to add P3 bad - not messured just placed
+;  6     7         1 0.60 25000 ; New to add P3 bad - not messured just placed
+#endif
+  5     6         1 0.60 25000 ; added just as bonds to increase stability
+  6     7         1 0.60 25000 ; New to add P3 bad - not messured just placed ; added just as bonds to increase stability
+  1     4         1 0.35 1250
+  4     8         1 0.47 1250
+; Tail part (uses standar Martini v2.0 tail rules)
+  8     9         1 0.37 1250
+  8    10         1 0.47 1250
+ 10    11         1 0.47 1250
+ 11    12         1 0.47 1250
+ 12    13         1 0.47 1250
+  9    14         1 0.47 1250
+ 14    15         1 0.47 1250
+ 15    16         1 0.47 1250
+ 16    17         1 0.47 1250
+
+[ angles ]
+; i j k         funct   angle   force.c.
+; Here we have less angles than in PI, replaced by bonds/constraints
+; Orient Head
+  1    4    8         2 140.00 25 ; link to lipid - PI has 30
+; 4    8    9         2 120.00 25.0 ; These are part of the default lipids rules but not used here
+; 4    8   10         2 180.00 25.0 ; These are part of the default lipids rules but not used here
+  8    10    11         2 180.00 25.0
+ 10    11    12         2 180.00 25.0
+ 11    12    13         2 120.00 45.0
+  9    14    15         2 180.00 25.0 
+ 14    15    16         2 180.00 25.0 
+ 15    16    17         2 180.00 25.0 
+
+[ dihedrals ]
+;3 1 4 5 1 -30.00 5.00 1   ; Removed as it was unstable - WARNING has not been tested
+
+[ constraints ]
+#ifndef FLEXIBLE 
+; Using constraints not bonds
+  1     2         1 0.4 
+  1     3         1 0.4 
+  2     3         1 0.4 
+  2     5         1 0.3  
+  2     6         1 0.35 
+  1     5         1 0.40 
+  3     6         1 0.31 
+;  5     6         1 0.60 ; added just as bonds to increase stability
+  1     7         1 0.40 ; New to add P3 bad - not messured just placed
+  3     7         1 0.3  ; New to add P3 bad - not messured just placed
+;  6     7         1 0.60 ; New to add P3 bad - not messured just placed ; added just as bonds to increase stability
+#endif
+ 
+
+; Cholesterol: 
+
+#ifdef FLEXIBLE
+
+;;; TOPOLOGY FOR CHOLESTEROL
+;;; 2010/09/22
+
+; Please cite:
+;
+;   S.J. Marrink, A.H. de Vries, T.A. Harroun, J. Katsaras, S.R. Wassall.
+;  Cholesterol shows preference for the interior of polyunsaturated lipid membranes.
+;  JACS, 130:10-11, 2008.
+;
+; This topology is stable with an integration timestep of 30 fs
+
+[ moleculetype ]
+; molname  nrexcl
+  CHOL     1
+
+[ atoms ]
+; heavier cholesterol is more stable
+; 54.0 matches the 3/4th rule of 72.0
+; i type resnr residue atom cgnr charge mass
+  1 SP1  1     CHOL    ROH   1   0.0    54.0
+  2 SC1  1     CHOL    R1    2   0.0    54.0
+  3 SC3  1     CHOL    R2    3   0.0    54.0
+  4 SC1  1     CHOL    R3    4   0.0    54.0
+  5 SC1  1     CHOL    R4    5   0.0    54.0
+  6 SC1  1     CHOL    R5    6   0.0    54.0
+  7 SC1  1     CHOL    C1    7   0.0    54.0
+  8  C1  1     CHOL    C2    8   0.0    72.0
+
+[ bonds ]
+; i  j  funct  length  force
+  1  2  1      0.242   20000.0
+  2  3  1      0.260   20000.0
+  2  4  1      0.341   20000.0
+  4  6  1      0.213   20000.0
+  4  7  1      0.544   20000.0
+  5  6  1      0.203   20000.0
+  6  7  1      0.368   20000.0
+  7  8  1      0.425    1250.0
+
+[ constraints ]
+; cholesterol frame constraint
+; i  j  funct  length
+  1  3  1      0.493
+  1  4  1      0.604
+  3  4  1      0.272
+  3  5  1      0.346
+  4  5  1      0.294
+  5  7  1      0.406
+
+[ angles ]
+; i  j  k  funct  angle  force
+  4  7  8  2      180.0  25.0
+
+[ dihedrals ]
+; i  j  k  l  funct  angle  force
+  1  3  5  7  2        0.0  100.0
+  1  3  5  4  2        0.0  100.0
+  1  4  5  3  2        0.0  100.0
+  4  7  5  3  2        0.0  100.0
+  3  5  7  4  2        0.0  100.0
+  2  1  3  4  2      -45.0  300.0
+  2  4  3  1  2       45.0  300.0
+  6  4  5  7  2      -45.0  300.0
+  6  7  5  4  2       45.0  300.0
+
+[ exclusions ]
+; i  j  k  ...
+  1  2  3  4  5  6  7
+  2  3  4  5  6  7
+  3  4  5  6  7
+  4  5  6  7
+  5  6  7
+  6  7
+
+#else
+
+;;; ALTERNATIVE TOPOLOGY FOR CHOLESTEROL USING VIRTUAL SITES 
+;;; 2013/08/20
+
+; Adapted from the equilibrium structure of Martini 2.0 cholesterol to have 3 virtual sites.
+; Runs at 40fs timestep; the manual suggests that triangle constraints with virtual sites and large timesteps (exactly this case) should use lincs-order=6.
+;  I played it safe and used lincs-order=8 and lincs-iter=2 during parameterization; the performance penalty, even on a 30% cholesterol membrane, is negligible.
+; Frame masses were distributed to best mimic the original cholesterol's moment of inertia (using S-particle mass of 45).
+; The plane dihedral was weakened to better match the atomistic flexibility (and maybe better stability?)
+; The protrusion of the off plane beads was increased by 30% to prevent preferential chol-chol interactions from forming, and their partaking of hexagonal lattices.
+
+
+[ moleculetype ]
+; molname  nrexcl
+  CHOL     1
+
+[ atoms ]
+; i type resnr residue atom cgnr charge mass
+  1 SP1  1     CHOL    ROH  1    0.0    77.22
+  2 SC1  1     CHOL    R1   2    0.0      0.0
+  3 SC3  1     CHOL    R2   3    0.0    38.69
+  4 SC1  1     CHOL    R3   4    0.0   159.65
+  5 SC1  1     CHOL    R4   5    0.0      0.0
+  6 SC1  1     CHOL    R5   6    0.0      0.0
+  7 SC1  1     CHOL    C1   7    0.0    39.44
+  8  C1  1     CHOL    C2   8    0.0     72.0
+
+[ bonds ]
+; i  j  funct  length  force
+  7  8  1      0.425   1250.0
+[ dihedrals ]
+  1  3  4  7   2  -179.7  50
+
+[ constraints ]
+; i  j  funct  length
+  1  3  1    0.4904 
+  1  4  1    0.6019
+  3  4  1    0.2719 
+  7  3  1    0.7237
+  7  4  1    0.5376
+
+[ virtual_sites3 ]
+; In-plane bead from frame 4-3-7 (bead 5)
+  5  4  3  7   1  0.9613  0.6320 
+; Out-of-plane bead from frame 3-1-4 (bead 2)
+  2  3  1  4   4  0.5207  0.2882  -0.83824 
+; Out-of-plane bead from frame 4-3-7 (bead 6)
+  6  4  3  7   4  0.2287  0.4111   1.1531 
+
+[ angles ]
+; i  j  k  funct  angle  force
+  4  7  8  2      180.0  25.0
+
+[ exclusions ]
+; i  j  k  ...
+  1  2  3  4  5  6  7
+  2  3  4  5  6  7
+  3  4  5  6  7
+  4  5  6  7
+  5  6  7
+  6  7
+
+#endif

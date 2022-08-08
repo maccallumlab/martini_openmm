@@ -1,0 +1,16 @@
+#include "martini_v2.2_masses.itp"
+#include "martini_v2.0_ions.itp"
+#include "PLASMA-v01-PA2.itp"
+#include "POPX_Martini_v2.0_lipid.itp"
+#include "PIPX_Martini_v2.0_lipid.itp"
+    
+#define RUBBER_BANDS
+  
+#include "m_pgp_A+m_pgp_B.itp"
+    
+[ system ]
+; name
+Martini system from 4m1m.pdb
+    
+[ molecules ]
+CHOL           1

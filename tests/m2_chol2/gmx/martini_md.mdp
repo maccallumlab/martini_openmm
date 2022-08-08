@@ -1,0 +1,161 @@
+; VARIOUS PREPROCESSING OPTIONS
+; Preprocessor information: use cpp syntax.
+; e.g.: -I/home/joe/doe -I/home/mary/roe
+include                  = 
+; e.g.: -DPOSRES -DFLEXIBLE (note these variable names are case sensitive)
+
+; RUN CONTROL PARAMETERS
+integrator               = md
+; Start time and timestep in ps
+tinit                    = 0
+dt                       = 0.02
+nsteps                   = 1
+; For exact run continuation or redoing part of a run
+init-step                = 0
+; Part index is updated automatically on checkpointing (keeps files separate)
+simulation-part          = 1
+; mode for center of mass motion removal
+comm-mode                = Linear
+; number of steps for center of mass motion removal
+nstcomm                  = 10
+; group(s) for center of mass motion removal
+comm-grps                = Lipids
+
+; LANGEVIN DYNAMICS OPTIONS
+; Friction coefficient (amu/ps) and random seed
+bd-fric                  = 0
+ld-seed                  = -1
+
+; ENERGY MINIMIZATION OPTIONS
+; Force tolerance and initial step-size
+emtol                    = 10
+emstep                   = 0.01
+; Max number of iterations in relax-shells
+niter                    = 20
+; Step size (ps^2) for minimization of flexible constraints
+fcstep                   = 0
+; Frequency of steepest descents steps when doing CG
+nstcgsteep               = 1000
+nbfgscorr                = 10
+
+; TEST PARTICLE INSERTION OPTIONS
+rtpi                     = 0.05
+
+; OUTPUT CONTROL OPTIONS
+; Output frequency for coords (x), velocities (v) and forces (f)
+nstxout                  = 1
+nstvout                  = 1
+nstfout                  = 1
+; Output frequency for energies to log file and energy file
+nstlog                   = 1
+nstcalcenergy            = 1
+nstenergy                = 1
+; Output frequency and precision for .xtc file
+nstxout-compressed       = 20000
+compressed-x-precision   = 100
+; This selects the subset of atoms for the compressed
+; trajectory file. You can select multiple groups. By
+; default, all atoms will be written.
+compressed-x-grps        = 
+; Selection of energy groups
+energygrps               = Lipids
+
+; NEIGHBORSEARCHING PARAMETERS
+; cut-off scheme (Verlet: particle based cut-offs, group: using charge groups)
+cutoff-scheme            = Verlet
+; nblist update frequency
+nstlist                  = 20
+; ns algorithm (simple or grid)
+ns_type                  = grid
+; Periodic boundary conditions: xyz, no, xy
+pbc                      = xyz
+periodic-molecules       = no
+
+; OPTIONS FOR ELECTROSTATICS AND VDW
+; Method for doing electrostatics
+coulombtype              = reaction-field
+rcoulomb                 = 1.1
+; Relative dielectric constant for the medium and the reaction field
+epsilon_r                = 15
+epsilon-rf               = 0
+; Method for doing Van der Waals
+vdw_type                 = cutoff
+; cut-off lengths       
+rvdw                     = 1.1
+
+; GENERALIZED BORN ELECTROSTATICS
+; Algorithm for calculating Born radii
+gb-algorithm             = Still
+; Frequency of calculating the Born radii inside rlist
+nstgbradii               = 1
+; Cutoff for Born radii calculation; the contribution from atoms
+; between rlist and rgbradii is updated every nstlist steps
+rgbradii                 = 1
+; Dielectric coefficient of the implicit solvent
+gb-epsilon-solvent       = 80
+; Salt concentration in M for Generalized Born models
+gb-saltconc              = 0
+; Scaling factors used in the OBC GB model. Default values are OBC(II)
+gb-obc-alpha             = 1
+gb-obc-beta              = 0.8
+gb-obc-gamma             = 4.85
+gb-dielectric-offset     = 0.009
+sa-algorithm             = Ace-approximation
+; Surface tension (kJ/mol/nm^2) for the SA (nonpolar surface) part of GBSA
+; The value -1 will set default value for Still/HCT/OBC GB-models.
+sa-surface-tension       = -1
+
+; OPTIONS FOR WEAK COUPLING ALGORITHMS
+; Temperature coupling  
+tcoupl                   = v-rescale
+nsttcouple               = -1
+nh-chain-length          = 10
+print-nose-hoover-chain-variables = no
+; Groups to couple separately
+tc-grps                  = Lipids 
+; Time constant (ps) and reference temperature (K)
+tau_t                    = 2.0
+ref_t                    = 310
+; pressure coupling     
+Pcoupl                   = Berendsen
+Pcoupltype               = semiisotropic
+nstpcouple               = -1
+; Time constant (ps), compressibility (1/bar) and reference P (bar)
+tau_p                    = 12.0
+compressibility          = 3e-4  3e-4
+ref_p                    = 1.0  1.0
+; Scaling of reference coordinates, No, All or COM
+refcoord_scaling         = all
+
+; SIMULATED ANNEALING  
+; Type of annealing for each temperature group (no/single/periodic)
+annealing                = 
+; Number of time points to use for specifying annealing in each group
+annealing-npoints        = 
+; List of times at the annealing points for each group
+annealing-time           = 
+; Temp. at each annealing point, for each group.
+annealing-temp           = 
+
+; GENERATE VELOCITIES FOR STARTUP RUN
+gen_vel                  = no
+gen_temp                 = 310
+gen-seed                 = -1
+
+; OPTIONS FOR BONDS    
+constraints              = none
+; Type of constraint algorithm
+constraint_algorithm     = Lincs
+; Do not constrain the start configuration
+continuation             = no
+; Use successive overrelaxation to reduce the number of shake iterations
+Shake-SOR                = no
+; Relative tolerance of shake
+shake-tol                = 0.0001
+; Highest order in the expansion of the constraint coupling matrix
+lincs_order              = 4
+; Number of iterations in the final step of LINCS. 1 is fine for
+; normal simulations, but use 2 to conserve energy in NVE runs.
+; For energy minimization with constraints it should be 4 to 8.
+lincs-iter               = 1
+; Lincs wi

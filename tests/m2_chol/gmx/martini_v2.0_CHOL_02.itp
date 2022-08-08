@@ -1,0 +1,76 @@
+;;;;;; Martini lipid topology for cholesterol
+;
+; Description:
+;   A Martini model for cholesterol. An alternative topology for cholesterol using virtual sites. 
+; Parameterization:
+;   Adapted from the equilibrium structure of Martini 2.0 cholesterol (Marrink et al. 2008) to have 3 virtual sites, 
+;   see Ingolfsson et al. 2014. Frame masses were distributed to best mimic the original cholesterol's moment of inertia 
+;   (using S-particle mass of 45). The off-plane bead distance was increased by 30% to reduce the propensity of cholesterol 
+;   to self-associate, and therefore to more effectively disrupt lipid chain packing in lo-domains.
+; Reference(s): 
+;   S.J. Marrink, A.H. de Vries, A.E. Mark. Coarse grained model for semi-quantitative lipid simulations. JPC-B, 108:750-760, 
+;   2004. doi:10.1021/jp036508g 
+;   S.J. Marrink, H.J. Risselada, S. Yefimov, D.P. Tieleman, A.H. de Vries. The MARTINI force field: coarse grained model for 
+;   biomolecular simulations. JPC-B, 111:7812-7824, 2007. doi:10.1021/jp071097f 
+;   S.J. Marrink, A.H. de Vries, T.A. Harroun, J. Katsaras, S.R. Wassall. Cholesterol shows preference for the interior of 
+;   polyunsaturated lipid membranes. JACS, 130:10-11, 2008. doi:10.1021/ja076641c
+;   H.I. Ingolfsson, M.N. Melo, F.J. van Eerden, C. Arnarez, C.A. Lopez, T.A. Wassenaar, X. Periole, A.H. De Vries, D.P. Tieleman,
+;   S.J. Marrink. Lipid organization of the plasma membrane. JACS, 136:14554-14559, 2014. doi:10.1021/ja507832e
+; Created: 2014.05
+; Warning(s)/Note(s):
+;   Note, Runs at 40fs timestep; the manual suggests that triangle constraints with virtual sites and large timesteps (exactly 
+;   this case) should use lincs-order=6. I played it safe and used lincs-order=8 and lincs-iter=2 during parameterization; the 
+;   performance penalty, even on a 30% cholesterol membrane, is small.
+;   Add define=-DFLEXIBLE to select harmonic bonds for minimization purposes.
+;
+
+[ moleculetype ]
+; molname  nrexcl
+  CHOL     1
+
+[ atoms ]
+; i type resnr residue atom cgnr charge mass
+  1 SP1  1     CHOL    ROH  1    0.0    77.22
+  2 SC1  1     CHOL    R1   2    0.0      0.0
+  3 SC3  1     CHOL    R2   3    0.0    38.69
+  4 SC1  1     CHOL    R3   4    0.0   159.65
+  5 SC1  1     CHOL    R4   5    0.0      0.0
+  6 SC1  1     CHOL    R5   6    0.0      0.0
+  7 SC1  1     CHOL    C1   7    0.0    39.44
+  8  C1  1     CHOL    C2   8    0.0     72.0
+
+[ bonds ]
+; i  j  funct  length  force
+  7  8  1      0.425   1250.0
+#ifndef FLEXIBLE
+[ constraints ]
+#endif
+  1  3  1    0.4904  1000000 
+  1  4  1    0.6019  1000000
+  3  4  1    0.2719  1000000 
+  7  3  1    0.7237  1000000
+  7  4  1    0.5376  1000000
+
+[ dihedrals ]
+  1  3  4  7   2  -179.7  50
+
+[ virtual_sites3 ]
+; In-plane bead from frame 4-3-7 (bead 5)
+  5  4  3  7   1  0.9613  0.6320 
+; Out-of-plane bead from frame 3-1-4 (bead 2)
+  2  3  1  4   4  0.5207  0.2882  -0.83824 
+; Out-of-plane bead from frame 4-3-7 (bead 6)
+  6  4  3  7   4  0.2287  0.4111   1.1531 
+
+[ angles ]
+; i  j  k  funct  angle  force
+  4  7  8  2      180.0  25.0
+
+[ exclusions ]
+; i  j  k  ...
+  1  2  3  4  5  6  7
+  2  3  4  5  6  7
+  3  4  5  6  7
+  4  5  6  7
+  5  6  7
+  6  7
