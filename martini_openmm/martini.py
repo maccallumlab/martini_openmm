@@ -868,36 +868,6 @@ class MartiniTopFile(object):
                 theta,
                 k,
             )
-        # This is a bit of a hack to make the constraint system used for
-        # cholesterol work with CCMA, which is the constraint algorithm
-        # used in OpenMM.
-        #
-        # The issue is that CCMA creates a fixed constraint matrix that
-        # is used to iteratively solve for the positions of the atoms.
-        # This algorithm needs to know how the constraints are coupled to
-        # each other. Noramlly, this information is inferred through either
-        # the bond angles or through the presence of triangles in the
-        # constraint network. However, the Martini 2 cholestrol topology
-        # has neither.
-        #
-        # To get around this, we add a dummy angle with a force constant
-        # of zero that provides CCMA with the information that it needs.
-        #
-        # This current implmentation is specific to Martini 2 and might
-        # need to be changed for Martini 3.
-        if molecule_type.molecule_name == "CHOL":
-            assert molecule_type.atoms[0][4] == "ROH"
-            assert molecule_type.atoms[2][4] == "R2"
-            assert molecule_type.atoms[3][4] == "R3"
-            assert molecule_type.atoms[6][4] == "C1"
-            ind1 = base_atom_index + 0
-            ind2 = base_atom_index + 2
-            ind3 = base_atom_index + 3
-            ind4 = base_atom_index + 6
-            THETA1 = 2.3836
-            THETA2 = 2.8840
-            self.harmonic_angle_force.addAngle(ind1, ind2, ind4, THETA1, 0.0)
-            self.harmonic_angle_force.addAngle(ind1, ind3, ind4, THETA2, 0.0)
 
     def _add_g96_angles_to_system(self, molecule_type, bonded_types, base_atom_index):
         for fields in molecule_type.g96_angles:

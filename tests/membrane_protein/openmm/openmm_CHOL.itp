@@ -1,0 +1,50 @@
+;;;;;; Martini lipid topology for cholesterol
+;
+
+[ moleculetype ]
+; molname  nrexcl
+  CHOL     1
+
+[ atoms ]
+; i type resnr residue atom cgnr charge mass
+  1 SP1  1     CHOL    ROH  1    0.0      0.0
+  2 SC1  1     CHOL    R1   2    0.0      0.0
+  3 SC3  1     CHOL    R2   3    0.0    104.7
+  4 SC1  1     CHOL    R3   4    0.0    104.7
+  5 SC1  1     CHOL    R4   5    0.0      0.0
+  6 SC1  1     CHOL    R5   6    0.0      0.0
+  7 SC1  1     CHOL    C1   7    0.0    104.7
+  8  C1  1     CHOL    C2   8    0.0     72.0
+
+[ bonds ]
+; i  j  funct  length  force
+  7  8  1      0.425   1250.0
+#ifndef FLEXIBLE
+[ constraints ]
+#endif
+  3  4  1    0.2719  1000000 
+  7  3  1    0.7237  1000000
+  7  4  1    0.5376  1000000
+
+[ virtual_sites3 ]
+; Out-of-plane bead from frame 4-3-7 (bead 1)
+  1  4  3  7   4  0.1594  -1.0593 -0.1454
+; Out-of-plane bead from frame 4-3-7 (bead 2)
+  2  4  3  7   4  0.2643  -0.5604  0.8120
+; In-plane bead from frame 4-3-7 (bead 5)
+  5  4  3  7   1  0.9613  0.6320 
+; Out-of-plane bead from frame 4-3-7 (bead 6)
+  6  4  3  7   4  0.2287  0.4111   1.1531 
+
+[ angles ]
+; i  j  k  funct  angle  force
+  4  7  8  2      180.0  25.0
+
+[ exclusions ]
+; i  j  k  ...
+  1  2  3  4  5  6  7
+  2  3  4  5  6  7
+  3  4  5  6  7
+  4  5  6  7
+  5  6  7
+  6  7

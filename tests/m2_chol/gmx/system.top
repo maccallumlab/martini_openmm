@@ -1,5 +1,5 @@
 #include "martini_v2.1.itp"
-#include "martini_v2.0_CHOL_02.itp"
+#include "openmm_CHOL.itp"
 
 [ system ]
 ; name

@@ -84,26 +84,20 @@ class TestMartini2Protein(Base, unittest.TestCase):
     test_dir = "tests/protein"
     depth = 1
 
-# The following test all involve cholesterol.
-# It is not possible to have the constraints work
-# exactly the same in openmm as gromacs, so we have
-# temporarily removed these tests.
 
-# class TestMartini2ComplexLipid(Base, unittest.TestCase):
-#     test_dir = "tests/complex_lipid"
-#     depth = 1
+class TestMartini2ComplexLipid(Base, unittest.TestCase):
+    test_dir = "tests/complex_lipid"
+    depth = 1
 
-# class TestMartini2Cholesterol(Base, unittest.TestCase):
-#     test_dir = "tests/m2_chol"
-#     depth = 1
 
-# class TestMartini2Cholesterol2(Base, unittest.TestCase):
-#     test_dir = "tests/m2_chol2"
-#     depth = 1
+class TestMartini2Cholesterol(Base, unittest.TestCase):
+    test_dir = "tests/m2_chol"
+    depth = 1
 
-# class TestMartini2MembraneProtein(Base, unittest.TestCase):
-#     test_dir = "tests/membrane_protein"
-#     depth = 1
+
+class TestMartini2MembraneProtein(Base, unittest.TestCase):
+    test_dir = "tests/membrane_protein"
+    depth = 1
 
 
 class TestMartini3AqpEN(Base, unittest.TestCase):
@@ -255,17 +249,21 @@ def _gen_openmm(epsilon_r):
 
     # Check to see that constraints and vsites are applied correctly
     simulation.context.setPositions(conf.getPositions())
-    simulation.context.applyConstraints(tol=1e-6)
+    simulation.context.applyConstraints(tol=1e-5)
     state = simulation.context.getState(getPositions=True)
     positions = state.getPositions(asNumpy=True).value_in_unit(u.nanometer)
     ref = np.array(conf.getPositions().value_in_unit(u.nanometer))
     delta = np.linalg.norm(positions - ref, axis=1)
-    if np.any(delta > 2e-3):
+    if np.any(delta > 2.5e-3):
+        index = np.argmax(delta)
+        start = max(0, index - 5)
+        end = min(positions.shape[0], index + 8)
+        print(positions[start:end, :])
         raise AssertionError(
             f"""
             Applying constraints or vsites resulted in a position error
-            of > 2e-3 nm. Largest deviation is on atom {np.argmax(delta)}
-            (zero-based) with deviation {delta[np.argmax(delta)]}.
+            of > 2.5e-3 nm. Largest deviation is on atom {index}
+            (zero-based) with deviation {delta[index]}.
             """
         )
 
