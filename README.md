@@ -42,7 +42,6 @@ The source code included in this repository is available under the GNU Public Li
 ## Contributions
 Please report any problems or bugs you may encounter as issues on [the github repo](https://github.com/maccallumlab/martini_openmm).
 
-## References
 [^1]: Marrink, S. J. et al., J. Phys. Chem. B 2007, 111, 7812–7824
 [^2]: de Jong, D. H. et al., J. Chem. Theory Comput. 2013, 9, 687–697
 [^3]: Souza, P. C. T. et al., Nat. Methods 2021, 18, 382–388
