@@ -194,6 +194,10 @@ class TestMartini3SmallPolyTDMBI(Base, unittest.TestCase):
     test_dir = "tests/small_mols_m3/poly/TDMBI"
     depth = 3
 
+class TestMartini2ElasticNetworkType6(Base, unittest.TestCase):
+    test_dir = "tests/1ubq_en_m2_btype6"
+    depth = 1
+
 
 def _handle_gmx_result(result):
     if result.returncode != 0:

@@ -1,0 +1,10 @@
+This test systems is for Martini2.2:
+1 ubiquitin molecule in a water box, with ions.
+
+I generated the elastic network for the protein using the first version of it, which
+uses bond type 6 for the elastic bonds (elnedyn uses bond type 1).
+
+minimized.gro is the output of a 40ns sims.
+I wanted to see if I could spot any major difference with the elnedyn model.
+I didn't, RMSD on the BB beads is within the same range as with elnedyn or the go model in Martini 3.
+

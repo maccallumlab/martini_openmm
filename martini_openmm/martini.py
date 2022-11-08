@@ -481,7 +481,7 @@ class MartiniTopFile(object):
         fields = line.split()
         if len(fields) < 3:
             raise ValueError("Too few fields in [ bonds ] line: " + line)
-        if fields[2] != "1":
+        if fields[2] != "1" and fields[2] != "6":
             raise ValueError("Unsupported function type in [ bonds ] line: " + line)
         self._currentMoleculeType.bonds.append(fields)
 
@@ -1184,9 +1184,12 @@ class MartiniTopFile(object):
         bond_indices = []
         for fields in molecule_type.bonds:
             atoms = [int(x) - 1 for x in fields[:2]]
-            bond_indices.append(
-                (base_atom_index + atoms[0], base_atom_index + atoms[1])
-            )
+            bond_type = int(fields[2])
+            # Type 6 bonds do not generate exclusions
+            if bond_type == 1:
+                bond_indices.append(
+                    (base_atom_index + atoms[0], base_atom_index + atoms[1])
+                )
 
         bondedExceptions = [(i, j, 0, 0, 0) for i, j in bond_indices]
         return bondedExceptions

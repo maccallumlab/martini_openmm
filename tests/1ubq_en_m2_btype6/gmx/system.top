@@ -1,0 +1,14 @@
+#include "martini_v2.2.itp"
+#include "martini_v2.0_ions.itp"
+#include "Protein_A.itp
+#define RUBBER_BANDS
+
+[ system ]
+Title of the system
+
+[ molecules ]
+Protein_A	 1
+W             8818
+NA              97
+CL              97
+
