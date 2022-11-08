@@ -1,0 +1,11 @@
+	;;;;;; CETYL TRIMETHYL AMMONIUM
+	;;;;;; MARTINI FORCE FIELD ATOM TYPES
+
+	#include "martini_v2.3P.itp"
+
+	[ system ]
+	pw_mix
+
+	[ molecules ]
+	;molecule name   nr.
+        PW 10

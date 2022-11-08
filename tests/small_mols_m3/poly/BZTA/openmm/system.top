@@ -1,9 +1,0 @@
-#include "martini_v3.0.0.itp"
-#include "BZTA.itp"
-
-[ system ]
-System
-
-[ molecules ]
-BZTA	1
-

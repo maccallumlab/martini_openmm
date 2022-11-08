@@ -1,7 +1,0 @@
-
-Statistics over 1 steps [ 0.0000 through 0.0000 ps ], 1 data sets
-All statistics are over 1 points
-
-Energy                      Average   Err.Est.       RMSD  Tot-Drift
--------------------------------------------------------------------------------
-Potential                   -236751         --          0          0  (kJ/mol)

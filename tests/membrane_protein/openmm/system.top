@@ -3,6 +3,7 @@
 #include "PLASMA-v01-PA2.itp"
 #include "POPX_Martini_v2.0_lipid.itp"
 #include "PIPX_Martini_v2.0_lipid.itp"
+#include "openmm_CHOL.itp"
     
 #define RUBBER_BANDS
   

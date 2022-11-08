@@ -1,0 +1,13 @@
+#include "martini_v3.0.0.itp"
+#include "martini_v3.0.0_nucleobases_v1_modTHY2.itp"
+#include "martini_v3.0.0_solvents_v1.itp"
+
+[ system ]
+; name
+Insanely solvated protein.
+
+
+[ molecules ]
+; name  number
+THY2          1
+W             1312

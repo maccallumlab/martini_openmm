@@ -18,6 +18,9 @@ Membrane proteins with elastic network setup for Martini 2 and 3;
 
 All the test systems files are in the `tests` directory, which also includes example scripts to compare GROMACS and OpenMM energies and forces.
 
+To run the tests, use `pytest` in the root directory after installation.
+
+
 ## Limitations
 - Martini 2 cholesterol. The standard Martini 2 cholesterol topology uses a constraint network that, while can be solved by LINCS in GROMACS, cannot be solved by the Constant Constraint Matrix Approximation (CCMA) algorithm in OpenMM, thus leading to instabilities.
     - We have developed an alternative topology to be used in OpenMM. Before running an OpenMM Martini 2 simulation with cholesterol, the user needs to manually replace the cholesterol topology. The modified topology can be found in the folder `cholesterol`.

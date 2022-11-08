@@ -1,0 +1,10 @@
+#include "martini_v2.1.itp"
+#include "openmm_CHOL.itp"
+
+[ system ]
+; name
+Cholesterol
+
+[ molecules ]
+; name  number
+CHOL             1

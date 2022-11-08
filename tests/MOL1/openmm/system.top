@@ -1,0 +1,11 @@
+#include "martini_v3.0.0.itp"
+
+#include "mol1_new.itp"
+
+[ system ]
+; Name
+MOL1
+
+[ molecules ]
+; Compound        #mols
+MOL1                1
