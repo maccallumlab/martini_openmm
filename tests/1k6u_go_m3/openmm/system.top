@@ -1,0 +1,15 @@
+#define GO_VIRT
+
+#include "martini_v3.0.0.itp"
+#include "martini_v3.0.0_ions_v1.itp"
+#include "martini_v3.0.0_solvents_v1.itp"
+#include "1k6u.itp"
+
+[ system ]
+Title of the system
+
+[ molecules ]
+1k6u    1
+W             8862
+NA              95
+CL             101

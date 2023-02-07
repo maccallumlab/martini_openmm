@@ -1,0 +1,9 @@
+#include "martini_v3.0.0.itp"
+#include "ANTH.itp"
+
+[ system ]
+System
+
+[ molecules ]
+ANTH	1
+

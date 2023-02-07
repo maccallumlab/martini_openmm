@@ -1,0 +1,7 @@
+All constructions are virtual_sites3 type 4 with constructing atoms 4 - 3 - 7
+
+atom         a        b       c       Notes
+1       0.1594  -1.0593 -0.1454     RMSD after fitting 0.094 nm
+2       0.2643  -0.5604  0.8120     RMSD after fitting 0.054 nm
+5       0.9613   0.6320  0.0000     Not fit; from existing in-plane v-site
+6       0.2287   0.4111  1.1531     Not fit; from existing v-site

@@ -1,0 +1,9 @@
+#include "martini_v3.0.0.itp"
+#include "TDMBI.itp"
+
+[ system ]
+System
+
+[ molecules ]
+TDMBI	1
+

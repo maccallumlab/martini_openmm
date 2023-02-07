@@ -1,0 +1,10 @@
+#include "martini_v3.0.0.itp"
+#include "martini_v3.0.0_solvents_v1.itp"
+
+[ system ]
+; name
+Water 
+
+[ molecules ]
+; name  number
+W	2

@@ -1,0 +1,9 @@
+#include "martini_v3.0.0.itp"
+#include "CNAP.itp"
+
+[ system ]
+System
+
+[ molecules ]
+CNAP	1
+

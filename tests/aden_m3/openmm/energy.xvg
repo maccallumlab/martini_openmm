@@ -1,0 +1,25 @@
+# This file was created Mon Jan 24 10:46:22 2022
+# Created by:
+#            :-) GROMACS - gmx energy, 2021.2 (double precision) (-:
+# 
+# Executable:   /Users/jlmaccal/miniconda3/envs/martini/bin/gmx_d
+# Data prefix:  /Users/jlmaccal/miniconda3/envs/martini
+# Working dir:  /Users/jlmaccal/Source/martini_openmm/tests/aden_m3/gmx
+# Command line:
+#   gmx_d energy -f run
+# gmx energy is part of G R O M A C S:
+#
+# Gallium Rubidium Oxygen Manganese Argon Carbon Silicon
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Potential"
+    0.000000  -31562.355657

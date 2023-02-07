@@ -1,0 +1,9 @@
+#include "martini_v3.0.0.itp"
+#include "3HT.itp"
+
+[ system ]
+System
+
+[ molecules ]
+3HT	1
+
