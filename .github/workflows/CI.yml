@@ -34,24 +34,26 @@ jobs:
       shell: bash -l {0}
       run: python setup.py install
 
-    - name: "Download and untar gromacs"
-      run: |
-        wget https://ftp.gromacs.org/gromacs/gromacs-2021.2.tar.gz
-        tar zxf gromacs-2021.2.tar.gz
+#    - name: "Download and untar gromacs"
+#      run: |
+#        wget https://ftp.gromacs.org/gromacs/gromacs-2021.2.tar.gz
+#        tar zxf gromacs-2021.2.tar.gz
 
-    - name: "Build and install gromacs"
-      working-directory: ./gromacs-2021.2
-      run: |
-        mkdir build
-        cd build
-        cmake .. -DGMX_BUILD_OWN_FFTW=ON -DGMX_DOUBLE=on
-        make
-        sudo make install
+#    - name: "Build and install gromacs"
+#      working-directory: ./gromacs-2021.2
+#      run: |
+#        mkdir build
+#        cd build
+#        cmake .. -DGMX_BUILD_OWN_FFTW=ON -DGMX_DOUBLE=on
+#        make
+#        sudo make install
 
     - name: "Run tests"
       shell: bash -l {0}
       run: |
         source /usr/local/gromacs/bin/GMXRC
+        pwd
+        ls -lh
         pytest
 
 
