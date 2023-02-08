@@ -52,8 +52,7 @@ jobs:
       shell: bash -l {0}
       run: |
         source /usr/local/gromacs/bin/GMXRC
-        cd tests
-        python -m unittest
+        python -m unittest discover
 
 
 
