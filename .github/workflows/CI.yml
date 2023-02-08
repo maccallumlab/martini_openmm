@@ -51,7 +51,7 @@ jobs:
     - name: "Run tests"
       shell: bash -l {0}
       run: |
-        source /usr/local/gromacs/bin/GMXRC
+        #source /usr/local/gromacs/bin/GMXRC
         pwd
         ls -lh
         pytest
