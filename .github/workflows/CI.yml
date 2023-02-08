@@ -45,8 +45,8 @@ jobs:
         mkdir build
         cd build
         cmake .. -DGMX_BUILD_OWN_FFTW=ON -DGMX_DOUBLE=on
-        make
-        sudo make install
+        #make
+        #sudo make install
 
     - name: "Run tests"
       shell: bash -l {0}
