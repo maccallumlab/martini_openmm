@@ -52,9 +52,9 @@ Then, we import the topology in Martini model:
 
 ```python
 top = martini.MartiniTopFile("system.top",
-														periodicBoxVectors=box_vectors,
-														defines=defines,
-														epsilon_r=epsilon_r,
+							periodicBoxVectors=box_vectors,
+							defines=defines,
+							epsilon_r=epsilon_r,
 														)
 ```
 
@@ -97,13 +97,13 @@ In the last section, we define the output files and the length of simulation. We
 
 ```python
 simulation.reporters.append(StateDataReporter("prod.log", 1000,
-																							step=True,
-																							potentialEnergy=True,
-																							totalEnergy=True,
-																							density=True,
-																							temperature=True,
-																							volume=True)
-														)
+												step=True,
+												potentialEnergy=True,
+												totalEnergy=True,
+												density=True,
+												temperature=True,
+												volume=True)
+												)
 xtc_reporter = XTCReporter('prod.xtc', 1000)
 simulation.reporters.append(xtc_reporter)
 ```
@@ -120,9 +120,9 @@ When simulating a lipid bilayer system, the barostat needs to be decoupled betwe
 
 ```python
 barostat = mm.openmm.MonteCarloMembraneBarostat(1 * bar, 0 * bar * nanometer, 310 * kelvin,
-																								mm.openmm.MonteCarloMembraneBarostat.XYIsotropic,
-																								mm.openmm.MonteCarloMembraneBarostat.ZFree, 10
-																								)
+												mm.openmm.MonteCarloMembraneBarostat.XYIsotropic,
+												mm.openmm.MonteCarloMembraneBarostat.ZFree, 10
+												)
 ```
 
 ### Simulations in NVT ensemble
@@ -172,13 +172,8 @@ As the trajectory output is in XTC format, many of analysis proposed in the Mart
 
 [^1]:Eastman P, Swails J, Chodera JD, McGibbon RT, Zhao Y, Beauchamp KA, et al. OpenMM 7: Rapid development of high performance algorithms for molecular dynamics. PLOS Comput Biol. 2017 Jul 26;13(7):e1005659.
 [^2]:Marrink SJ, Risselada HJ, Yefimov S, Tieleman DP, de Vries AH. The MARTINI Force Field: Coarse Grained Model for Biomolecular Simulations. J Phys Chem B. 2007 Jul 1;111(27):7812–24.
-
 [^3]:Monticelli L, Kandasamy SK, Periole X, Larson RG, Tieleman DP, Marrink SJ. The MARTINI Coarse-Grained Force Field: Extension to Proteins. J Chem Theory Comput. 2008 May 1;4(5):819–34.
-
 [^4]:Souza PCT, Alessandri R, Barnoud J, Thallmair S, Faustino I, Grünewald F, et al. Martini 3: a general purpose force field for coarse-grained molecular dynamics. Nat Methods. 2021 Apr;18(4):382–8.
-
 [^5]:Abraham MJ, Murtola T, Schulz R, Páll S, Smith JC, Hess B, et al. GROMACS: High performance molecular simulations through multi-level parallelism from laptops to supercomputers. SoftwareX. 2015 Sep 1;1–2:19–25.
-
 [^6]:McGibbon RT, Beauchamp KA, Harrigan MP, Klein C, Swails JM, Hernández CX, et al. MDTraj: A Modern Open Library for the Analysis of Molecular Dynamics Trajectories. Biophys J. 2015 Oct 20;109(8):1528–32.
-
 [^7]:Kroon PC, Grünewald F, Barnoud J, van Tilburg M, Souza PCT, Wassenaar TA, et al. Martinize2 and Vermouth: Unified Framework for Topology Generation [Internet]. arXiv; 2022 [cited 2023 Feb 8]. Available from: http://arxiv.org/abs/2212.01191
