@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This tutorial will walk you through how to set up an OpenMM[^1] simulation using the Martini force field[^2-4] and GROMACS[^5] topology files. More specifically, we use the [implementation](https://github.com/maccallumlab/martini_openmm) of Martini for OpenMM from the MacCallum Lab. If you are not familiar with the protocols for generating gro, top and itp files for Martini in GROMACS, please have a look in the tutorials from the [Martini official website](http://cgmartini.nl/) and [GROMACS manual](https://manual.gromacs.org/current/reference-manual/). Some familiarity with OpenMM is also assumed here. For explanation of how to work with OpenMM and run parameters we refer to the [OpenMM user guide](http://docs.openmm.org/latest/userguide/). There are some excellent OpenMM tutorials available at the same page as well. Although OpenMM supports Python and C++ as APIs, here we only use Python for demonstration.
+This tutorial will walk you through how to set up an OpenMM[^1] simulation using the Martini force field[^2][^3][^4] and GROMACS[^5] topology files. More specifically, we use the [implementation](https://github.com/maccallumlab/martini_openmm) of Martini for OpenMM from the MacCallum Lab. If you are not familiar with the protocols for generating gro, top and itp files for Martini in GROMACS, please have a look in the tutorials from the [Martini official website](http://cgmartini.nl/) and [GROMACS manual](https://manual.gromacs.org/current/reference-manual/). Some familiarity with OpenMM is also assumed here. For explanation of how to work with OpenMM and run parameters we refer to the [OpenMM user guide](http://docs.openmm.org/latest/userguide/). There are some excellent OpenMM tutorials available at the same page as well. Although OpenMM supports Python and C++ as APIs, here we only use Python for demonstration.
 
 We assume you are using a Linux environment. To install Python libraries for OpenMM and Martini, we recommend using a conda environment. You can install Miniconda or Anaconda following the instructions at [conda.io](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html). To create a new environment for Python development using conda, you can use the following command:
 
@@ -52,10 +52,10 @@ Then, we import the topology in Martini model:
 
 ```python
 top = martini.MartiniTopFile("system.top",
-							periodicBoxVectors=box_vectors,
-							defines=defines,
-							epsilon_r=epsilon_r,
-														)
+		periodicBoxVectors=box_vectors,
+		defines=defines,
+		epsilon_r=epsilon_r
+		)
 ```
 
 Before minimizing the system, we define the non-bonded cut-off, integrator, target temperature, integration time steps. This information is stored in a Simulation object that has all the parameters.
@@ -97,13 +97,13 @@ In the last section, we define the output files and the length of simulation. We
 
 ```python
 simulation.reporters.append(StateDataReporter("prod.log", 1000,
-												step=True,
-												potentialEnergy=True,
-												totalEnergy=True,
-												density=True,
-												temperature=True,
-												volume=True)
-												)
+		step=True,
+		potentialEnergy=True,
+		totalEnergy=True,
+		density=True,
+		temperature=True,
+		volume=True)
+		)
 xtc_reporter = XTCReporter('prod.xtc', 1000)
 simulation.reporters.append(xtc_reporter)
 ```
@@ -120,9 +120,9 @@ When simulating a lipid bilayer system, the barostat needs to be decoupled betwe
 
 ```python
 barostat = mm.openmm.MonteCarloMembraneBarostat(1 * bar, 0 * bar * nanometer, 310 * kelvin,
-												mm.openmm.MonteCarloMembraneBarostat.XYIsotropic,
-												mm.openmm.MonteCarloMembraneBarostat.ZFree, 10
-												)
+		mm.openmm.MonteCarloMembraneBarostat.XYIsotropic,
+		mm.openmm.MonteCarloMembraneBarostat.ZFree, 10
+		)
 ```
 
 ### Simulations in NVT ensemble
