@@ -6,6 +6,7 @@ channels:
 dependencies:
 # build
 - cmake
+- pytest
 - make
 - ccache
 - openmm
