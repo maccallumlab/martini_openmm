@@ -1557,10 +1557,14 @@ class MartiniTopFile(object):
             for i, j in except_map:
                 # Remove i,j from nonbonded interactions for all exceptions / exclusions
                 self.nb_force.addExclusion(i, j)
-
+            
                 # Handle electrostatic exceptions / exclusions.
                 # We're going to assume that q==0 means that this was an
                 # exclusion.
+                # In this for loop, we have not give the q, c6, c12 correspond to i and j.
+                q = float(except_map[(i, j)][0])
+                c6 = float(except_map[(i, j)][1])
+                c12 = float(except_map[(i, j)][0])
                 if q == 0:
                     # In this case, we still need to add in the reaction field correction
                     # term.
@@ -1575,7 +1579,8 @@ class MartiniTopFile(object):
                 # Now we'll add the LJ exceptions. We don't bother
                 # adding the interaction if the combined LJ parameters are zero.
                 if c6 != 0 and c12 != 0:
-                    self.lj_except_force.addBond(i, j, [c6, c12])
+                # As in lj_except_force we first add the parameter C12 and then C6
+                    self.lj_except_force.addBond(i, j, [c12, c6])
 
         if remove_com_motion:
             sys.addForce(mm.CMMotionRemover())
