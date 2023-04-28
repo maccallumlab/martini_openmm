@@ -95,7 +95,7 @@ class TestMartini2Cholesterol(Base, unittest.TestCase):
     depth = 1
 
 
-class TestMartini2Cholesterol(Base, unittest.TestCase):
+class TestMartini3Cholesterol(Base, unittest.TestCase):
     test_dir = "tests/m3_chol"
     depth = 1
 
