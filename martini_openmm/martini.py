@@ -38,12 +38,12 @@ import os
 import re
 from collections import OrderedDict, defaultdict
 
-import simtk.openmm as mm
-import simtk.unit as unit
-from simtk.openmm.app import PDBFile, Topology
-from simtk.openmm.app import amberprmtopfile as prmtop
-from simtk.openmm.app import element as elem
-from simtk.openmm.app import forcefield as ff
+import openmm as mm
+import openmm.unit as unit
+from openmm.app import PDBFile, Topology
+from openmm.app import amberprmtopfile as prmtop
+from openmm.app import element as elem
+from openmm.app import forcefield as ff
 from .vsites import (
     LinearSite,
     OutOfPlane,
@@ -728,6 +728,18 @@ class MartiniTopFile(object):
         fields = line.split()
         index = int(fields[0])
         func = int(fields[1])
+
+        if func == 3:  # custom weights
+            site_dict = {}
+            for i in range(2, len(fields), 2):
+                atom_idx = int(fields[i])
+                weight = float(fields[i+1])
+                site_dict[atom_idx] = weight
+            
+            site = LinearSite(site_dict)
+            self._currentMoleculeType.vsites.add(index, site)
+            return
+
         from_atoms = [int(field) for field in fields[2:]]
 
         if len(from_atoms) == 1:
