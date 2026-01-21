@@ -1,0 +1,57 @@
+[ moleculetype ]
+; molname  nrexcl
+  CHOL     1
+
+[ atoms ]
+; i type resnr residue atom cgnr charge  mass    
+  1  P1  1     CHOL    ROH  1    0.0     0.0
+  2 SC4  1     CHOL    R1   2    0.0   159.8
+  3 SC3  1     CHOL    R2   3    0.0   157.0
+  4 SC3  1     CHOL    R3   4    0.0     0.0
+  5 SC3  1     CHOL    R4   5    0.0     0.0 
+  6 TC2  1     CHOL    R5   6    0.0     0.0
+  7 TC2  1     CHOL    R6   7    0.0     0.0
+  8  C2  1     CHOL    C1   8    0.0   115.2
+  9  C2  1     CHOL    C2   9    0.0    72.0
+
+[ bonds ]
+; i  j  funct  length  force
+  8  9  1     0.440   15000
+#ifdef FLEXIBLE
+ 8  3   1  0.75012  100000
+ 8  2   1  0.78504  100000
+ 3  2   1  0.34797  100000
+#else
+[ constraints ]
+ 8  3   1  0.75012
+ 8  2   1  0.78504
+ 3  2   1  0.34797
+#endif
+
+[ angles ]
+; i  j  k  funct  angle  force
+; Cholesterol acyl chain angle
+  5  4  9     1    99.0   250    ;R4-R3-C2
+
+[ dihedrals ]
+; i  j  k  l funct  angle  force
+; Cholesterol acyl chain tortion
+  7  5  4  9   2    -70.0   50  ;R6-R4-R3-C2
+
+[ virtual_sites3 ]
+ 1   8  3  2  4   1.08999   0.35891   0.22947
+ 4   8  3  2  4  -0.41067   0.83597  -0.05311
+ 5   8  3  2  4   0.69138  -0.10352   0.17476
+ 6   8  3  2  4   0.77524   0.22413   0.92700
+ 7   8  3  2  4   0.06219   0.32398   0.76967
+ 
+[ exclusions ]
+; i  j  k  ...
+  1  2  3  4  5  6  7  8
+  2  3  4  5  6  7  8
+  3  4  5  6  7  8
+  4  5  6  7  8 
+  5  6  7  8 
+  6  7  8 
+  7  8 
+ 
